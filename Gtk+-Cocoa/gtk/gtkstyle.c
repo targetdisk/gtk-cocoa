@@ -351,11 +351,11 @@ gtk_style_copy (GtkStyle *style)
       new_style->bg_pixmap[i] = style->bg_pixmap[i];
     }
   
-/*
+
   gdk_font_unref (new_style->font);
   new_style->font = style->font;
   gdk_font_ref (new_style->font);
-*/
+
 
   if (style->rc_style)
     {
@@ -397,7 +397,7 @@ gtk_style_new (void)
   
   style = g_new0 (GtkStyle, 1);
   
-#if 0
+
   if (!default_font)
     {
       default_font =
@@ -410,7 +410,6 @@ gtk_style_new (void)
   
   style->font = default_font;
   gdk_font_ref (style->font);
-#endif
   
   style->ref_count = 1;
   style->attach_count = 0;
@@ -657,7 +656,6 @@ gtk_style_init (GtkStyle    *style,
   gdk_color_white (colormap, &style->white);
   
   gc_values_mask = GDK_GC_FOREGROUND | GDK_GC_FONT;
-/*
   if (style->font->type == GDK_FONT_FONT)
     {
       gc_values.font = style->font;
@@ -666,7 +664,6 @@ gtk_style_init (GtkStyle    *style,
     {
       gc_values.font = default_font;
     }
-*/
    
   gc_values.foreground = style->black;
   style->black_gc = gtk_gc_get (style->depth, style->colormap, &gc_values, gc_values_mask);

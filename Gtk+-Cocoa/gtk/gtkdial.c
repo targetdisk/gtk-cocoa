@@ -117,6 +117,24 @@ gtk_dial_class_init (GtkDialClass *class)
   widget_class->motion_notify_event = gtk_dial_motion_notify;
 }
 
+void
+gtk_dial_init (GtkDial *dial)
+{
+  dial->button           = 0;
+  dial->policy           = GTK_UPDATE_CONTINUOUS;
+  dial->view_only        = FALSE;
+  dial->timer            = 0;
+  dial->radius           = 0;
+  dial->pointer_width    = 0;
+  dial->angle            = 0.0;
+  dial->percentage       = 0.0;
+  dial->old_value        = 0.0;
+  dial->old_lower        = 0.0;
+  dial->old_upper        = 0.0;
+  dial->adjustment       = NULL;
+  dial->offscreen_pixmap = NULL;
+}
+
 /**
  * gtk_dial_new
  * @adjustment: Pointer to GtkAdjustment object

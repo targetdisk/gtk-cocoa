@@ -1020,11 +1020,11 @@ gtk_color_selection_drag_handle (GtkWidget        *widget,
   vals[1] = colors[1] * 0xffff;
   vals[2] = colors[2] * 0xffff;
   vals[3] = colorsel->use_opacity ? colors[3] * 0xffff : 0xffff;
-
+/*
   gtk_selection_data_set (selection_data,
 			  gdk_atom_intern ("application/x-color", FALSE),
 			  16, (guchar *)vals, 8);
-}
+*/}
 
 static void
 gtk_color_selection_draw_wheel_marker (GtkColorSelection *colorsel)

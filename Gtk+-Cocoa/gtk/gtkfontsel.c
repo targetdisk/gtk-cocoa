@@ -952,7 +952,7 @@ gtk_font_selection_destroy (GtkObject *object)
 #endif
 }
 
-#if 0
+
 /* This is called when the clist is exposed. Here we scroll to the current
    font if necessary. */
 static void
@@ -3620,4 +3620,3 @@ gtk_font_selection_dialog_on_configure (GtkWidget         *widget,
   
   return FALSE;
 }
-#endif

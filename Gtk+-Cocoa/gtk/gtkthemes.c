@@ -24,7 +24,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
-
+#if 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <gmodule.h>
@@ -155,3 +155,4 @@ gtk_theme_engine_unref (GtkThemeEngine *engine)
       g_free (private);
     }
 }
+#endif

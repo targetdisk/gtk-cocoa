@@ -105,6 +105,7 @@ gtk_plug_init (GtkPlug *plug)
 void
 gtk_plug_construct (GtkPlug *plug, guint32 socket_id)
 {
+#if 0
   plug->socket_window = gdk_window_lookup (socket_id);
   plug->same_app = TRUE;
 
@@ -113,6 +114,7 @@ gtk_plug_construct (GtkPlug *plug, guint32 socket_id)
       plug->socket_window = gdk_window_foreign_new (socket_id);
       plug->same_app = FALSE;
     }
+#endif
 }
 
 GtkWidget*
@@ -149,6 +151,7 @@ gtk_plug_unrealize (GtkWidget *widget)
 static void
 gtk_plug_realize (GtkWidget *widget)
 {
+#if 0
   GtkWindow *window;
   GtkPlug *plug;
   GdkWindowAttr attributes;
@@ -203,6 +206,7 @@ gtk_plug_realize (GtkWidget *widget)
 
   widget->style = gtk_style_attach (widget->style, widget->window);
   gtk_style_set_background (widget->style, widget->window, GTK_STATE_NORMAL);
+#endif
 }
 
 static gint

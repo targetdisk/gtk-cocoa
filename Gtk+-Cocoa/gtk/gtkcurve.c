@@ -220,7 +220,7 @@ gtk_curve_get_arg (GtkObject *object,
       break;
     }
 }
-#if 0
+
 static int
 project (gfloat value, gfloat min, gfloat max, int norm)
 {
@@ -669,6 +669,7 @@ gtk_curve_set_curve_type (GtkCurve *c, GtkCurveType new_type)
 static void
 gtk_curve_size_graph (GtkCurve *curve)
 {
+#if 0
   gint width, height;
   gfloat aspect;
 
@@ -687,6 +688,7 @@ gtk_curve_size_graph (GtkCurve *curve)
 
   gtk_drawing_area_size (GTK_DRAWING_AREA (curve),
 			 width + RADIUS * 2, height + RADIUS * 2);
+#endif
 }
 
 static void
@@ -783,6 +785,7 @@ gtk_curve_set_range (GtkCurve *curve,
 void
 gtk_curve_set_vector (GtkCurve *c, int veclen, gfloat vector[])
 {
+#if 0
   GtkCurveType old_type;
   gfloat rx, dx, ry;
   gint i, height;
@@ -818,6 +821,7 @@ gtk_curve_set_vector (GtkCurve *c, int veclen, gfloat vector[])
     gtk_signal_emit (GTK_OBJECT (c), curve_type_changed_signal);
 
   gtk_curve_draw (c, c->num_points, height);
+#endif
 }
 
 void
@@ -936,7 +940,6 @@ gtk_curve_get_vector (GtkCurve *c, int veclen, gfloat vector[])
       break;
     }
 }
-#endif
 
 GtkWidget*
 gtk_curve_new (void)

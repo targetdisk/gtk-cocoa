@@ -136,6 +136,7 @@ gtk_socket_new ()
 void           
 gtk_socket_steal (GtkSocket *socket, guint32 id)
 {
+#if 0
   GtkWidget *widget;
 
   widget = GTK_WIDGET (socket);
@@ -182,6 +183,7 @@ gtk_socket_steal (GtkSocket *socket, guint32 id)
   gdk_error_trap_pop ();
   
   socket->need_map = TRUE;
+#endif
 }
 
 static void
@@ -548,6 +550,7 @@ gtk_socket_send_configure_event (GtkSocket *socket)
 static void
 gtk_socket_add_window (GtkSocket *socket, guint32 xid)
 {
+#if 0
   socket->plug_window = gdk_window_lookup (xid);
   socket->same_app = TRUE;
 
@@ -584,6 +587,7 @@ gtk_socket_add_window (GtkSocket *socket, guint32 xid)
 	  gtk_window_add_embedded_xid (GTK_WINDOW (toplevel), xid);
 	}
     }
+#endif
 }
 
 static GdkFilterReturn

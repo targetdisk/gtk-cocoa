@@ -33,7 +33,7 @@
 #define BORDER_SPACING  3
 
 static void gtk_tearoff_menu_item_class_init (GtkTearoffMenuItemClass *klass);
-static void gtk_tearoff_menu_item_init       (GtkTearoffMenuItem      *tearoff_menu_item);
+extern void gtk_tearoff_menu_item_init       (GtkTearoffMenuItem      *tearoff_menu_item);
 static void gtk_tearoff_menu_item_size_request (GtkWidget             *widget,
 				                GtkRequisition        *requisition);
 static void gtk_tearoff_menu_item_draw       (GtkWidget             *widget,
@@ -93,11 +93,6 @@ gtk_tearoff_menu_item_class_init (GtkTearoffMenuItemClass *klass)
   menu_item_class->activate = gtk_tearoff_menu_item_activate;
 }
 
-static void
-gtk_tearoff_menu_item_init (GtkTearoffMenuItem *tearoff_menu_item)
-{
-  tearoff_menu_item->torn_off = FALSE;
-}
 
 static void
 gtk_tearoff_menu_item_size_request (GtkWidget      *widget,
