@@ -76,7 +76,7 @@ static gint gtk_option_menu_key_press	    (GtkWidget          *widget,
 					     GdkEventKey        *event);
 void gtk_option_menu_deactivate      (GtkMenuShell       *menu_shell,
 					     GtkOptionMenu      *option_menu);
-static void gtk_option_menu_update_contents (GtkOptionMenu      *option_menu);
+void gtk_option_menu_update_contents (GtkOptionMenu      *option_menu);
 static void gtk_option_menu_remove_contents (GtkOptionMenu      *option_menu);
 void gtk_option_menu_calc_size       (GtkOptionMenu      *option_menu);
 static void gtk_option_menu_position        (GtkMenu            *menu,
@@ -399,7 +399,6 @@ static gint
 gtk_option_menu_expose (GtkWidget      *widget,
 			GdkEventExpose *event)
 {
-#if 0
   GtkWidget *child;
   GdkEventExpose child_event;
   gint remove_child;
@@ -456,7 +455,6 @@ gtk_option_menu_expose (GtkWidget      *widget,
 
 #endif /* 0 */
     }
-#endif
   return FALSE;
 }
 
@@ -571,7 +569,7 @@ gtk_option_menu_item_destroy_cb (GtkWidget     *widget,
     }
 }
 
-static void
+void
 gtk_option_menu_update_contents (GtkOptionMenu *option_menu)
 {
   GtkWidget *child;
@@ -591,9 +589,10 @@ gtk_option_menu_update_contents (GtkOptionMenu *option_menu)
 	  child = GTK_BIN (option_menu->menu_item)->child;
 	  if (child)
 	    {
-	     // if (!GTK_WIDGET_IS_SENSITIVE (option_menu->menu_item))
-	//	gtk_widget_set_sensitive (child, FALSE);
-	//      gtk_widget_reparent (child, GTK_WIDGET (option_menu));
+	      if (!GTK_WIDGET_IS_SENSITIVE (option_menu->menu_item))
+            gtk_widget_set_sensitive (child, FALSE);
+	      //gtk_widget_reparent (child, GTK_WIDGET (option_menu));
+          GTK_BUTTON(option_menu)->child = child;
 	    }
 
 	  gtk_signal_connect (GTK_OBJECT (option_menu->menu_item), "state_changed",
