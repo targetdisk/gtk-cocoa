@@ -2269,7 +2269,7 @@ create_menus (void)
       
       menu = create_menu (2, TRUE);
       
-      menuitem = gtk_menu_item_new_with_label ("test\nline2");
+      menuitem = gtk_menu_item_new_with_label ("test line2   test");
       gtk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem), menu);
       gtk_menu_bar_append (GTK_MENU_BAR (menubar), menuitem);
       gtk_widget_show (menuitem);

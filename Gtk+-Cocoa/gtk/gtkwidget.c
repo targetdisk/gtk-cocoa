@@ -3746,6 +3746,18 @@ gtk_widget_get_colormap (GtkWidget *widget)
   return gtk_widget_get_default_colormap ();
 }
 
+void         
+gtk_widget_set_colormap    (GtkWidget      *widget,
+					 GdkColormap    *colormap)
+{
+}
+
+void         
+gtk_widget_set_visual      (GtkWidget      *widget, 
+					 GdkVisual      *visual)
+{
+}
+
 gtk_widget_super_destroy(GtkObject *object)
 {
   parent_class->destroy (object);

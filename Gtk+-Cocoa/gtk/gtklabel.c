@@ -217,7 +217,7 @@ gtk_label_new (const gchar *str)
   return GTK_WIDGET (label);
 }
 
-static inline void
+inline void
 gtk_label_set_text_internal (GtkLabel *label,
 			     gchar    *str,
 			     GdkWChar *str_wc)
