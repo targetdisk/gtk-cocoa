@@ -41,6 +41,11 @@ gtk_toggle_button_new_with_label (const gchar *label)
   GtkWidget *label_widget;
   
   toggle_button = gtk_toggle_button_new ();
+  label_widget = gtk_label_new (label);
+  gtk_misc_set_alignment (GTK_MISC (label_widget), 0.5, 0.5);
+
+  gtk_container_add (GTK_CONTAINER (toggle_button), label_widget);
+
   but = toggle_button->proxy; 
   l = [NSString stringWithCString: label];
   [but setTitle:l];
@@ -48,6 +53,12 @@ gtk_toggle_button_new_with_label (const gchar *label)
 
   but->width = [but frame].size.width;
   but->height = [but frame].size.height;
+  
+  // set the button as the label proxy
+  // so that the text can be accessed directly
+  //
+  [label_widget->proxy release];
+  label_widget->proxy= but;
   return toggle_button;
 }
 
