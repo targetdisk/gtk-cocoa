@@ -128,6 +128,8 @@ gtk_init (int *argc, char ***argv)
     }
 }
 
+extern GList *idle_funcs;
+
 void
 gtk_main (void)
 {
@@ -161,7 +163,10 @@ gtk_main (void)
       g_main_run (loop);
       GDK_THREADS_ENTER ();
       gdk_flush ();
-*/    [NSApp run];
+*/    
+
+    gdk_idle_hook();
+    [NSApp run];
    
     }
 

@@ -13,7 +13,6 @@
 - (void)activated:(id)sender
 {
 /*
->>>>>>> 1.2
 	if(GTK_IS_CHECK_MENU_ITEM(proxy))
 	{
 		if([self state] == NSOffState)
@@ -39,6 +38,14 @@
     gtk_signal_emit_by_name(proxy,"activate",proxy);
     if(callback)
 		(callback)(proxy,user_data);
+}
+
+- (void)display
+{
+}
+
+- (void)setNeedsDisplay:(BOOL)yesno
+{
 }
 
 - (BOOL)validateMenuItem:(NSGtkMenuItem*)menuItem

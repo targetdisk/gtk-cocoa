@@ -19,5 +19,6 @@
 }
 
 - (void)activated:(id)sender;
-
+- (void)display;
+- (void)setNeedsDisplay:(BOOL)yesno;
 @end

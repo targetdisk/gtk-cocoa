@@ -51,6 +51,7 @@ gtk_check_button_size_request (GtkWidget      *widget,
 			       GtkRequisition *requisition)
 {
   GtkToggleButton *toggle_button;
+  NSGtkButton *but;
 #if 0
   gint temp;
   gint indicator_size;
@@ -62,9 +63,9 @@ gtk_check_button_size_request (GtkWidget      *widget,
   g_return_if_fail (requisition != NULL);
   
   toggle_button = GTK_TOGGLE_BUTTON (widget);
-  
-  requisition->width = [widget->proxy frame].size.width; 
-  requisition->height = [widget->proxy frame].size.height;
+  but = widget->proxy;
+  requisition->width = but->width; 
+  requisition->height = but->height;
 #if 0
   if (GTK_WIDGET_CLASS (parent_class)->size_request)
     (* GTK_WIDGET_CLASS (parent_class)->size_request) (widget, requisition);

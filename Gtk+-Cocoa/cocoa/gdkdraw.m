@@ -50,13 +50,13 @@ gdk_draw_rectangle (GdkDrawable *drawable,
 {
 	NSView *view;
 	float r,g,b;
-        GdkGCValues values;
-        GdkColor color;
+    GdkGCValues values;
+    GdkColor color;
 
-        view  = (NSView *)drawable;
-        gdk_gc_get_values(gc, &values);
+    view  = (NSView *)drawable;
+    gdk_gc_get_values(gc, &values);
         
-        color = values.foreground;
+    color = values.foreground;
         
 	r = (float)color.red/65535;
 	g = (float)color.green/65535;

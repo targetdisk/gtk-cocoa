@@ -10,6 +10,8 @@
 
 #include <gtk/gtk.h>
  
+#define CHILD_SPACING     1
+ 
 void
 gtk_button_init (GtkButton *button)
 {
@@ -28,6 +30,7 @@ gtk_button_init (GtkButton *button)
   [but setTarget: but];
   but->proxy = button;
   but->width = but->height = 48;
+  but->customImage = FALSE;
   [GTK_WIDGET(button)->proxy release];
   GTK_WIDGET(button)->proxy = but;
 
@@ -121,7 +124,7 @@ gtk_button_size_request (GtkWidget      *widget,
   gint default_spacing;
 
   but = widget->proxy;
-  requisition->width = but->width; 
+  requisition->width =  but->width; 
   requisition->height = but->height;
 }
 
@@ -142,25 +145,50 @@ ns_gtk_button_add (GtkContainer *container,
 		GtkWidget    *widget)
 {    
    NSGtkButton *but = GTK_WIDGET(container)->proxy;
-   // Cocoa does not suppurt arbitrary controls
+   // Cocoa does not support arbitrary controls
   // inside a button. We only support images and labels
   if(GTK_IS_PIXMAP(widget))
   {
-    NSImageView *iv = widget->proxy; 
+    NSImageView *iv = widget->proxy;
+    NSButton *oldBut = GTK_WIDGET(container)->proxy;
+    NSRect frame;
+    
+    but = [[NSGtkButton alloc] initWithFrame:NSMakeRect(0,0,100,100)];
+    [[but cell] setType:NSImageCellType];
     [but setImage:[iv image]];
-    [[but cell] setImagePosition:NSImageAbove];
+    [[but cell] setImagePosition:NSImageOnly];
     [but sizeToFit];
-    [but setBezelStyle:NSRegularSquareBezelStyle];
+    frame = [but frame];
+    frame.size.width += CHILD_SPACING+6;
+    frame.size.height += CHILD_SPACING+6;
+    [but setFrame:frame];
+    [but setAction: @selector (clicked:)];
+    [but setTarget: but];
+    [but setBezelStyle:[oldBut bezelStyle]];
+    [but setBordered:[oldBut isBordered]];
     but->width = [but frame].size.width;
     but->height = [but frame].size.height;
+    but->proxy = container;
+    but->customImage = TRUE;
+    if(![but isBordered])
+    {
+        [but setBordered:YES];
+        [but setShowsBorderOnlyWhileMouseInside:TRUE];
+    }
+    if(GTK_IS_TOGGLE_BUTTON (but->proxy))
+    {
+        [but setButtonType:NSPushOnPushOffButton];
+    }
+    [oldBut release]; 
+    GTK_WIDGET(container)->proxy = but;
   }
   if(GTK_IS_LABEL(widget))
   {
     NSButton *label = widget->proxy; 
     [but setTitle:[label title]];
     [but sizeToFit];
-    but->width = [but frame].size.width;
-    but->height = [but frame].size.height;
+    but->width = [but frame].size.width+CHILD_SPACING+6;
+    but->height = [but frame].size.height+CHILD_SPACING+6;
   }
 }
 
