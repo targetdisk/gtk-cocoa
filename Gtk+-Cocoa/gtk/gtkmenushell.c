@@ -311,9 +311,9 @@ gtk_menu_shell_insert (GtkMenuShell *menu_shell,
 
   menu_shell->children = g_list_insert (menu_shell->children, child, position);
 
-	child->parent = menu_shell;
-#if 0
-  gtk_widget_set_parent (child, GTK_WIDGET (menu_shell));
+// 	child->parent = menu_shell;
+
+ gtk_widget_set_parent (child, GTK_WIDGET (menu_shell));
 
   if (GTK_WIDGET_REALIZED (child->parent))
    gtk_widget_realize (child);
@@ -325,7 +325,6 @@ gtk_menu_shell_insert (GtkMenuShell *menu_shell,
 
       gtk_widget_queue_resize (child);
     }
-#endif
 }
 
 void
@@ -340,7 +339,6 @@ gtk_menu_shell_deactivate (GtkMenuShell *menu_shell)
 static void
 gtk_menu_shell_map (GtkWidget *widget)
 {
-#if 0
   GtkMenuShell *menu_shell;
   GtkWidget *child;
   GList *children;
@@ -362,13 +360,11 @@ gtk_menu_shell_map (GtkWidget *widget)
     }
 
   gdk_window_show (widget->window);
-#endif
 }
 
 static void
 gtk_menu_shell_realize (GtkWidget *widget)
 {
-#if 0
   GdkWindowAttr attributes;
   gint attributes_mask;
 
@@ -376,7 +372,7 @@ gtk_menu_shell_realize (GtkWidget *widget)
   g_return_if_fail (GTK_IS_MENU_SHELL (widget));
 
   GTK_WIDGET_SET_FLAGS (widget, GTK_REALIZED);
-
+#if 0
   attributes.x = widget->allocation.x;
   attributes.y = widget->allocation.y;
   attributes.width = widget->allocation.width;
