@@ -23,11 +23,11 @@ gtk_radio_button_init (GtkRadioButton *radio_button)
   radio_button->group = g_slist_prepend (NULL, radio_button);
 
 
-  //but = [[NSGtkButton alloc] initWithFrame:NSMakeRect(0,0,100,100)];
-  but = GTK_WIDGET(radio_button)->proxy;
+  but = [[NSGtkButton alloc] initWithFrame:NSMakeRect(0,0,100,100)];
+  [GTK_WIDGET(radio_button)->proxy release];
+  GTK_WIDGET(radio_button)->proxy = but;
   [but setButtonType:NSRadioButton];
   [but setAction: @selector (clicked:)];
-  [but setTarget: but];
   [but setTarget: but];
   [but setState:NSOnState];
   but->proxy = radio_button;
@@ -141,7 +141,7 @@ gtk_radio_button_clicked (GtkButton *button)
 	{
 	  toggled = TRUE;
 	  toggle_button->active = !toggle_button->active;
-	  [but setState:(toggle_button->active ? NSOnState : NSOffState)];
+	
 	  new_state = (button->in_button ? GTK_STATE_PRELIGHT : GTK_STATE_NORMAL);
 	}
     }
@@ -174,7 +174,9 @@ gtk_radio_button_clicked (GtkButton *button)
 
   gtk_widget_queue_draw (GTK_WIDGET (button));
 
-  gtk_widget_unref (GTK_WIDGET (button));
+  gtk_widget_unref (GTK_WIDGET (button));  
+  
+  [but setState:(toggle_button->active ? NSOnState : NSOffState)];
 }
 
 
