@@ -82,6 +82,7 @@ struct _GtkStateData
 extern GList *idle_funcs;
 extern guint widget_signals[LAST_SIGNAL];
 extern guint        aux_info_key_id;
+extern const gchar *aux_info_key;
 
 void reset_focus_recurse (GtkWidget *widget, gpointer   data);
 NSPoint convert_coords(GtkWidget *widget, int x, int y);
@@ -112,13 +113,13 @@ gtk_widget_show                 (GtkWidget *widget)
       	
       }
       if (GTK_IS_WINDOW (widget) && GTK_WIDGET_REALIZED (widget))
-                [widget->window makeKeyAndOrderFront:widget->window ];
+                [widget->proxy makeKeyAndOrderFront:widget->proxy ];
       gtk_signal_emit (GTK_OBJECT (widget), widget_signals[SHOW]);
     }
  //if(!GTK_IS_MENU_ITEM(widget))
  if([widget->proxy isKindOfClass:[NSView class]])
   {  
-      obj = (NSView *)widget->proxy;
+      obj = (NSView *)widget->window;
 	  [obj setNeedsDisplay:TRUE];
       
  //     printf("widget %s\n", gtk_widget_get_name(widget));
@@ -360,19 +361,22 @@ gtk_widget_set_parent (GtkWidget *widget,
   data.state_restoration = FALSE;
   data.parent_sensitive = (GTK_WIDGET_IS_SENSITIVE (parent) != FALSE);
   data.use_forall = GTK_WIDGET_IS_SENSITIVE (parent) != GTK_WIDGET_IS_SENSITIVE (widget);
-
+/*
     view = (NSView *)GTK_WIDGET(parent)->proxy;
     win = (GtkWindowPrivate *)GTK_WIDGET(parent)->window;
-    subView = (NSView *)widget->proxy;
+    
 
     if(win)
     {
         view = [win contentView];
     }
-	if(GTK_WIDGET_VISIBLE(widget))
+*/
+  subView = (NSView *)widget->proxy;
+  view = (NSView *)GTK_WIDGET(parent)->window;
+  if(GTK_WIDGET_VISIBLE(widget))
 		[view addSubview:subView];
-	widget->superview = view;
-    [subView display];
+  widget->superview = view;
+  [subView display];
 
   gtk_widget_propagate_state (widget, &data);
   
@@ -457,7 +461,7 @@ gtk_widget_size_allocate (GtkWidget	*widget,
 	  origin = NSMakePoint(real_allocation.x,real_allocation.y); //convert_coords(widget, real_allocation.x,real_allocation.y);
   // flip y
   //
-  if(!GTK_IS_WINDOW(widget))
+  if(!GTK_IS_WINDOW(widget) && widget->parent)
   {
 	  origin.y = widget->parent->allocation.height - origin.y - real_allocation.height;
 	  [widget->proxy setFrameOrigin:origin];
@@ -465,7 +469,7 @@ gtk_widget_size_allocate (GtkWidget	*widget,
 	  //printf("coonverted y= %f %d %f\n",origin.y, real_allocation.height, [widget->proxy frame].size.height );
   }
   //printf("end widget %s\n",gtk_widget_get_name(widget));
-  [widget->proxy setNeedsDisplay:TRUE];
+  [widget->window setNeedsDisplay:TRUE];
 }
 
 NSPoint
@@ -547,7 +551,7 @@ gtk_widget_real_grab_focus (GtkWidget *focus_widget)
       	if (GTK_IS_WINDOW (widget))
 		{
 			gtk_window_set_focus (GTK_WINDOW (widget), focus_widget);
-			win = widget->window;
+			win = widget->proxy;
             printf("focus widget %x\n",focus_widget);
 			[win makeFirstResponder:focus_widget->proxy];
 		}
@@ -643,6 +647,47 @@ ns_gtk_widget_finalize (GtkWidget *widget)
 {
  if(widget->proxy && widget->superview)
     [widget->proxy release];
+}
+
+
+/*****************************************
+ * gtk_widget_set_uposition:
+ *
+ *   arguments:
+ *
+ *   results:
+ *****************************************/
+
+void
+gtk_widget_set_uposition (GtkWidget *widget,
+			  gint	     x,
+			  gint	     y)
+{
+  GtkWidgetAuxInfo *aux_info;
+  NSSize screen = [[NSScreen mainScreen] frame].size;
+  
+  g_return_if_fail (widget != NULL);
+  g_return_if_fail (GTK_IS_WIDGET (widget));
+  
+  aux_info = gtk_object_get_data_by_id (GTK_OBJECT (widget), aux_info_key_id);
+  if (!aux_info)
+    {
+      if (!aux_info_key_id)
+	aux_info_key_id = g_quark_from_static_string (aux_info_key);
+      aux_info = gtk_widget_aux_info_new ();
+      gtk_object_set_data_by_id (GTK_OBJECT (widget), aux_info_key_id, aux_info);
+    }
+
+  /* keep this in sync with gtk_window_compute_reposition() */
+  
+  if (x > -2)
+    aux_info->x = x;
+  if (y > -2)
+    aux_info->y = y;
+  
+  if (GTK_WIDGET_VISIBLE (widget) && widget->parent)
+    gtk_widget_size_allocate (widget, &widget->allocation);
+    [widget->proxy setFrameOrigin:NSMakePoint(x,screen.height - y)];
 }
 
 
