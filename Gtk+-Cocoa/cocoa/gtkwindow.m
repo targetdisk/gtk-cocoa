@@ -150,10 +150,20 @@ gtk_window_realize (GtkWidget *widget)
     {
 		case GTK_WIN_POS_CENTER:
 		  [win center];
-			break;
+			break;       
+        case GTK_WIN_POS_MOUSE:
+        {
+            NSPoint mouseLoc = [NSEvent mouseLocation];
+            NSSize winSize = [widget->proxy frame].size;
+            
+            mouseLoc.x -= winSize.width/2;
+            mouseLoc.y -= winSize.height/2;
+            [widget->proxy setFrameOrigin:mouseLoc];
+            break;
+        }
     }
-    [win makeKeyAndOrderFront:win];
-    [win display];
+  //  [win makeKeyAndOrderFront:win];
+  //  [win display];
 	frame = [win frame];
 	frame.size.height++;
 	[win setFrame:frame display:YES];
@@ -259,15 +269,6 @@ gtk_window_set_policy           (GtkWindow *window,
     win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
     
     [win setShowsResizeIndicator:allow_grow];
-	if(!allow_grow)
-		[win setMaxSize:[win frame].size];
-	else
-		[win setMaxSize:NSMakeSize(FLT_MAX, FLT_MAX)];
-	if(!allow_shrink)
-		[win setMinSize:[win frame].size];
-	else
-		[win setMinSize:NSMakeSize(0, 0)];
-
 }
 
 void        
@@ -319,26 +320,10 @@ void        gtk_window_set_geometry_hints   (GtkWindow *window,
 }
 
 void
-gtk_window_destroy (GtkObject *object)
+ns_window_close(GtkWidget *window)
 {
-  GtkWindowPrivate *win;
-  GtkWindow *window;
-  
-  g_return_if_fail (object != NULL);
-  g_return_if_fail (GTK_IS_WINDOW (object));
-
-  window = GTK_WINDOW (object);
-  
-  gtk_container_unregister_toplevel (GTK_CONTAINER (object));
-
-  if (window->transient_parent)
-    gtk_window_unset_transient_for (window);
-
-  win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
-  [win close];
-//  gtk_window_super_destroy(object);
+    [window->proxy close];
 }
-
 
 void
 gtk_window_set_position (GtkWindow         *window,
@@ -417,4 +402,60 @@ gtk_window_set_transient_for  (GtkWindow *window,
 	[win setLevel:NSFloatingWindowLevel];
 }
 
+void
+gtk_window_show (GtkWidget *widget)
+{
+  GtkWindow *window = GTK_WINDOW (widget);
+  GtkContainer *container = GTK_CONTAINER (window);
+  gboolean need_resize;
+
+  GTK_WIDGET_SET_FLAGS (widget, GTK_VISIBLE);
+
+  need_resize = container->need_resize || !GTK_WIDGET_REALIZED (widget);
+  container->need_resize = FALSE;
+
+  if (need_resize)
+    {
+      GtkWindowGeometryInfo *info = gtk_window_get_geometry_info (window, TRUE);
+      GtkAllocation allocation = { 0, 0 };
+      GdkGeometry new_geometry;
+      guint width, height, new_flags;
+
+      /* determine default size to initially show the window with */
+      gtk_widget_size_request (widget, NULL);
+      gtk_window_compute_default_size (window, &width, &height);
+
+      /* save away the last default size for later comparisions */
+      info->last.width = width;
+      info->last.height = height;
+
+      /* constrain size to geometry */
+      gtk_window_compute_hints (window, &new_geometry, &new_flags);
+      gtk_window_constrain_size (window,
+				 &new_geometry, new_flags,
+				 width, height,
+				 &width, &height);
+
+      /* and allocate the window */
+      allocation.width  = width;
+      allocation.height = height;
+      gtk_widget_size_allocate (widget, &allocation);
+      
+      if (GTK_WIDGET_REALIZED (widget))
+		;//gdk_window_resize (widget->window, width, height);
+      else
+	gtk_widget_realize (widget);
+    }
+  
+  gtk_container_check_resize (container);
+
+  gtk_widget_map (widget);
+
+ [widget->proxy makeKeyAndOrderFront:widget->proxy ];
+
+/*
+  if (window->modal)
+    gtk_grab_add (widget);
+*/
+}
 
