@@ -974,33 +974,7 @@ gdk_window_set_background (GdkWindow *window,
 #endif
 }
 
-void
-gdk_window_set_back_pixmap (GdkWindow *window,
-			    GdkPixmap *pixmap,
-			    gboolean   parent_relative)
-{
-#if 0
-  GdkWindowPrivate *window_private;
-  GdkPixmapPrivate *pixmap_private;
-  Pixmap xpixmap;
-  
-  g_return_if_fail (window != NULL);
-  
-  window_private = (GdkWindowPrivate*) window;
-  pixmap_private = (GdkPixmapPrivate*) pixmap;
-  
-  if (pixmap)
-    xpixmap = pixmap_private->xwindow;
-  else
-    xpixmap = None;
-  
-  if (parent_relative)
-    xpixmap = ParentRelative;
-  
-  if (!window_private->destroyed)
-    XSetWindowBackgroundPixmap (window_private->xdisplay, window_private->xwindow, xpixmap);
-#endif
-}
+
 
 void
 gdk_window_set_cursor (GdkWindow *window,
@@ -1024,6 +998,7 @@ gdk_window_set_cursor (GdkWindow *window,
   if (!window_private->destroyed)
     XDefineCursor (window_private->xdisplay, window_private->xwindow, xcursor);
 #endif
+
 }
 
 void
@@ -1061,11 +1036,11 @@ void
 gdk_window_get_user_data (GdkWindow *window,
 			  gpointer  *data)
 {
-#if 0
+
   g_return_if_fail (window != NULL);
   
   *data = window->user_data;
-#endif
+
 }
 
 void
