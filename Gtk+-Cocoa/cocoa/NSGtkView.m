@@ -72,4 +72,30 @@ printf("mouse dragged\n");
 {
     return proxy;
 }
+
+- (void)drawRect:(NSRect)rect 
+{
+    const NSRect *rects;
+    int index, count;
+
+    if(!bg_image)
+    {
+        [super drawRect:rect];
+        return;
+    }
+    
+    [[NSColor colorWithPatternImage:bg_image] set];
+
+    [self getRectsBeingDrawn:&rects count:&count];
+    for (index = 0; index < count; index++) 
+    {
+        NSRectFill(rects[index]);
+    }
+}
+
+-(void)setBGImage:(NSImage *)image
+{
+    bg_image = image;
+}
+    
 @end

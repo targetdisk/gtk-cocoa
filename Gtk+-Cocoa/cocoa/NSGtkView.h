@@ -13,8 +13,11 @@
 @interface NSGtkView : NSView
 {
     GtkWidget *proxy;
+    NSImage *bg_image;
 }
 
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent;
-
+-(void)setBGImage:(NSImage *)image;
+- (void)drawRect:(NSRect)rect;
+ 
 @end
