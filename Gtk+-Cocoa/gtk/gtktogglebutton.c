@@ -201,55 +201,6 @@ gtk_toggle_button_get_arg (GtkObject *object,
     }
 }
 
-void
-gtk_toggle_button_set_mode (GtkToggleButton *toggle_button,
-			    gboolean         draw_indicator)
-{
-  GtkWidget *widget;
-
-  g_return_if_fail (toggle_button != NULL);
-  g_return_if_fail (GTK_IS_TOGGLE_BUTTON (toggle_button));
-
-  widget = GTK_WIDGET (toggle_button);
-
-  draw_indicator = draw_indicator ? TRUE : FALSE;
-
-  if (toggle_button->draw_indicator != draw_indicator)
-    {
-      if (GTK_WIDGET_REALIZED (toggle_button))
-	{
-	  gboolean visible = GTK_WIDGET_VISIBLE (toggle_button);
-
-	  if (visible)
-	    gtk_widget_hide (widget);
-
-	  gtk_widget_unrealize (widget);
-	  toggle_button->draw_indicator = draw_indicator;
-
-	  if (toggle_button->draw_indicator)
-	    GTK_WIDGET_SET_FLAGS (toggle_button, GTK_NO_WINDOW);
-	  else
-	    GTK_WIDGET_UNSET_FLAGS (toggle_button, GTK_NO_WINDOW);
-	  
-	  gtk_widget_realize (widget);
-
-	  if (visible)
-	    gtk_widget_show (widget);
-	}
-      else
-	{
-	  toggle_button->draw_indicator = draw_indicator;
-
-	  if (toggle_button->draw_indicator)
-	    GTK_WIDGET_SET_FLAGS (toggle_button, GTK_NO_WINDOW);
-	  else
-	    GTK_WIDGET_UNSET_FLAGS (toggle_button, GTK_NO_WINDOW);
-	}
-
-      if (GTK_WIDGET_VISIBLE (toggle_button))
-	gtk_widget_queue_resize (GTK_WIDGET (toggle_button));
-    }
-}
 
 
 
