@@ -180,7 +180,7 @@ void gtk_widget_set_style_recurse	 (GtkWidget	*widget,
 
 static gboolean gtk_widget_is_offscreen           (GtkWidget     *widget);
 
-static GtkWidgetAuxInfo* gtk_widget_aux_info_new     (void);
+GtkWidgetAuxInfo* gtk_widget_aux_info_new     (void);
 static void		 gtk_widget_aux_info_destroy (GtkWidgetAuxInfo *aux_info);
 
 static GtkObjectClass *parent_class = NULL;
@@ -199,7 +199,7 @@ static GSList *style_stack = NULL;
 static guint   composite_child_stack = 0;
 static GSList *gtk_widget_redraw_queue = NULL;
 
-static const gchar *aux_info_key = "gtk-aux-info";
+const gchar *aux_info_key = "gtk-aux-info";
 guint        aux_info_key_id = 0;
 static const gchar *event_key = "gtk-event-mask";
 static guint        event_key_id = 0;
@@ -2667,44 +2667,6 @@ gtk_widget_get_parent_window   (GtkWidget           *widget)
 }
 
 /*****************************************
- * gtk_widget_set_uposition:
- *
- *   arguments:
- *
- *   results:
- *****************************************/
-
-void
-gtk_widget_set_uposition (GtkWidget *widget,
-			  gint	     x,
-			  gint	     y)
-{
-  GtkWidgetAuxInfo *aux_info;
-  
-  g_return_if_fail (widget != NULL);
-  g_return_if_fail (GTK_IS_WIDGET (widget));
-  
-  aux_info = gtk_object_get_data_by_id (GTK_OBJECT (widget), aux_info_key_id);
-  if (!aux_info)
-    {
-      if (!aux_info_key_id)
-	aux_info_key_id = g_quark_from_static_string (aux_info_key);
-      aux_info = gtk_widget_aux_info_new ();
-      gtk_object_set_data_by_id (GTK_OBJECT (widget), aux_info_key_id, aux_info);
-    }
-
-  /* keep this in sync with gtk_window_compute_reposition() */
-  
-  if (x > -2)
-    aux_info->x = x;
-  if (y > -2)
-    aux_info->y = y;
-  
-  if (GTK_WIDGET_VISIBLE (widget) && widget->parent)
-    gtk_widget_size_allocate (widget, &widget->allocation);
-}
-
-/*****************************************
  * gtk_widget_set_usize:
  *
  *   arguments:
@@ -3464,7 +3426,7 @@ gtk_widget_is_offscreen (GtkWidget *widget)
  *   results:
  *****************************************/
 
-static GtkWidgetAuxInfo*
+GtkWidgetAuxInfo*
 gtk_widget_aux_info_new (void)
 {
   GtkWidgetAuxInfo *aux_info;
