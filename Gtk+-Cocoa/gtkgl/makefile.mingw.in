@@ -1,0 +1,26 @@
+##
+## Obsolete. Use autoconfiscation.
+##
+
+TOP = ../..
+
+include ../build/win32/make.mingw
+
+GTKGLAREA_VER=@VERSION@
+
+INCLUDES = -I . -I ..
+DEPCFLAGS = $(GLIB_CFLAGS) $(GTK_CFLAGS) $(OPENGL_CFLAGS)
+
+TARGET = libgtkgl-$(GTKGLAREA_VER).dll
+
+OBJS   = gdkgl-win32.o gtkglarea.o
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(GLIB)/build-dll gtkgl $(GTKGLAREA_VER) gtkgl.def $(OBJS) $(GTK_LIBS) $(GLIB_LIBS) $(OPENGL_LIBS) -lgdi32
+
+# Hack to get an updated makefile.mingw automatically if updating
+# makefile.mingw.in
+makefile.mingw: makefile.mingw.in
+	sed -e 's,@VER[S]ION@,@VERSION@,' <$< >$@

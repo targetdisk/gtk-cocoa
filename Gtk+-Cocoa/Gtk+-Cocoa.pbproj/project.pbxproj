@@ -1,0 +1,5739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		014CEA440018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		014CEA450018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//010
+//011
+//012
+//013
+//014
+//030
+//031
+//032
+//033
+//034
+		034768DFFF38A50411DB9C8B = {
+			children = (
+				034768E0FF38A50411DB9C8B,
+				F51816D4048129E701304BCB,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		034768E0FF38A50411DB9C8B = {
+			explicitFileType = wrapper.framework;
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			path = "Gtk+-Cocoa.framework";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//030
+//031
+//032
+//033
+//034
+//080
+//081
+//082
+//083
+//084
+		0867D690FE84028FC02AAC07 = {
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				SDKROOT = /Developer/SDKs/MacOSX10.1.5.sdk;
+			};
+			buildStyles = (
+				014CEA440018CDF011CA2923,
+				014CEA450018CDF011CA2923,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 0867D691FE84028FC02AAC07;
+			productRefGroup = 034768DFFF38A50411DB9C8B;
+			projectDirPath = "";
+			targets = (
+				0867D69CFE84028FC02AAC07,
+				F51816D3048129E701304BCB,
+			);
+		};
+		0867D691FE84028FC02AAC07 = {
+			children = (
+				F51816D604812A9801304BCB,
+				F51816C9048127B301304BCB,
+				F5975109047FF8EA01668CD5,
+				F5975058047FF7C101668CD5,
+				F5974E9B047FF72301668CD5,
+				08FB77AEFE84172EC02AAC07,
+				089C1665FE841158C02AAC07,
+				0867D69AFE84028FC02AAC07,
+				034768DFFF38A50411DB9C8B,
+			);
+			isa = PBXGroup;
+			name = "Gtk+-Cocoa";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 = {
+			children = (
+				1058C7B0FEA5585E11CA2CBB,
+				1058C7B2FEA5585E11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D69BFE84028FC02AAC07 = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		0867D69CFE84028FC02AAC07 = {
+			buildPhases = (
+				0867D69DFE84028FC02AAC07,
+				0867D69EFE84028FC02AAC07,
+				0867D69FFE84028FC02AAC07,
+				0867D6A0FE84028FC02AAC07,
+				0867D6A2FE84028FC02AAC07,
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework\"";
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Versions/A/Headers\" /usr/local/include/glib-1.2 /usr/local/lib/glib/include . gdk gtk";
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-g
+";
+				OTHER_LDFLAGS = "-lglib -seg1addr 0x10000000 -g";
+				PRODUCT_NAME = "Gtk+-Cocoa";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = framework;
+			};
+			dependencies = (
+			);
+			isa = PBXFrameworkTarget;
+			name = "Gtk+-Cocoa";
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = "Gtk+-Cocoa";
+			productReference = 034768E0FF38A50411DB9C8B;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Gtk+-Cocoa</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+</dict>
+</plist>
+";
+		};
+		0867D69DFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				F5974F7A047FF7A901668CD5,
+				F5974F7C047FF7A901668CD5,
+				F5974F80047FF7A901668CD5,
+				F5974F82047FF7A901668CD5,
+				F5974F84047FF7A901668CD5,
+				F5974F89047FF7A901668CD5,
+				F5974F8B047FF7A901668CD5,
+				F5974F8D047FF7A901668CD5,
+				F5974F8F047FF7A901668CD5,
+				F5974F91047FF7A901668CD5,
+				F5974F93047FF7A901668CD5,
+				F5974F95047FF7A901668CD5,
+				F5974F97047FF7A901668CD5,
+				F5974F99047FF7A901668CD5,
+				F5974F9B047FF7A901668CD5,
+				F5974FA2047FF7A901668CD5,
+				F5974FA4047FF7A901668CD5,
+				F5974FA8047FF7A901668CD5,
+				F5974FAB047FF7A901668CD5,
+				F5974FAD047FF7A901668CD5,
+				F5974FAF047FF7A901668CD5,
+				F5974FB1047FF7A901668CD5,
+				F5974FB3047FF7A901668CD5,
+				F5974FB4047FF7A901668CD5,
+				F5974FB6047FF7A901668CD5,
+				F5974FB7047FF7A901668CD5,
+				F5974FBB047FF7A901668CD5,
+				F5974FBF047FF7A901668CD5,
+				F5974FC3047FF7A901668CD5,
+				F5974FC7047FF7A901668CD5,
+				F5974FC9047FF7A901668CD5,
+				F5974FCD047FF7A901668CD5,
+				F5974FCF047FF7A901668CD5,
+				F5974FD1047FF7A901668CD5,
+				F5974FD3047FF7A901668CD5,
+				F5974FD5047FF7A901668CD5,
+				F5974FD8047FF7A901668CD5,
+				F5974FDC047FF7A901668CD5,
+				F5974FE0047FF7A901668CD5,
+				F5974FE2047FF7A901668CD5,
+				F5974FE4047FF7A901668CD5,
+				F5974FE6047FF7A901668CD5,
+				F5974FE8047FF7A901668CD5,
+				F5974FEA047FF7A901668CD5,
+				F5974FEC047FF7A901668CD5,
+				F5974FEE047FF7A901668CD5,
+				F5974FF2047FF7A901668CD5,
+				F5974FF4047FF7A901668CD5,
+				F5974FF6047FF7A901668CD5,
+				F5974FF8047FF7A901668CD5,
+				F5974FFA047FF7A901668CD5,
+				F5974FFC047FF7A901668CD5,
+				F5975002047FF7A901668CD5,
+				F5975007047FF7A901668CD5,
+				F5975009047FF7A901668CD5,
+				F597500B047FF7A901668CD5,
+				F597500D047FF7A901668CD5,
+				F597500F047FF7A901668CD5,
+				F5975011047FF7A901668CD5,
+				F5975015047FF7A901668CD5,
+				F5975017047FF7A901668CD5,
+				F5975019047FF7A901668CD5,
+				F597501B047FF7A901668CD5,
+				F597501D047FF7A901668CD5,
+				F597501F047FF7A901668CD5,
+				F5975021047FF7A901668CD5,
+				F5975025047FF7A901668CD5,
+				F5975027047FF7A901668CD5,
+				F597502B047FF7A901668CD5,
+				F597502D047FF7A901668CD5,
+				F597502F047FF7A901668CD5,
+				F5975035047FF7A901668CD5,
+				F5975037047FF7A901668CD5,
+				F5975039047FF7A901668CD5,
+				F597503B047FF7A901668CD5,
+				F5975041047FF7A901668CD5,
+				F5975045047FF7A901668CD5,
+				F5975047047FF7A901668CD5,
+				F5975049047FF7A901668CD5,
+				F597504F047FF7A901668CD5,
+				F5975051047FF7A901668CD5,
+				F5975053047FF7A901668CD5,
+				F5975055047FF7A901668CD5,
+				F5975057047FF7A901668CD5,
+				F59750B4047FF8E301668CD5,
+				F59750B6047FF8E301668CD5,
+				F59750C3047FF8E301668CD5,
+				F59750DD047FF8E301668CD5,
+				F59750E3047FF8E301668CD5,
+				F59750E5047FF8E301668CD5,
+				F59750E7047FF8E301668CD5,
+				F59750E9047FF8E301668CD5,
+				F59750EB047FF8E301668CD5,
+				F59750ED047FF8E301668CD5,
+				F59750EF047FF8E301668CD5,
+				F59750F3047FF8E301668CD5,
+				F59750F5047FF8E301668CD5,
+				F59750F7047FF8E301668CD5,
+				F59750F9047FF8E301668CD5,
+				F59750FB047FF8E301668CD5,
+				F59750FD047FF8E301668CD5,
+				F59750FF047FF8E301668CD5,
+				F5975101047FF8E301668CD5,
+				F5975103047FF8E301668CD5,
+				F5975105047FF8E301668CD5,
+				F5975107047FF8E301668CD5,
+				F597510F047FF90D01668CD5,
+				F5975111047FF90D01668CD5,
+				F51816B204800C9F01304BCB,
+				F51816B5048014BF01304BCB,
+				F51816BD04801D3401304BCB,
+				F51816BE04801D3401304BCB,
+				F51816C204801D8A01304BCB,
+				F51816C60481215A01304BCB,
+				F53ED34304F7CB9F0148A6F0,
+				F53ED34704F7CBE70148A6F0,
+				528D9590056710A8002B5214,
+				52F6AAF60583A8CD0068C552,
+				5209FD660583BDE10036C783,
+				52EDFC7E0583C192007F1311,
+				52EDFC800583C192007F1311,
+				52EDFC820583C192007F1311,
+				52EDFC840583C192007F1311,
+				52EDFC860583C192007F1311,
+				52EDFC880583C192007F1311,
+				52EDFC8C0583C192007F1311,
+				52EDFC8E0583C192007F1311,
+				52EDFC900583C192007F1311,
+				52EDFC920583C192007F1311,
+				52EDFC960583C192007F1311,
+				52EDFC980583C192007F1311,
+				5212CB9E05B9F9AC009AB20E,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D69EFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				089C1668FE841158C02AAC07,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D69FFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				F5974F7B047FF7A901668CD5,
+				F5974F7F047FF7A901668CD5,
+				F5974F81047FF7A901668CD5,
+				F5974F83047FF7A901668CD5,
+				F5974F88047FF7A901668CD5,
+				F5974F8A047FF7A901668CD5,
+				F5974F8C047FF7A901668CD5,
+				F5974F8E047FF7A901668CD5,
+				F5974F90047FF7A901668CD5,
+				F5974F92047FF7A901668CD5,
+				F5974F94047FF7A901668CD5,
+				F5974F96047FF7A901668CD5,
+				F5974F98047FF7A901668CD5,
+				F5974F9A047FF7A901668CD5,
+				F5974FA1047FF7A901668CD5,
+				F5974FA3047FF7A901668CD5,
+				F5974FA7047FF7A901668CD5,
+				F5974FAA047FF7A901668CD5,
+				F5974FAC047FF7A901668CD5,
+				F5974FAE047FF7A901668CD5,
+				F5974FB0047FF7A901668CD5,
+				F5974FB2047FF7A901668CD5,
+				F5974FB5047FF7A901668CD5,
+				F5974FBA047FF7A901668CD5,
+				F5974FBE047FF7A901668CD5,
+				F5974FC6047FF7A901668CD5,
+				F5974FC8047FF7A901668CD5,
+				F5974FCC047FF7A901668CD5,
+				F5974FCE047FF7A901668CD5,
+				F5974FD0047FF7A901668CD5,
+				F5974FD2047FF7A901668CD5,
+				F5974FD4047FF7A901668CD5,
+				F5974FDB047FF7A901668CD5,
+				F5974FDF047FF7A901668CD5,
+				F5974FE1047FF7A901668CD5,
+				F5974FE3047FF7A901668CD5,
+				F5974FE5047FF7A901668CD5,
+				F5974FE7047FF7A901668CD5,
+				F5974FE9047FF7A901668CD5,
+				F5974FEB047FF7A901668CD5,
+				F5974FED047FF7A901668CD5,
+				F5974FF1047FF7A901668CD5,
+				F5974FF3047FF7A901668CD5,
+				F5974FF5047FF7A901668CD5,
+				F5974FF7047FF7A901668CD5,
+				F5974FF9047FF7A901668CD5,
+				F5974FFB047FF7A901668CD5,
+				F5975001047FF7A901668CD5,
+				F5975008047FF7A901668CD5,
+				F597500A047FF7A901668CD5,
+				F597500C047FF7A901668CD5,
+				F597500E047FF7A901668CD5,
+				F5975010047FF7A901668CD5,
+				F5975014047FF7A901668CD5,
+				F5975016047FF7A901668CD5,
+				F5975018047FF7A901668CD5,
+				F597501A047FF7A901668CD5,
+				F597501C047FF7A901668CD5,
+				F597501E047FF7A901668CD5,
+				F5975020047FF7A901668CD5,
+				F5975024047FF7A901668CD5,
+				F5975026047FF7A901668CD5,
+				F597502A047FF7A901668CD5,
+				F597502C047FF7A901668CD5,
+				F597502E047FF7A901668CD5,
+				F5975034047FF7A901668CD5,
+				F5975036047FF7A901668CD5,
+				F5975038047FF7A901668CD5,
+				F597503A047FF7A901668CD5,
+				F5975044047FF7A901668CD5,
+				F5975046047FF7A901668CD5,
+				F5975048047FF7A901668CD5,
+				F597504E047FF7A901668CD5,
+				F5975050047FF7A901668CD5,
+				F5975052047FF7A901668CD5,
+				F5975054047FF7A901668CD5,
+				F5975056047FF7A901668CD5,
+				F59750B1047FF8E301668CD5,
+				F59750B2047FF8E301668CD5,
+				F59750B3047FF8E301668CD5,
+				F59750B5047FF8E301668CD5,
+				F59750B7047FF8E301668CD5,
+				F59750B8047FF8E301668CD5,
+				F59750B9047FF8E301668CD5,
+				F59750BA047FF8E301668CD5,
+				F59750BB047FF8E301668CD5,
+				F59750BC047FF8E301668CD5,
+				F59750BD047FF8E301668CD5,
+				F59750BE047FF8E301668CD5,
+				F59750BF047FF8E301668CD5,
+				F59750C0047FF8E301668CD5,
+				F59750C1047FF8E301668CD5,
+				F59750C2047FF8E301668CD5,
+				F59750C4047FF8E301668CD5,
+				F59750C6047FF8E301668CD5,
+				F59750C7047FF8E301668CD5,
+				F59750C8047FF8E301668CD5,
+				F59750C9047FF8E301668CD5,
+				F59750CA047FF8E301668CD5,
+				F59750CB047FF8E301668CD5,
+				F59750CC047FF8E301668CD5,
+				F59750CD047FF8E301668CD5,
+				F59750CE047FF8E301668CD5,
+				F59750CF047FF8E301668CD5,
+				F59750D0047FF8E301668CD5,
+				F59750D1047FF8E301668CD5,
+				F59750D2047FF8E301668CD5,
+				F59750D3047FF8E301668CD5,
+				F59750D4047FF8E301668CD5,
+				F59750D5047FF8E301668CD5,
+				F59750D6047FF8E301668CD5,
+				F59750D7047FF8E301668CD5,
+				F59750D8047FF8E301668CD5,
+				F59750D9047FF8E301668CD5,
+				F59750DA047FF8E301668CD5,
+				F59750DB047FF8E301668CD5,
+				F59750DC047FF8E301668CD5,
+				F59750DE047FF8E301668CD5,
+				F59750DF047FF8E301668CD5,
+				F59750E0047FF8E301668CD5,
+				F59750E1047FF8E301668CD5,
+				F59750E2047FF8E301668CD5,
+				F59750E4047FF8E301668CD5,
+				F59750E6047FF8E301668CD5,
+				F59750E8047FF8E301668CD5,
+				F59750EA047FF8E301668CD5,
+				F59750EC047FF8E301668CD5,
+				F59750EE047FF8E301668CD5,
+				F59750F0047FF8E301668CD5,
+				F59750F4047FF8E301668CD5,
+				F59750F6047FF8E301668CD5,
+				F59750F8047FF8E301668CD5,
+				F59750FA047FF8E301668CD5,
+				F59750FC047FF8E301668CD5,
+				F59750FE047FF8E301668CD5,
+				F5975100047FF8E301668CD5,
+				F5975102047FF8E301668CD5,
+				F5975104047FF8E301668CD5,
+				F5975106047FF8E301668CD5,
+				F5975108047FF8E301668CD5,
+				F5975110047FF90D01668CD5,
+				F51816B104800C9F01304BCB,
+				F51816B6048014BF01304BCB,
+				F51816BA04801D1201304BCB,
+				F51816C104801D8A01304BCB,
+				F51816C50481215A01304BCB,
+				F51816C80481270101304BCB,
+				F51816CB0481280A01304BCB,
+				F51816CD0481281D01304BCB,
+				F53ED34204F7CB9F0148A6F0,
+				F53ED34604F7CBE70148A6F0,
+				528D955605670AEE002B5214,
+				528D958D056710A8002B5214,
+				528D958E056710A8002B5214,
+				528D958F056710A8002B5214,
+				528D959405671104002B5214,
+				528D959805671135002B5214,
+				528D95CF05671597002B5214,
+				525D52B90583AF2900361714,
+				5209FD650583BDE10036C783,
+				52EDFC7D0583C192007F1311,
+				52EDFC7F0583C192007F1311,
+				52EDFC810583C192007F1311,
+				52EDFC830583C192007F1311,
+				52EDFC850583C192007F1311,
+				52EDFC870583C192007F1311,
+				52EDFC8B0583C192007F1311,
+				52EDFC8D0583C192007F1311,
+				52EDFC8F0583C192007F1311,
+				52EDFC910583C192007F1311,
+				52EDFC950583C192007F1311,
+				52EDFC970583C192007F1311,
+				5212CB9F05B9F9AC009AB20E,
+				5212CBD805B9F9E4009AB20E,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A0FE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				1058C7B3FEA5585E11CA2CBB,
+				F51816B704801B5A01304BCB,
+				F51816B804801B5A01304BCB,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A2FE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A5FE840307C02AAC07 = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		089C1665FE841158C02AAC07 = {
+			children = (
+				089C1666FE841158C02AAC07,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1666FE841158C02AAC07 = {
+			children = (
+				089C1667FE841158C02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1667FE841158C02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1668FE841158C02AAC07 = {
+			fileRef = 089C1666FE841158C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		08FB77AEFE84172EC02AAC07 = {
+			children = (
+				F597505C047FF8E301668CD5,
+				F597505D047FF8E301668CD5,
+				F597505E047FF8E301668CD5,
+				F597505F047FF8E301668CD5,
+				F597506B047FF8E301668CD5,
+				F597506C047FF8E301668CD5,
+				F5975085047FF8E301668CD5,
+				F597508B047FF8E301668CD5,
+				F597508C047FF8E301668CD5,
+				F51816B3048014BF01304BCB,
+				F51816B4048014BF01304BCB,
+				F597508D047FF8E301668CD5,
+				F597508E047FF8E301668CD5,
+				F597508F047FF8E301668CD5,
+				F5975090047FF8E301668CD5,
+				F5975091047FF8E301668CD5,
+				F5975092047FF8E301668CD5,
+				528D958C056710A8002B5214,
+				528D955405670AEE002B5214,
+				F5975093047FF8E301668CD5,
+				F5975094047FF8E301668CD5,
+				F5975095047FF8E301668CD5,
+				F5975096047FF8E301668CD5,
+				F5975097047FF8E301668CD5,
+				F5975098047FF8E301668CD5,
+				F597509B047FF8E301668CD5,
+				F597509C047FF8E301668CD5,
+				F597509D047FF8E301668CD5,
+				F597509E047FF8E301668CD5,
+				5212CB9C05B9F9AC009AB20E,
+				5212CB9D05B9F9AC009AB20E,
+				F597509F047FF8E301668CD5,
+				F59750A0047FF8E301668CD5,
+				F59750A1047FF8E301668CD5,
+				F59750A2047FF8E301668CD5,
+				F59750A3047FF8E301668CD5,
+				F59750A4047FF8E301668CD5,
+				F59750A5047FF8E301668CD5,
+				F59750A6047FF8E301668CD5,
+				F59750A7047FF8E301668CD5,
+				F59750A8047FF8E301668CD5,
+				F59750A9047FF8E301668CD5,
+				F59750AA047FF8E301668CD5,
+				F59750AB047FF8E301668CD5,
+				F59750AC047FF8E301668CD5,
+				F59750AD047FF8E301668CD5,
+				F59750AE047FF8E301668CD5,
+				F59750AF047FF8E301668CD5,
+				F59750B0047FF8E301668CD5,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7B0FEA5585E11CA2CBB = {
+			children = (
+				1058C7B1FEA5585E11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7B1FEA5585E11CA2CBB = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7B2FEA5585E11CA2CBB = {
+			children = (
+				0867D69BFE84028FC02AAC07,
+				0867D6A5FE840307C02AAC07,
+				F53ED35404F7D7900148A6F0,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7B3FEA5585E11CA2CBB = {
+			fileRef = 1058C7B1FEA5585E11CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//100
+//101
+//102
+//103
+//104
+//520
+//521
+//522
+//523
+//524
+		5209FD630583BDE10036C783 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkitemfactory.c;
+			path = gtk/gtkitemfactory.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		5209FD640583BDE10036C783 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkitemfactory.h;
+			path = gtk/gtkitemfactory.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		5209FD650583BDE10036C783 = {
+			fileRef = 5209FD630583BDE10036C783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		5209FD660583BDE10036C783 = {
+			fileRef = 5209FD640583BDE10036C783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		5212CB9C05B9F9AC009AB20E = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkProgressBar.h;
+			path = cocoa/NSGtkProgressBar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		5212CB9D05B9F9AC009AB20E = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkProgressBar.m;
+			path = cocoa/NSGtkProgressBar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		5212CB9E05B9F9AC009AB20E = {
+			fileRef = 5212CB9C05B9F9AC009AB20E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		5212CB9F05B9F9AC009AB20E = {
+			fileRef = 5212CB9D05B9F9AC009AB20E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		5212CBD705B9F9E4009AB20E = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkprogressbar.m;
+			path = cocoa/gtkprogressbar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		5212CBD805B9F9E4009AB20E = {
+			fileRef = 5212CBD705B9F9E4009AB20E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		525D52B80583AF2800361714 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkfilesel.m;
+			path = cocoa/gtkfilesel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		525D52B90583AF2900361714 = {
+			fileRef = 525D52B80583AF2800361714;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D955405670AEE002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkDrawingArea.m;
+			path = cocoa/NSGtkDrawingArea.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D955605670AEE002B5214 = {
+			fileRef = 528D955405670AEE002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D9589056710A8002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gdkdraw.m;
+			path = cocoa/gdkdraw.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D958A056710A8002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkdrawingarea.m;
+			path = cocoa/gtkdrawingarea.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D958B056710A8002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkradiomenuitem.m;
+			path = cocoa/gtkradiomenuitem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D958C056710A8002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkDrawingArea.h;
+			path = cocoa/NSGtkDrawingArea.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D958D056710A8002B5214 = {
+			fileRef = 528D9589056710A8002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D958E056710A8002B5214 = {
+			fileRef = 528D958A056710A8002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D958F056710A8002B5214 = {
+			fileRef = 528D958B056710A8002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D9590056710A8002B5214 = {
+			fileRef = 528D958C056710A8002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D959305671104002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gdkcolor.c;
+			path = gdk/gdkcolor.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D959405671104002B5214 = {
+			fileRef = 528D959305671104002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D959705671135002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gdkgc.c;
+			path = gdk/gdkgc.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D959805671135002B5214 = {
+			fileRef = 528D959705671135002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		528D95CE05671597002B5214 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkgc.c;
+			path = gtk/gtkgc.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		528D95CF05671597002B5214 = {
+			fileRef = 528D95CE05671597002B5214;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC610583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkarrow.c;
+			path = gtk/gtkarrow.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC620583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkarrow.h;
+			path = gtk/gtkarrow.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC630583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcombo.c;
+			path = gtk/gtkcombo.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC640583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcombo.h;
+			path = gtk/gtkcombo.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC650583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcurve.c;
+			path = gtk/gtkcurve.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC660583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcurve.h;
+			path = gtk/gtkcurve.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC670583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkgamma.c;
+			path = gtk/gtkgamma.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC680583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkgamma.h;
+			path = gtk/gtkgamma.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC690583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhandlebox.c;
+			path = gtk/gtkhandlebox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC6A0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhandlebox.h;
+			path = gtk/gtkhandlebox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC6B0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhpaned.c;
+			path = gtk/gtkhpaned.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC6C0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhpaned.h;
+			path = gtk/gtkhpaned.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC6F0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkinvisible.c;
+			path = gtk/gtkinvisible.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC700583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkinvisible.h;
+			path = gtk/gtkinvisible.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC710583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmenufactory.c;
+			path = gtk/gtkmenufactory.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC720583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmenufactory.h;
+			path = gtk/gtkmenufactory.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC730583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkpacker.c;
+			path = gtk/gtkpacker.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC740583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkpacker.h;
+			path = gtk/gtkpacker.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC750583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkpaned.c;
+			path = gtk/gtkpaned.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC760583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkpaned.h;
+			path = gtk/gtkpaned.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC790583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvpaned.c;
+			path = gtk/gtkvpaned.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC7A0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvpaned.h;
+			path = gtk/gtkvpaned.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC7B0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvruler.c;
+			path = gtk/gtkvruler.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC7C0583C192007F1311 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvruler.h;
+			path = gtk/gtkvruler.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52EDFC7D0583C192007F1311 = {
+			fileRef = 52EDFC610583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC7E0583C192007F1311 = {
+			fileRef = 52EDFC620583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC7F0583C192007F1311 = {
+			fileRef = 52EDFC630583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC800583C192007F1311 = {
+			fileRef = 52EDFC640583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC810583C192007F1311 = {
+			fileRef = 52EDFC650583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC820583C192007F1311 = {
+			fileRef = 52EDFC660583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC830583C192007F1311 = {
+			fileRef = 52EDFC670583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC840583C192007F1311 = {
+			fileRef = 52EDFC680583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC850583C192007F1311 = {
+			fileRef = 52EDFC690583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC860583C192007F1311 = {
+			fileRef = 52EDFC6A0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC870583C192007F1311 = {
+			fileRef = 52EDFC6B0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC880583C192007F1311 = {
+			fileRef = 52EDFC6C0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC8B0583C192007F1311 = {
+			fileRef = 52EDFC6F0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC8C0583C192007F1311 = {
+			fileRef = 52EDFC700583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC8D0583C192007F1311 = {
+			fileRef = 52EDFC710583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC8E0583C192007F1311 = {
+			fileRef = 52EDFC720583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC8F0583C192007F1311 = {
+			fileRef = 52EDFC730583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC900583C192007F1311 = {
+			fileRef = 52EDFC740583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC910583C192007F1311 = {
+			fileRef = 52EDFC750583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC920583C192007F1311 = {
+			fileRef = 52EDFC760583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC950583C192007F1311 = {
+			fileRef = 52EDFC790583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC960583C192007F1311 = {
+			fileRef = 52EDFC7A0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC970583C192007F1311 = {
+			fileRef = 52EDFC7B0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52EDFC980583C192007F1311 = {
+			fileRef = 52EDFC7C0583C192007F1311;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		52F6AAF50583A8CD0068C552 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gdk.h;
+			path = gdk/gdk.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		52F6AAF60583A8CD0068C552 = {
+			fileRef = 52F6AAF50583A8CD0068C552;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//520
+//521
+//522
+//523
+//524
+//F50
+//F51
+//F52
+//F53
+//F54
+		F51816AF04800C9F01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktypeutils.c;
+			path = gtk/gtktypeutils.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816B004800C9F01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktypeutils.h;
+			path = gtk/gtktypeutils.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816B104800C9F01304BCB = {
+			fileRef = F51816AF04800C9F01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B204800C9F01304BCB = {
+			fileRef = F51816B004800C9F01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B3048014BF01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSColorView.h;
+			path = cocoa/NSColorView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816B4048014BF01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSColorView.m;
+			path = cocoa/NSColorView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816B5048014BF01304BCB = {
+			fileRef = F51816B3048014BF01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B6048014BF01304BCB = {
+			fileRef = F51816B4048014BF01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B704801B5A01304BCB = {
+			fileRef = 0867D69BFE84028FC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B804801B5A01304BCB = {
+			fileRef = 0867D6A5FE840307C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816B904801D1201304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkstyle.c;
+			path = gtk/gtkstyle.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816BA04801D1201304BCB = {
+			fileRef = F51816B904801D1201304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816BB04801D3401304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkstyle.h;
+			path = gtk/gtkstyle.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816BC04801D3401304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkthemes.h;
+			path = gtk/gtkthemes.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816BD04801D3401304BCB = {
+			fileRef = F51816BB04801D3401304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816BE04801D3401304BCB = {
+			fileRef = F51816BC04801D3401304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816BF04801D8A01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkaccellabel.c;
+			path = gtk/gtkaccellabel.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816C004801D8A01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkaccellabel.h;
+			path = gtk/gtkaccellabel.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816C104801D8A01304BCB = {
+			fileRef = F51816BF04801D8A01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816C204801D8A01304BCB = {
+			fileRef = F51816C004801D8A01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816C30481215A01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktreeitem.c;
+			path = gtk/gtktreeitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816C40481215A01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktreeitem.h;
+			path = gtk/gtktreeitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816C50481215A01304BCB = {
+			fileRef = F51816C30481215A01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816C60481215A01304BCB = {
+			fileRef = F51816C40481215A01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816C70481270101304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkrc.c;
+			path = gtk/gtkrc.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816C80481270101304BCB = {
+			fileRef = F51816C70481270101304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816C9048127B301304BCB = {
+			children = (
+				F51816CA0481280A01304BCB,
+				F51816CC0481281D01304BCB,
+				528D959305671104002B5214,
+				528D959705671135002B5214,
+				52F6AAF50583A8CD0068C552,
+			);
+			isa = PBXGroup;
+			name = gdk;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816CA0481280A01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gdkevents.c;
+			path = gdk/gdkevents.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816CB0481280A01304BCB = {
+			fileRef = F51816CA0481280A01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816CC0481281D01304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gdkwindow.c;
+			path = gdk/gdkwindow.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816CD0481281D01304BCB = {
+			fileRef = F51816CC0481281D01304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F51816CE048129E701304BCB = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51816CF048129E701304BCB = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51816D0048129E701304BCB = {
+			buildActionMask = 2147483647;
+			files = (
+				F51816D804812AB401304BCB,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51816D1048129E701304BCB = {
+			buildActionMask = 2147483647;
+			files = (
+				F53ED35604F7D7900148A6F0,
+				F53ED35704F7D7940148A6F0,
+				F53ED35804F7D7950148A6F0,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51816D2048129E701304BCB = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51816D3048129E701304BCB = {
+			buildPhases = (
+				F51816CE048129E701304BCB,
+				F51816CF048129E701304BCB,
+				F51816D0048129E701304BCB,
+				F51816D1048129E701304BCB,
+				F51816D2048129E701304BCB,
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"/Users/paolo/Projects/Gtk+-Cocoa/build\"";
+				HEADER_SEARCH_PATHS = "/usr/local/include/glib-1.2 /usr/local/lib/glib/include .";
+				OTHER_LDFLAGS = "-g";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = testgtk;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXApplicationTarget;
+			name = testgtk;
+			productInstallPath = "$(USER_APPS_DIR)";
+			productName = testgtk;
+			productReference = F51816D4048129E701304BCB;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+</dict>
+</plist>
+";
+		};
+		F51816D4048129E701304BCB = {
+			explicitFileType = wrapper.application;
+			fallbackIsa = PBXFileReference;
+			isa = PBXApplicationReference;
+			path = testgtk.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F51816D604812A9801304BCB = {
+			children = (
+				F51816D704812AB401304BCB,
+			);
+			isa = PBXGroup;
+			name = testgtk;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816D704812AB401304BCB = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = testgtk.c;
+			path = gtk/testgtk.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F51816D804812AB401304BCB = {
+			fileRef = F51816D704812AB401304BCB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED34004F7CB9F0148A6F0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkfilesel.c;
+			path = gtk/gtkfilesel.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F53ED34104F7CB9F0148A6F0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkfilesel.h;
+			path = gtk/gtkfilesel.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F53ED34204F7CB9F0148A6F0 = {
+			fileRef = F53ED34004F7CB9F0148A6F0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED34304F7CB9F0148A6F0 = {
+			fileRef = F53ED34104F7CB9F0148A6F0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED34404F7CBE70148A6F0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkfontsel.c;
+			path = gtk/gtkfontsel.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F53ED34504F7CBE70148A6F0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkfontsel.h;
+			path = gtk/gtkfontsel.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F53ED34604F7CBE70148A6F0 = {
+			fileRef = F53ED34404F7CBE70148A6F0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED34704F7CBE70148A6F0 = {
+			fileRef = F53ED34504F7CBE70148A6F0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED35404F7D7900148A6F0 = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			path = "Gtk+-Cocoa.framework";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F53ED35604F7D7900148A6F0 = {
+			fileRef = F53ED35404F7D7900148A6F0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED35704F7D7940148A6F0 = {
+			fileRef = 0867D6A5FE840307C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F53ED35804F7D7950148A6F0 = {
+			fileRef = 0867D69BFE84028FC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974E9B047FF72301668CD5 = {
+			children = (
+				F5974E9C047FF7A801668CD5,
+				F5974E9D047FF7A801668CD5,
+				F5974E9E047FF7A801668CD5,
+				F51816BF04801D8A01304BCB,
+				F51816C004801D8A01304BCB,
+				F5974EA1047FF7A801668CD5,
+				F5974EA2047FF7A801668CD5,
+				F5974EA3047FF7A801668CD5,
+				F5974EA4047FF7A801668CD5,
+				F5974EA5047FF7A801668CD5,
+				F5974EA6047FF7A801668CD5,
+				52EDFC610583C192007F1311,
+				52EDFC620583C192007F1311,
+				F5974EAA047FF7A801668CD5,
+				F5974EAB047FF7A801668CD5,
+				F5974EAC047FF7A801668CD5,
+				F5974EAD047FF7A801668CD5,
+				F5974EAE047FF7A801668CD5,
+				F5974EAF047FF7A801668CD5,
+				F5974EB0047FF7A801668CD5,
+				F5974EB1047FF7A801668CD5,
+				F5974EB2047FF7A801668CD5,
+				F5974EB3047FF7A801668CD5,
+				F5974EB4047FF7A801668CD5,
+				F5974EB5047FF7A801668CD5,
+				F5974EB6047FF7A801668CD5,
+				F5974EB7047FF7A801668CD5,
+				F5974EB8047FF7A801668CD5,
+				F5974EB9047FF7A801668CD5,
+				F5974EBA047FF7A801668CD5,
+				F5974EBB047FF7A801668CD5,
+				F5974EBC047FF7A801668CD5,
+				F5974EBD047FF7A801668CD5,
+				52EDFC630583C192007F1311,
+				52EDFC640583C192007F1311,
+				F5974EC3047FF7A801668CD5,
+				F5974EC4047FF7A801668CD5,
+				F5974EC5047FF7A801668CD5,
+				F5974EC6047FF7A801668CD5,
+				52EDFC650583C192007F1311,
+				52EDFC660583C192007F1311,
+				F5974EC9047FF7A801668CD5,
+				F5974ECA047FF7A801668CD5,
+				F5974ECC047FF7A801668CD5,
+				F5974ECD047FF7A801668CD5,
+				F5974ECE047FF7A801668CD5,
+				F5974ECF047FF7A801668CD5,
+				F5974ED0047FF7A801668CD5,
+				F5974ED1047FF7A801668CD5,
+				F5974ED2047FF7A801668CD5,
+				F5974ED3047FF7A801668CD5,
+				F5974ED4047FF7A801668CD5,
+				F5974ED5047FF7A801668CD5,
+				F5974ED6047FF7A801668CD5,
+				F5974ED7047FF7A801668CD5,
+				F5974ED8047FF7A801668CD5,
+				F5974ED9047FF7A801668CD5,
+				F53ED34004F7CB9F0148A6F0,
+				F53ED34104F7CB9F0148A6F0,
+				F5974EDC047FF7A801668CD5,
+				F5974EDD047FF7A801668CD5,
+				F53ED34404F7CBE70148A6F0,
+				F53ED34504F7CBE70148A6F0,
+				F5974EE0047FF7A801668CD5,
+				F5974EE1047FF7A801668CD5,
+				52EDFC670583C192007F1311,
+				52EDFC680583C192007F1311,
+				528D95CE05671597002B5214,
+				F5974EE5047FF7A801668CD5,
+				52EDFC690583C192007F1311,
+				52EDFC6A0583C192007F1311,
+				F5974EE8047FF7A801668CD5,
+				F5974EE9047FF7A801668CD5,
+				F5974EEA047FF7A801668CD5,
+				F5974EEB047FF7A801668CD5,
+				52EDFC6B0583C192007F1311,
+				52EDFC6C0583C192007F1311,
+				F5974EEE047FF7A801668CD5,
+				F5974EEF047FF7A801668CD5,
+				F5974EF0047FF7A801668CD5,
+				F5974EF1047FF7A801668CD5,
+				F5974EF2047FF7A801668CD5,
+				F5974EF3047FF7A801668CD5,
+				F5974EF4047FF7A801668CD5,
+				F5974EF5047FF7A801668CD5,
+				F5974EF6047FF7A801668CD5,
+				F5974EF7047FF7A801668CD5,
+				F5974EFA047FF7A801668CD5,
+				52EDFC6F0583C192007F1311,
+				52EDFC700583C192007F1311,
+				F5974EFD047FF7A801668CD5,
+				F5974EFE047FF7A801668CD5,
+				5209FD630583BDE10036C783,
+				5209FD640583BDE10036C783,
+				F5974F01047FF7A801668CD5,
+				F5974F02047FF7A801668CD5,
+				F5974F03047FF7A801668CD5,
+				F5974F04047FF7A801668CD5,
+				F5974F05047FF7A801668CD5,
+				F5974F06047FF7A801668CD5,
+				F5974F07047FF7A801668CD5,
+				F5974F08047FF7A801668CD5,
+				F5974F09047FF7A801668CD5,
+				F5974F0A047FF7A801668CD5,
+				F5974F0B047FF7A801668CD5,
+				F5974F0C047FF7A801668CD5,
+				F5974F0D047FF7A801668CD5,
+				F5974F0E047FF7A801668CD5,
+				F5974F0F047FF7A801668CD5,
+				F5974F10047FF7A801668CD5,
+				52EDFC710583C192007F1311,
+				52EDFC720583C192007F1311,
+				F5974F13047FF7A801668CD5,
+				F5974F14047FF7A801668CD5,
+				F5974F15047FF7A801668CD5,
+				F5974F16047FF7A801668CD5,
+				F5974F17047FF7A801668CD5,
+				F5974F18047FF7A901668CD5,
+				F5974F19047FF7A901668CD5,
+				F5974F1A047FF7A901668CD5,
+				F5974F1B047FF7A901668CD5,
+				F5974F1C047FF7A901668CD5,
+				F5974F1D047FF7A901668CD5,
+				F5974F1E047FF7A901668CD5,
+				52EDFC730583C192007F1311,
+				52EDFC740583C192007F1311,
+				52EDFC750583C192007F1311,
+				52EDFC760583C192007F1311,
+				F5974F23047FF7A901668CD5,
+				F5974F24047FF7A901668CD5,
+				F5974F29047FF7A901668CD5,
+				F5974F2A047FF7A901668CD5,
+				F5974F2B047FF7A901668CD5,
+				F5974F2C047FF7A901668CD5,
+				F5974F2D047FF7A901668CD5,
+				F5974F2E047FF7A901668CD5,
+				F5974F2F047FF7A901668CD5,
+				F5974F30047FF7A901668CD5,
+				F5974F31047FF7A901668CD5,
+				F5974F32047FF7A901668CD5,
+				F5974F33047FF7A901668CD5,
+				F51816C70481270101304BCB,
+				F5974F36047FF7A901668CD5,
+				F5974F37047FF7A901668CD5,
+				F5974F38047FF7A901668CD5,
+				F5974F39047FF7A901668CD5,
+				F5974F3A047FF7A901668CD5,
+				F5974F3B047FF7A901668CD5,
+				F5974F3C047FF7A901668CD5,
+				F5974F3D047FF7A901668CD5,
+				F5974F3E047FF7A901668CD5,
+				F5974F3F047FF7A901668CD5,
+				F5974F40047FF7A901668CD5,
+				F5974F41047FF7A901668CD5,
+				F5974F42047FF7A901668CD5,
+				F5974F43047FF7A901668CD5,
+				F5974F46047FF7A901668CD5,
+				F5974F47047FF7A901668CD5,
+				F5974F48047FF7A901668CD5,
+				F5974F49047FF7A901668CD5,
+				F51816B904801D1201304BCB,
+				F51816BB04801D3401304BCB,
+				F5974F4C047FF7A901668CD5,
+				F5974F4D047FF7A901668CD5,
+				F5974F4E047FF7A901668CD5,
+				F5974F4F047FF7A901668CD5,
+				F5974F50047FF7A901668CD5,
+				F5974F51047FF7A901668CD5,
+				F51816BC04801D3401304BCB,
+				F5974F56047FF7A901668CD5,
+				F5974F57047FF7A901668CD5,
+				F5974F58047FF7A901668CD5,
+				F5974F59047FF7A901668CD5,
+				F5974F5A047FF7A901668CD5,
+				F5974F5B047FF7A901668CD5,
+				F5974F5C047FF7A901668CD5,
+				F5974F5D047FF7A901668CD5,
+				F51816C30481215A01304BCB,
+				F51816C40481215A01304BCB,
+				F5974F63047FF7A901668CD5,
+				F51816AF04800C9F01304BCB,
+				F51816B004800C9F01304BCB,
+				F5974F66047FF7A901668CD5,
+				F5974F67047FF7A901668CD5,
+				F5974F68047FF7A901668CD5,
+				F5974F69047FF7A901668CD5,
+				F5974F6A047FF7A901668CD5,
+				F5974F6B047FF7A901668CD5,
+				52EDFC790583C192007F1311,
+				52EDFC7A0583C192007F1311,
+				52EDFC7B0583C192007F1311,
+				52EDFC7C0583C192007F1311,
+				F5974F70047FF7A901668CD5,
+				F5974F71047FF7A901668CD5,
+				F5974F72047FF7A901668CD5,
+				F5974F73047FF7A901668CD5,
+				F5974F74047FF7A901668CD5,
+				F5974F75047FF7A901668CD5,
+				F5974F76047FF7A901668CD5,
+				F5974F77047FF7A901668CD5,
+				F5974F78047FF7A901668CD5,
+				F5974F79047FF7A901668CD5,
+			);
+			isa = PBXGroup;
+			name = "gtk+";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974E9C047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtk.h;
+			path = gtk/gtk.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974E9D047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkaccelgroup.c;
+			path = gtk/gtkaccelgroup.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974E9E047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkaccelgroup.h;
+			path = gtk/gtkaccelgroup.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA1047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkadjustment.c;
+			path = gtk/gtkadjustment.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA2047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkadjustment.h;
+			path = gtk/gtkadjustment.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA3047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkalignment.c;
+			path = gtk/gtkalignment.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA4047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkalignment.h;
+			path = gtk/gtkalignment.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkarg.c;
+			path = gtk/gtkarg.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EA6047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkarg.h;
+			path = gtk/gtkarg.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAA047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkaspectframe.c;
+			path = gtk/gtkaspectframe.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAB047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkaspectframe.h;
+			path = gtk/gtkaspectframe.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAC047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkbbox.c;
+			path = gtk/gtkbbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAD047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkbbox.h;
+			path = gtk/gtkbbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAE047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkbin.c;
+			path = gtk/gtkbin.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EAF047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkbin.h;
+			path = gtk/gtkbin.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB0047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkbindings.c;
+			path = gtk/gtkbindings.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB1047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkbindings.h;
+			path = gtk/gtkbindings.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB2047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkbox.c;
+			path = gtk/gtkbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB3047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkbox.h;
+			path = gtk/gtkbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB4047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkbutton.c;
+			path = gtk/gtkbutton.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkbutton.h;
+			path = gtk/gtkbutton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB6047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcalendar.c;
+			path = gtk/gtkcalendar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB7047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcalendar.h;
+			path = gtk/gtkcalendar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB8047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcheckbutton.c;
+			path = gtk/gtkcheckbutton.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EB9047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcheckbutton.h;
+			path = gtk/gtkcheckbutton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EBA047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcheckmenuitem.c;
+			path = gtk/gtkcheckmenuitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EBB047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcheckmenuitem.h;
+			path = gtk/gtkcheckmenuitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EBC047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkclist.c;
+			path = gtk/gtkclist.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EBD047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkclist.h;
+			path = gtk/gtkclist.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EC3047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkcontainer.c;
+			path = gtk/gtkcontainer.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EC4047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkcontainer.h;
+			path = gtk/gtkcontainer.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EC5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkctree.c;
+			path = gtk/gtkctree.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EC6047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkctree.h;
+			path = gtk/gtkctree.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EC9047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkdata.c;
+			path = gtk/gtkdata.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ECA047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkdata.h;
+			path = gtk/gtkdata.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ECC047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkdialog.c;
+			path = gtk/gtkdialog.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ECD047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkdialog.h;
+			path = gtk/gtkdialog.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ECE047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkdnd.c;
+			path = gtk/gtkdnd.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ECF047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkdnd.h;
+			path = gtk/gtkdnd.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED0047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkdrawingarea.c;
+			path = gtk/gtkdrawingarea.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED1047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkdrawingarea.h;
+			path = gtk/gtkdrawingarea.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED2047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkeditable.c;
+			path = gtk/gtkeditable.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED3047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkeditable.h;
+			path = gtk/gtkeditable.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED4047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkentry.c;
+			path = gtk/gtkentry.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkentry.h;
+			path = gtk/gtkentry.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED6047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkenums.h;
+			path = gtk/gtkenums.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED7047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkeventbox.c;
+			path = gtk/gtkeventbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED8047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkeventbox.h;
+			path = gtk/gtkeventbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974ED9047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkfeatures.h;
+			path = gtk/gtkfeatures.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EDC047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkfixed.c;
+			path = gtk/gtkfixed.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EDD047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkfixed.h;
+			path = gtk/gtkfixed.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EE0047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkframe.c;
+			path = gtk/gtkframe.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EE1047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkframe.h;
+			path = gtk/gtkframe.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EE5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkgc.h;
+			path = gtk/gtkgc.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EE8047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhbbox.c;
+			path = gtk/gtkhbbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EE9047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhbbox.h;
+			path = gtk/gtkhbbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EEA047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhbox.c;
+			path = gtk/gtkhbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EEB047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhbox.h;
+			path = gtk/gtkhbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EEE047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhruler.c;
+			path = gtk/gtkhruler.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EEF047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhruler.h;
+			path = gtk/gtkhruler.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF0047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhscale.c;
+			path = gtk/gtkhscale.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF1047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhscale.h;
+			path = gtk/gtkhscale.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF2047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhscrollbar.c;
+			path = gtk/gtkhscrollbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF3047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhscrollbar.h;
+			path = gtk/gtkhscrollbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF4047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkhseparator.c;
+			path = gtk/gtkhseparator.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF5047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkhseparator.h;
+			path = gtk/gtkhseparator.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF6047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkimage.c;
+			path = gtk/gtkimage.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EF7047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkimage.h;
+			path = gtk/gtkimage.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EFA047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkintl.h;
+			path = gtk/gtkintl.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EFD047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkitem.c;
+			path = gtk/gtkitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974EFE047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkitem.h;
+			path = gtk/gtkitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F01047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtklabel.c;
+			path = gtk/gtklabel.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F02047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtklabel.h;
+			path = gtk/gtklabel.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F03047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtklayout.c;
+			path = gtk/gtklayout.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F04047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtklayout.h;
+			path = gtk/gtklayout.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F05047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtklist.c;
+			path = gtk/gtklist.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F06047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtklist.h;
+			path = gtk/gtklist.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F07047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtklistitem.c;
+			path = gtk/gtklistitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F08047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtklistitem.h;
+			path = gtk/gtklistitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F09047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmain.c;
+			path = gtk/gtkmain.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0A047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmain.h;
+			path = gtk/gtkmain.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0B047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmarshal.c;
+			path = gtk/gtkmarshal.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0C047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmarshal.h;
+			path = gtk/gtkmarshal.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0D047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmenu.c;
+			path = gtk/gtkmenu.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0E047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmenu.h;
+			path = gtk/gtkmenu.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F0F047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmenubar.c;
+			path = gtk/gtkmenubar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F10047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmenubar.h;
+			path = gtk/gtkmenubar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F13047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmenuitem.c;
+			path = gtk/gtkmenuitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F14047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmenuitem.h;
+			path = gtk/gtkmenuitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F15047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmenushell.c;
+			path = gtk/gtkmenushell.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F16047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmenushell.h;
+			path = gtk/gtkmenushell.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F17047FF7A801668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkmisc.c;
+			path = gtk/gtkmisc.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F18047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkmisc.h;
+			path = gtk/gtkmisc.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F19047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtknotebook.c;
+			path = gtk/gtknotebook.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F1A047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtknotebook.h;
+			path = gtk/gtknotebook.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F1B047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkobject.c;
+			path = gtk/gtkobject.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F1C047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkobject.h;
+			path = gtk/gtkobject.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F1D047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkoptionmenu.c;
+			path = gtk/gtkoptionmenu.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F1E047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkoptionmenu.h;
+			path = gtk/gtkoptionmenu.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F23047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkpixmap.c;
+			path = gtk/gtkpixmap.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F24047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkpixmap.h;
+			path = gtk/gtkpixmap.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F29047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkprivate.h;
+			path = gtk/gtkprivate.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2A047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkprogress.c;
+			path = gtk/gtkprogress.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2B047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkprogress.h;
+			path = gtk/gtkprogress.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2C047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkprogressbar.c;
+			path = gtk/gtkprogressbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2D047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkprogressbar.h;
+			path = gtk/gtkprogressbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2E047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkradiobutton.c;
+			path = gtk/gtkradiobutton.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F2F047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkradiobutton.h;
+			path = gtk/gtkradiobutton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F30047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkradiomenuitem.c;
+			path = gtk/gtkradiomenuitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F31047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkradiomenuitem.h;
+			path = gtk/gtkradiomenuitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F32047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkrange.c;
+			path = gtk/gtkrange.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F33047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkrange.h;
+			path = gtk/gtkrange.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F36047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkruler.c;
+			path = gtk/gtkruler.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F37047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkruler.h;
+			path = gtk/gtkruler.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F38047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkscale.c;
+			path = gtk/gtkscale.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F39047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkscale.h;
+			path = gtk/gtkscale.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3A047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkscrollbar.c;
+			path = gtk/gtkscrollbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3B047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkscrollbar.h;
+			path = gtk/gtkscrollbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3C047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkscrolledwindow.c;
+			path = gtk/gtkscrolledwindow.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3D047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkscrolledwindow.h;
+			path = gtk/gtkscrolledwindow.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3E047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkselection.c;
+			path = gtk/gtkselection.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F3F047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkselection.h;
+			path = gtk/gtkselection.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F40047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkseparator.c;
+			path = gtk/gtkseparator.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F41047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkseparator.h;
+			path = gtk/gtkseparator.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F42047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtksignal.c;
+			path = gtk/gtksignal.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F43047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtksignal.h;
+			path = gtk/gtksignal.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F46047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkspinbutton.c;
+			path = gtk/gtkspinbutton.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F47047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkspinbutton.h;
+			path = gtk/gtkspinbutton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F48047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkstatusbar.c;
+			path = gtk/gtkstatusbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F49047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkstatusbar.h;
+			path = gtk/gtkstatusbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F4C047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktable.c;
+			path = gtk/gtktable.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F4D047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktable.h;
+			path = gtk/gtktable.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F4E047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktearoffmenuitem.c;
+			path = gtk/gtktearoffmenuitem.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F4F047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktearoffmenuitem.h;
+			path = gtk/gtktearoffmenuitem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F50047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktext.c;
+			path = gtk/gtktext.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F51047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktext.h;
+			path = gtk/gtktext.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F56047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktogglebutton.c;
+			path = gtk/gtktogglebutton.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F57047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktogglebutton.h;
+			path = gtk/gtktogglebutton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F58047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktoolbar.c;
+			path = gtk/gtktoolbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F59047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktoolbar.h;
+			path = gtk/gtktoolbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F5A047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktooltips.c;
+			path = gtk/gtktooltips.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F5B047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktooltips.h;
+			path = gtk/gtktooltips.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F5C047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtktree.c;
+			path = gtk/gtktree.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F5D047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktree.h;
+			path = gtk/gtktree.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F63047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtktypebuiltins.h;
+			path = gtk/gtktypebuiltins.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F66047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvbbox.c;
+			path = gtk/gtkvbbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F67047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvbbox.h;
+			path = gtk/gtkvbbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F68047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvbox.c;
+			path = gtk/gtkvbox.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F69047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvbox.h;
+			path = gtk/gtkvbox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F6A047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkviewport.c;
+			path = gtk/gtkviewport.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F6B047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkviewport.h;
+			path = gtk/gtkviewport.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F70047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvscale.c;
+			path = gtk/gtkvscale.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F71047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvscale.h;
+			path = gtk/gtkvscale.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F72047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvscrollbar.c;
+			path = gtk/gtkvscrollbar.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F73047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvscrollbar.h;
+			path = gtk/gtkvscrollbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F74047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkvseparator.c;
+			path = gtk/gtkvseparator.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F75047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkvseparator.h;
+			path = gtk/gtkvseparator.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F76047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkwidget.c;
+			path = gtk/gtkwidget.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F77047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkwidget.h;
+			path = gtk/gtkwidget.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F78047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkwindow.c;
+			path = gtk/gtkwindow.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F79047FF7A901668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkwindow.h;
+			path = gtk/gtkwindow.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5974F7A047FF7A901668CD5 = {
+			fileRef = F5974E9C047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F7B047FF7A901668CD5 = {
+			fileRef = F5974E9D047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F7C047FF7A901668CD5 = {
+			fileRef = F5974E9E047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F7F047FF7A901668CD5 = {
+			fileRef = F5974EA1047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F80047FF7A901668CD5 = {
+			fileRef = F5974EA2047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F81047FF7A901668CD5 = {
+			fileRef = F5974EA3047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F82047FF7A901668CD5 = {
+			fileRef = F5974EA4047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F83047FF7A901668CD5 = {
+			fileRef = F5974EA5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F84047FF7A901668CD5 = {
+			fileRef = F5974EA6047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F88047FF7A901668CD5 = {
+			fileRef = F5974EAA047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F89047FF7A901668CD5 = {
+			fileRef = F5974EAB047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8A047FF7A901668CD5 = {
+			fileRef = F5974EAC047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8B047FF7A901668CD5 = {
+			fileRef = F5974EAD047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8C047FF7A901668CD5 = {
+			fileRef = F5974EAE047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8D047FF7A901668CD5 = {
+			fileRef = F5974EAF047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8E047FF7A901668CD5 = {
+			fileRef = F5974EB0047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F8F047FF7A901668CD5 = {
+			fileRef = F5974EB1047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F90047FF7A901668CD5 = {
+			fileRef = F5974EB2047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F91047FF7A901668CD5 = {
+			fileRef = F5974EB3047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F92047FF7A901668CD5 = {
+			fileRef = F5974EB4047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F93047FF7A901668CD5 = {
+			fileRef = F5974EB5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F94047FF7A901668CD5 = {
+			fileRef = F5974EB6047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F95047FF7A901668CD5 = {
+			fileRef = F5974EB7047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F96047FF7A901668CD5 = {
+			fileRef = F5974EB8047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F97047FF7A901668CD5 = {
+			fileRef = F5974EB9047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F98047FF7A901668CD5 = {
+			fileRef = F5974EBA047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F99047FF7A901668CD5 = {
+			fileRef = F5974EBB047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F9A047FF7A901668CD5 = {
+			fileRef = F5974EBC047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974F9B047FF7A901668CD5 = {
+			fileRef = F5974EBD047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA1047FF7A901668CD5 = {
+			fileRef = F5974EC3047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA2047FF7A901668CD5 = {
+			fileRef = F5974EC4047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA3047FF7A901668CD5 = {
+			fileRef = F5974EC5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA4047FF7A901668CD5 = {
+			fileRef = F5974EC6047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA7047FF7A901668CD5 = {
+			fileRef = F5974EC9047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FA8047FF7A901668CD5 = {
+			fileRef = F5974ECA047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAA047FF7A901668CD5 = {
+			fileRef = F5974ECC047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAB047FF7A901668CD5 = {
+			fileRef = F5974ECD047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAC047FF7A901668CD5 = {
+			fileRef = F5974ECE047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAD047FF7A901668CD5 = {
+			fileRef = F5974ECF047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAE047FF7A901668CD5 = {
+			fileRef = F5974ED0047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FAF047FF7A901668CD5 = {
+			fileRef = F5974ED1047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB0047FF7A901668CD5 = {
+			fileRef = F5974ED2047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB1047FF7A901668CD5 = {
+			fileRef = F5974ED3047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB2047FF7A901668CD5 = {
+			fileRef = F5974ED4047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB3047FF7A901668CD5 = {
+			fileRef = F5974ED5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB4047FF7A901668CD5 = {
+			fileRef = F5974ED6047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB5047FF7A901668CD5 = {
+			fileRef = F5974ED7047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB6047FF7A901668CD5 = {
+			fileRef = F5974ED8047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FB7047FF7A901668CD5 = {
+			fileRef = F5974ED9047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FBA047FF7A901668CD5 = {
+			fileRef = F5974EDC047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FBB047FF7A901668CD5 = {
+			fileRef = F5974EDD047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FBE047FF7A901668CD5 = {
+			fileRef = F5974EE0047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FBF047FF7A901668CD5 = {
+			fileRef = F5974EE1047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FC3047FF7A901668CD5 = {
+			fileRef = F5974EE5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FC6047FF7A901668CD5 = {
+			fileRef = F5974EE8047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FC7047FF7A901668CD5 = {
+			fileRef = F5974EE9047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FC8047FF7A901668CD5 = {
+			fileRef = F5974EEA047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FC9047FF7A901668CD5 = {
+			fileRef = F5974EEB047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FCC047FF7A901668CD5 = {
+			fileRef = F5974EEE047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FCD047FF7A901668CD5 = {
+			fileRef = F5974EEF047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FCE047FF7A901668CD5 = {
+			fileRef = F5974EF0047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FCF047FF7A901668CD5 = {
+			fileRef = F5974EF1047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD0047FF7A901668CD5 = {
+			fileRef = F5974EF2047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD1047FF7A901668CD5 = {
+			fileRef = F5974EF3047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD2047FF7A901668CD5 = {
+			fileRef = F5974EF4047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD3047FF7A901668CD5 = {
+			fileRef = F5974EF5047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD4047FF7A901668CD5 = {
+			fileRef = F5974EF6047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD5047FF7A901668CD5 = {
+			fileRef = F5974EF7047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FD8047FF7A901668CD5 = {
+			fileRef = F5974EFA047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FDB047FF7A901668CD5 = {
+			fileRef = F5974EFD047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FDC047FF7A901668CD5 = {
+			fileRef = F5974EFE047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FDF047FF7A901668CD5 = {
+			fileRef = F5974F01047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE0047FF7A901668CD5 = {
+			fileRef = F5974F02047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE1047FF7A901668CD5 = {
+			fileRef = F5974F03047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE2047FF7A901668CD5 = {
+			fileRef = F5974F04047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE3047FF7A901668CD5 = {
+			fileRef = F5974F05047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE4047FF7A901668CD5 = {
+			fileRef = F5974F06047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE5047FF7A901668CD5 = {
+			fileRef = F5974F07047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE6047FF7A901668CD5 = {
+			fileRef = F5974F08047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE7047FF7A901668CD5 = {
+			fileRef = F5974F09047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE8047FF7A901668CD5 = {
+			fileRef = F5974F0A047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FE9047FF7A901668CD5 = {
+			fileRef = F5974F0B047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FEA047FF7A901668CD5 = {
+			fileRef = F5974F0C047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FEB047FF7A901668CD5 = {
+			fileRef = F5974F0D047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FEC047FF7A901668CD5 = {
+			fileRef = F5974F0E047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FED047FF7A901668CD5 = {
+			fileRef = F5974F0F047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FEE047FF7A901668CD5 = {
+			fileRef = F5974F10047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF1047FF7A901668CD5 = {
+			fileRef = F5974F13047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF2047FF7A901668CD5 = {
+			fileRef = F5974F14047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF3047FF7A901668CD5 = {
+			fileRef = F5974F15047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF4047FF7A901668CD5 = {
+			fileRef = F5974F16047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF5047FF7A901668CD5 = {
+			fileRef = F5974F17047FF7A801668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF6047FF7A901668CD5 = {
+			fileRef = F5974F18047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF7047FF7A901668CD5 = {
+			fileRef = F5974F19047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF8047FF7A901668CD5 = {
+			fileRef = F5974F1A047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FF9047FF7A901668CD5 = {
+			fileRef = F5974F1B047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FFA047FF7A901668CD5 = {
+			fileRef = F5974F1C047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FFB047FF7A901668CD5 = {
+			fileRef = F5974F1D047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5974FFC047FF7A901668CD5 = {
+			fileRef = F5974F1E047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975001047FF7A901668CD5 = {
+			fileRef = F5974F23047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975002047FF7A901668CD5 = {
+			fileRef = F5974F24047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975007047FF7A901668CD5 = {
+			fileRef = F5974F29047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975008047FF7A901668CD5 = {
+			fileRef = F5974F2A047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975009047FF7A901668CD5 = {
+			fileRef = F5974F2B047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500A047FF7A901668CD5 = {
+			fileRef = F5974F2C047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500B047FF7A901668CD5 = {
+			fileRef = F5974F2D047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500C047FF7A901668CD5 = {
+			fileRef = F5974F2E047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500D047FF7A901668CD5 = {
+			fileRef = F5974F2F047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500E047FF7A901668CD5 = {
+			fileRef = F5974F30047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597500F047FF7A901668CD5 = {
+			fileRef = F5974F31047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975010047FF7A901668CD5 = {
+			fileRef = F5974F32047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975011047FF7A901668CD5 = {
+			fileRef = F5974F33047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975014047FF7A901668CD5 = {
+			fileRef = F5974F36047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975015047FF7A901668CD5 = {
+			fileRef = F5974F37047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975016047FF7A901668CD5 = {
+			fileRef = F5974F38047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975017047FF7A901668CD5 = {
+			fileRef = F5974F39047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975018047FF7A901668CD5 = {
+			fileRef = F5974F3A047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975019047FF7A901668CD5 = {
+			fileRef = F5974F3B047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501A047FF7A901668CD5 = {
+			fileRef = F5974F3C047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501B047FF7A901668CD5 = {
+			fileRef = F5974F3D047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501C047FF7A901668CD5 = {
+			fileRef = F5974F3E047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501D047FF7A901668CD5 = {
+			fileRef = F5974F3F047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501E047FF7A901668CD5 = {
+			fileRef = F5974F40047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597501F047FF7A901668CD5 = {
+			fileRef = F5974F41047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975020047FF7A901668CD5 = {
+			fileRef = F5974F42047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975021047FF7A901668CD5 = {
+			fileRef = F5974F43047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975024047FF7A901668CD5 = {
+			fileRef = F5974F46047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975025047FF7A901668CD5 = {
+			fileRef = F5974F47047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975026047FF7A901668CD5 = {
+			fileRef = F5974F48047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975027047FF7A901668CD5 = {
+			fileRef = F5974F49047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502A047FF7A901668CD5 = {
+			fileRef = F5974F4C047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502B047FF7A901668CD5 = {
+			fileRef = F5974F4D047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502C047FF7A901668CD5 = {
+			fileRef = F5974F4E047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502D047FF7A901668CD5 = {
+			fileRef = F5974F4F047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502E047FF7A901668CD5 = {
+			fileRef = F5974F50047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597502F047FF7A901668CD5 = {
+			fileRef = F5974F51047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975034047FF7A901668CD5 = {
+			fileRef = F5974F56047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975035047FF7A901668CD5 = {
+			fileRef = F5974F57047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975036047FF7A901668CD5 = {
+			fileRef = F5974F58047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975037047FF7A901668CD5 = {
+			fileRef = F5974F59047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975038047FF7A901668CD5 = {
+			fileRef = F5974F5A047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975039047FF7A901668CD5 = {
+			fileRef = F5974F5B047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597503A047FF7A901668CD5 = {
+			fileRef = F5974F5C047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597503B047FF7A901668CD5 = {
+			fileRef = F5974F5D047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975041047FF7A901668CD5 = {
+			fileRef = F5974F63047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975044047FF7A901668CD5 = {
+			fileRef = F5974F66047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975045047FF7A901668CD5 = {
+			fileRef = F5974F67047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975046047FF7A901668CD5 = {
+			fileRef = F5974F68047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975047047FF7A901668CD5 = {
+			fileRef = F5974F69047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975048047FF7A901668CD5 = {
+			fileRef = F5974F6A047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975049047FF7A901668CD5 = {
+			fileRef = F5974F6B047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597504E047FF7A901668CD5 = {
+			fileRef = F5974F70047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F597504F047FF7A901668CD5 = {
+			fileRef = F5974F71047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975050047FF7A901668CD5 = {
+			fileRef = F5974F72047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975051047FF7A901668CD5 = {
+			fileRef = F5974F73047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975052047FF7A901668CD5 = {
+			fileRef = F5974F74047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975053047FF7A901668CD5 = {
+			fileRef = F5974F75047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975054047FF7A901668CD5 = {
+			fileRef = F5974F76047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975055047FF7A901668CD5 = {
+			fileRef = F5974F77047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975056047FF7A901668CD5 = {
+			fileRef = F5974F78047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975057047FF7A901668CD5 = {
+			fileRef = F5974F79047FF7A901668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975058047FF7C101668CD5 = {
+			children = (
+				F5975059047FF8E301668CD5,
+				F597505A047FF8E301668CD5,
+				F597505B047FF8E301668CD5,
+				F5975060047FF8E301668CD5,
+				F5975061047FF8E301668CD5,
+				F5975062047FF8E301668CD5,
+				F5975063047FF8E301668CD5,
+				F5975064047FF8E301668CD5,
+				F5975065047FF8E301668CD5,
+				F5975066047FF8E301668CD5,
+				F5975067047FF8E301668CD5,
+				F5975068047FF8E301668CD5,
+				528D9589056710A8002B5214,
+				528D958A056710A8002B5214,
+				F5975069047FF8E301668CD5,
+				F597506A047FF8E301668CD5,
+				F597506E047FF8E301668CD5,
+				F597506F047FF8E301668CD5,
+				F5975070047FF8E301668CD5,
+				F5975071047FF8E301668CD5,
+				F5975072047FF8E301668CD5,
+				F5975073047FF8E301668CD5,
+				F5975074047FF8E301668CD5,
+				F5975075047FF8E301668CD5,
+				F5975076047FF8E301668CD5,
+				F5975077047FF8E301668CD5,
+				F5975078047FF8E301668CD5,
+				F5975079047FF8E301668CD5,
+				5212CBD705B9F9E4009AB20E,
+				F597507A047FF8E301668CD5,
+				528D958B056710A8002B5214,
+				F597507B047FF8E301668CD5,
+				F597507C047FF8E301668CD5,
+				F597507D047FF8E301668CD5,
+				F597507E047FF8E301668CD5,
+				F597507F047FF8E301668CD5,
+				F5975080047FF8E301668CD5,
+				F5975081047FF8E301668CD5,
+				F5975082047FF8E301668CD5,
+				F5975083047FF8E301668CD5,
+				F5975084047FF8E301668CD5,
+				F5975086047FF8E301668CD5,
+				F5975087047FF8E301668CD5,
+				F5975088047FF8E301668CD5,
+				F5975089047FF8E301668CD5,
+				F597508A047FF8E301668CD5,
+				525D52B80583AF2800361714,
+			);
+			isa = PBXGroup;
+			name = cocoa;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975059047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gdkpixmap.m;
+			path = cocoa/gdkpixmap.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505A047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gdkwindow.m;
+			path = cocoa/gdkwindow.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505B047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkaccellabel.m;
+			path = cocoa/gtkaccellabel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505C047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = GtkAppDelegate.h;
+			path = cocoa/GtkAppDelegate.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505D047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = GtkAppDelegate.m;
+			path = cocoa/GtkAppDelegate.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505E047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = GtkApplication.h;
+			path = cocoa/GtkApplication.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597505F047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = GtkApplication.m;
+			path = cocoa/GtkApplication.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975060047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkbox.m;
+			path = cocoa/gtkbox.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975061047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkbutton.m;
+			path = cocoa/gtkbutton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975062047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkcheckbutton.m;
+			path = cocoa/gtkcheckbutton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975063047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkcheckmenuitem.m;
+			path = cocoa/gtkcheckmenuitem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975064047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkclist.m;
+			path = cocoa/gtkclist.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975065047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkcontainer.m;
+			path = cocoa/gtkcontainer.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975066047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkctree.m;
+			path = cocoa/gtkctree.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975067047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkdialog.m;
+			path = cocoa/gtkdialog.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975068047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkdnd.m;
+			path = cocoa/gtkdnd.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975069047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkeditable.m;
+			path = cocoa/gtkeditable.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597506A047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkentry.m;
+			path = cocoa/gtkentry.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597506B047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = GtkEvents.h;
+			path = cocoa/GtkEvents.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597506C047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = GtkEvents.m;
+			path = cocoa/GtkEvents.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597506E047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkframe.m;
+			path = cocoa/gtkframe.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597506F047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkglarea.m;
+			path = cocoa/gtkglarea.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975070047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkhscale.m;
+			path = cocoa/gtkhscale.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975071047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkhscrollbar.m;
+			path = cocoa/gtkhscrollbar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975072047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtklabel.m;
+			path = cocoa/gtklabel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975073047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkmain.m;
+			path = cocoa/gtkmain.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975074047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkmenu.m;
+			path = cocoa/gtkmenu.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975075047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkmenubar.m;
+			path = cocoa/gtkmenubar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975076047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkmenuitem.m;
+			path = cocoa/gtkmenuitem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975077047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtknotebook.m;
+			path = cocoa/gtknotebook.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975078047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkoptionmenu.m;
+			path = cocoa/gtkoptionmenu.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975079047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkpixmap.m;
+			path = cocoa/gtkpixmap.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507A047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkradiobutton.m;
+			path = cocoa/gtkradiobutton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507B047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkrange.m;
+			path = cocoa/gtkrange.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507C047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkscale.m;
+			path = cocoa/gtkscale.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507D047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkscrolledwindow.m;
+			path = cocoa/gtkscrolledwindow.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507E047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkseparator.m;
+			path = cocoa/gtkseparator.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597507F047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkspinbutton.m;
+			path = cocoa/gtkspinbutton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975080047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtktext.m;
+			path = cocoa/gtktext.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975081047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtktogglebutton.m;
+			path = cocoa/gtktogglebutton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975082047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtktoolbar.m;
+			path = cocoa/gtktoolbar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975083047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtktree.m;
+			path = cocoa/gtktree.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975084047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtktreeitem.m;
+			path = cocoa/gtktreeitem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975085047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = GtkView.h;
+			path = cocoa/GtkView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975086047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkviewport.m;
+			path = cocoa/gtkviewport.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975087047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkvscale.m;
+			path = cocoa/gtkvscale.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975088047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkvscrollbar.m;
+			path = cocoa/gtkvscrollbar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975089047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkwidget.m;
+			path = cocoa/gtkwidget.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508A047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = gtkwindow.m;
+			path = cocoa/gtkwindow.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508B047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = GtkWindowPrivate.h;
+			path = cocoa/GtkWindowPrivate.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508C047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = GtkWindowPrivate.m;
+			path = cocoa/GtkWindowPrivate.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508D047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkBox.h;
+			path = cocoa/NSGtkBox.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508E047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkBox.m;
+			path = cocoa/NSGtkBox.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597508F047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkButton.h;
+			path = cocoa/NSGtkButton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975090047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkButton.m;
+			path = cocoa/NSGtkButton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975091047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkDnD.h;
+			path = cocoa/NSGtkDnD.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975092047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkDnD.m;
+			path = cocoa/NSGtkDnD.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975093047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkEntry.h;
+			path = cocoa/NSGtkEntry.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975094047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkEntry.m;
+			path = cocoa/NSGtkEntry.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975095047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkGLArea.h;
+			path = cocoa/NSGtkGLArea.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975096047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkGLArea.m;
+			path = cocoa/NSGtkGLArea.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975097047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkImageView.h;
+			path = cocoa/NSGtkImageView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F5975098047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkImageView.m;
+			path = cocoa/NSGtkImageView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597509B047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkMenuItem.h;
+			path = cocoa/NSGtkMenuItem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597509C047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkMenuItem.m;
+			path = cocoa/NSGtkMenuItem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597509D047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkPopUpButton.h;
+			path = cocoa/NSGtkPopUpButton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597509E047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkPopUpButton.m;
+			path = cocoa/NSGtkPopUpButton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597509F047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkScale.h;
+			path = cocoa/NSGtkScale.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A0047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkScale.m;
+			path = cocoa/NSGtkScale.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A1047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkScrollbar.h;
+			path = cocoa/NSGtkScrollbar.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A2047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkScrollbar.m;
+			path = cocoa/NSGtkScrollbar.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A3047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkSpinButton.h;
+			path = cocoa/NSGtkSpinButton.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A4047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkSpinButton.m;
+			path = cocoa/NSGtkSpinButton.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A5047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkTableView.h;
+			path = cocoa/NSGtkTableView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A6047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkTableView.m;
+			path = cocoa/NSGtkTableView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A7047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkTabView.h;
+			path = cocoa/NSGtkTabView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A8047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkTabView.m;
+			path = cocoa/NSGtkTabView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750A9047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkTabViewItem.h;
+			path = cocoa/NSGtkTabViewItem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AA047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkTabViewItem.m;
+			path = cocoa/NSGtkTabViewItem.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AB047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkText.h;
+			path = cocoa/NSGtkText.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AC047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkText.m;
+			path = cocoa/NSGtkText.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AD047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkTree.h;
+			path = cocoa/NSGtkTree.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AE047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkTree.m;
+			path = cocoa/NSGtkTree.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750AF047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NSGtkView.h;
+			path = cocoa/NSGtkView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750B0047FF8E301668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NSGtkView.m;
+			path = cocoa/NSGtkView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F59750B1047FF8E301668CD5 = {
+			fileRef = F5975059047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B2047FF8E301668CD5 = {
+			fileRef = F597505A047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B3047FF8E301668CD5 = {
+			fileRef = F597505B047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B4047FF8E301668CD5 = {
+			fileRef = F597505C047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B5047FF8E301668CD5 = {
+			fileRef = F597505D047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B6047FF8E301668CD5 = {
+			fileRef = F597505E047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B7047FF8E301668CD5 = {
+			fileRef = F597505F047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B8047FF8E301668CD5 = {
+			fileRef = F5975060047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750B9047FF8E301668CD5 = {
+			fileRef = F5975061047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BA047FF8E301668CD5 = {
+			fileRef = F5975062047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BB047FF8E301668CD5 = {
+			fileRef = F5975063047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BC047FF8E301668CD5 = {
+			fileRef = F5975064047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BD047FF8E301668CD5 = {
+			fileRef = F5975065047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BE047FF8E301668CD5 = {
+			fileRef = F5975066047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750BF047FF8E301668CD5 = {
+			fileRef = F5975067047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C0047FF8E301668CD5 = {
+			fileRef = F5975068047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C1047FF8E301668CD5 = {
+			fileRef = F5975069047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C2047FF8E301668CD5 = {
+			fileRef = F597506A047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C3047FF8E301668CD5 = {
+			fileRef = F597506B047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C4047FF8E301668CD5 = {
+			fileRef = F597506C047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C6047FF8E301668CD5 = {
+			fileRef = F597506E047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C7047FF8E301668CD5 = {
+			fileRef = F597506F047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C8047FF8E301668CD5 = {
+			fileRef = F5975070047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750C9047FF8E301668CD5 = {
+			fileRef = F5975071047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CA047FF8E301668CD5 = {
+			fileRef = F5975072047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CB047FF8E301668CD5 = {
+			fileRef = F5975073047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CC047FF8E301668CD5 = {
+			fileRef = F5975074047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CD047FF8E301668CD5 = {
+			fileRef = F5975075047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CE047FF8E301668CD5 = {
+			fileRef = F5975076047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750CF047FF8E301668CD5 = {
+			fileRef = F5975077047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D0047FF8E301668CD5 = {
+			fileRef = F5975078047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D1047FF8E301668CD5 = {
+			fileRef = F5975079047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D2047FF8E301668CD5 = {
+			fileRef = F597507A047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D3047FF8E301668CD5 = {
+			fileRef = F597507B047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D4047FF8E301668CD5 = {
+			fileRef = F597507C047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D5047FF8E301668CD5 = {
+			fileRef = F597507D047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D6047FF8E301668CD5 = {
+			fileRef = F597507E047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D7047FF8E301668CD5 = {
+			fileRef = F597507F047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D8047FF8E301668CD5 = {
+			fileRef = F5975080047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750D9047FF8E301668CD5 = {
+			fileRef = F5975081047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DA047FF8E301668CD5 = {
+			fileRef = F5975082047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DB047FF8E301668CD5 = {
+			fileRef = F5975083047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DC047FF8E301668CD5 = {
+			fileRef = F5975084047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DD047FF8E301668CD5 = {
+			fileRef = F5975085047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DE047FF8E301668CD5 = {
+			fileRef = F5975086047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750DF047FF8E301668CD5 = {
+			fileRef = F5975087047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E0047FF8E301668CD5 = {
+			fileRef = F5975088047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E1047FF8E301668CD5 = {
+			fileRef = F5975089047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E2047FF8E301668CD5 = {
+			fileRef = F597508A047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E3047FF8E301668CD5 = {
+			fileRef = F597508B047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E4047FF8E301668CD5 = {
+			fileRef = F597508C047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E5047FF8E301668CD5 = {
+			fileRef = F597508D047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E6047FF8E301668CD5 = {
+			fileRef = F597508E047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E7047FF8E301668CD5 = {
+			fileRef = F597508F047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E8047FF8E301668CD5 = {
+			fileRef = F5975090047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750E9047FF8E301668CD5 = {
+			fileRef = F5975091047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750EA047FF8E301668CD5 = {
+			fileRef = F5975092047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750EB047FF8E301668CD5 = {
+			fileRef = F5975093047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750EC047FF8E301668CD5 = {
+			fileRef = F5975094047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750ED047FF8E301668CD5 = {
+			fileRef = F5975095047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750EE047FF8E301668CD5 = {
+			fileRef = F5975096047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750EF047FF8E301668CD5 = {
+			fileRef = F5975097047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F0047FF8E301668CD5 = {
+			fileRef = F5975098047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F3047FF8E301668CD5 = {
+			fileRef = F597509B047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F4047FF8E301668CD5 = {
+			fileRef = F597509C047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F5047FF8E301668CD5 = {
+			fileRef = F597509D047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F6047FF8E301668CD5 = {
+			fileRef = F597509E047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F7047FF8E301668CD5 = {
+			fileRef = F597509F047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F8047FF8E301668CD5 = {
+			fileRef = F59750A0047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750F9047FF8E301668CD5 = {
+			fileRef = F59750A1047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FA047FF8E301668CD5 = {
+			fileRef = F59750A2047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FB047FF8E301668CD5 = {
+			fileRef = F59750A3047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FC047FF8E301668CD5 = {
+			fileRef = F59750A4047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FD047FF8E301668CD5 = {
+			fileRef = F59750A5047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FE047FF8E301668CD5 = {
+			fileRef = F59750A6047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F59750FF047FF8E301668CD5 = {
+			fileRef = F59750A7047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975100047FF8E301668CD5 = {
+			fileRef = F59750A8047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975101047FF8E301668CD5 = {
+			fileRef = F59750A9047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975102047FF8E301668CD5 = {
+			fileRef = F59750AA047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975103047FF8E301668CD5 = {
+			fileRef = F59750AB047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975104047FF8E301668CD5 = {
+			fileRef = F59750AC047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975105047FF8E301668CD5 = {
+			fileRef = F59750AD047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975106047FF8E301668CD5 = {
+			fileRef = F59750AE047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975107047FF8E301668CD5 = {
+			fileRef = F59750AF047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975108047FF8E301668CD5 = {
+			fileRef = F59750B0047FF8E301668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975109047FF8EA01668CD5 = {
+			children = (
+				F597510B047FF90D01668CD5,
+				F597510C047FF90D01668CD5,
+				F597510D047FF90D01668CD5,
+			);
+			isa = PBXGroup;
+			name = glarea;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597510B047FF90D01668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gdkgl.h;
+			path = glarea/gdkgl.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597510C047FF90D01668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = gtkglarea.c;
+			path = glarea/gtkglarea.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597510D047FF90D01668CD5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = gtkglarea.h;
+			path = glarea/gtkglarea.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		F597510F047FF90D01668CD5 = {
+			fileRef = F597510B047FF90D01668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975110047FF90D01668CD5 = {
+			fileRef = F597510C047FF90D01668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5975111047FF90D01668CD5 = {
+			fileRef = F597510D047FF90D01668CD5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 0867D690FE84028FC02AAC07;
+}
