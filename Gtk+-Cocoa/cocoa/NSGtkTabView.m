@@ -54,7 +54,7 @@
 	}	
 
 	gtk_notebook_set_page(notebook, idx);
-	gdk_idle_hook();
+//	gdk_idle_hook();
 }
 
 -(void) setFrameOrigin:(NSPoint)origin
