@@ -59,7 +59,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
-
+#if 0
 #include <X11/Xlib.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1711,3 +1711,4 @@ gdk_color_context_get_index_from_palette (GdkColorContext *cc,
   
   return j;
 }
+#endif

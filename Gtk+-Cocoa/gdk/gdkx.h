@@ -50,14 +50,14 @@ extern "C" {
 #define GDK_FONT_XFONT(font)          (((GdkFontPrivate*) font)->xfont)
 
 
-GdkVisual*   gdkx_visual_get   (VisualID xvisualid);
+//GdkVisual*   gdkx_visual_get   (VisualID xvisualid);
 /* XXX: Do not use this function until it is fixed. An X Colormap
  *      is useless unless we also have the visual. */
-GdkColormap* gdkx_colormap_get (Colormap xcolormap);
+//GdkColormap* gdkx_colormap_get (Colormap xcolormap);
 /* Utility function in gdk.c - not sure where it belongs, but it's
    needed in more than one place, so make it public */
-Window        gdk_get_client_window      (Display  *dpy,
-                                          Window    win);
+//Window        gdk_get_client_window      (Display  *dpy,
+//                                          Window    win);
 
 /* Functions to create pixmaps and windows from their X equivalents */
 GdkPixmap    *gdk_pixmap_foreign_new (guint32     anid);

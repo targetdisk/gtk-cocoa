@@ -24,11 +24,11 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#include <X11/Xlocale.h>
+//#include <X11/Xlocale.h>
 #include "gdk.h"
 #include "gdkprivate.h"
 #include "gdki18n.h"
-#include "gdkx.h"
+//#include "gdkx.h"
 
 #if HAVE_CONFIG_H
 #  include <config.h>
@@ -103,7 +103,8 @@ gchar*
 gdk_set_locale (void)
 {
   wchar_t result;
-  gchar *current_locale;
+  gchar *current_locale = NULL;
+#if 0
 
   gdk_use_mb = FALSE;
 
@@ -145,7 +146,7 @@ gdk_set_locale (void)
   GDK_NOTE (XIM,
 	    g_message ("%s multi-byte string functions.", 
 		       gdk_use_mb ? "Using" : "Not using"));
-  
+#endif  
   return current_locale;
 }
 
@@ -1540,7 +1541,8 @@ _gdk_wcstombs_len (const GdkWChar *src,
 {
   gchar *mbstr = NULL;
   gint length;
-  
+#if 0
+ 
   if (len < 0)
     {
       length = 0;
@@ -1599,7 +1601,7 @@ _gdk_wcstombs_len (const GdkWChar *src,
 
       mbstr[i] = '\0';
     }
-
+#endif
   return mbstr;
 }
 #endif /* !USE_NATIVE_LOCALE */
@@ -1628,6 +1630,7 @@ gdk_wcstombs (const GdkWChar *src)
 gint
 gdk_mbstowcs (GdkWChar *dest, const gchar *src, gint dest_max)
 {
+#if 0
 #ifdef USE_NATIVE_LOCALE
   return mbstowcs ((wchar_t *)dest, src, dest_max);
 #else
@@ -1670,4 +1673,6 @@ gdk_mbstowcs (GdkWChar *dest, const gchar *src, gint dest_max)
       return i;
     }
 #endif
+#endif
+    return 0;
 }

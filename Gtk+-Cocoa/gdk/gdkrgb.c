@@ -56,7 +56,7 @@
 #else
 
 /* Compiling as a part of Gtk 1.1 or later */
-#include "../config.h"
+//#include "../config.h"
 #include "gdk.h"
 #include "gdkprivate.h"
 
@@ -481,7 +481,7 @@ gdk_rgb_score_visual (GdkVisual *visual)
   sys = (visual == gdk_visual_get_system ());
 
   pseudo = (visual->type == GDK_VISUAL_PSEUDO_COLOR || visual->type == GDK_VISUAL_TRUE_COLOR);
-
+/*
   if (gdk_rgb_verbose)
     g_print ("Visual 0x%x, type = %s, depth = %d, %x:%x:%x%s; score=%x\n",
 	     (gint)(((GdkVisualPrivate *)visual)->xvisual->visualid),
@@ -492,7 +492,7 @@ gdk_rgb_score_visual (GdkVisual *visual)
 	     visual->blue_mask,
 	     sys ? " (system)" : "",
 	     (quality << 12) | (speed << 8) | (sys << 4) | pseudo);
-
+*/
   return (quality << 12) | (speed << 8) | (sys << 4) | pseudo;
 }
 
@@ -2725,6 +2725,7 @@ gdk_rgb_convert_indexed_generic_d (GdkImage *image,
 static void
 gdk_rgb_select_conv (GdkImage *image)
 {
+#if 0
   GdkByteOrder byte_order;
   gint depth, bpp, byterev;
   GdkVisualType vtype;
@@ -2913,6 +2914,7 @@ gdk_rgb_select_conv (GdkImage *image)
 
   image_info->conv_indexed = conv_indexed;
   image_info->conv_indexed_d = conv_indexed_d;
+#endif
 }
 
 static gint horiz_idx;
@@ -3169,6 +3171,7 @@ gdk_rgb_make_gray_cmap (GdkRgbInfo *info)
   info->gray_cmap = gdk_rgb_cmap_new (rgb, 256);
 }
 
+
 void
 gdk_draw_gray_image (GdkDrawable *drawable,
 		     GdkGC *gc,
@@ -3180,6 +3183,7 @@ gdk_draw_gray_image (GdkDrawable *drawable,
 		     guchar *buf,
 		     gint rowstride)
 {
+#if 0
   if (image_info->bpp == 1 &&
       image_info->gray_cmap == NULL &&
       (image_info->visual->type == GDK_VISUAL_PSEUDO_COLOR ||
@@ -3195,6 +3199,7 @@ gdk_draw_gray_image (GdkDrawable *drawable,
     gdk_draw_rgb_image_core (drawable, gc, x, y, width, height,
 			     buf, 1, rowstride,
 			     image_info->conv_gray_d, NULL, 0, 0);
+#endif
 }
 
 GdkRgbCmap *

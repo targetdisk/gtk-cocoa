@@ -46,7 +46,8 @@ gdk_gc_new_with_values (GdkWindow	*window,
 //  g_return_val_if_fail (window != NULL, NULL);
 
   private = g_new (GdkGCPrivate, 1);
-  private->values = *values;
+  if(values)
+    private->values = *values;
   return private;
 }
 
@@ -145,7 +146,7 @@ gdk_gc_set_function (GdkGC	 *gc,
 
 }
 
-#if 0
+
 void
 gdk_gc_set_fill (GdkGC	 *gc,
 		 GdkFill  fill)
@@ -174,6 +175,7 @@ void
 gdk_gc_set_stipple (GdkGC     *gc,
 		    GdkPixmap *stipple)
 {
+#if 0
   GdkGCPrivate *private;
   GdkPixmapPrivate *pixmap_private;
   Pixmap pixmap;
@@ -188,7 +190,7 @@ gdk_gc_set_stipple (GdkGC     *gc,
       pixmap_private = (GdkPixmapPrivate*) stipple;
       pixmap = pixmap_private->xwindow;
     }
-
+#endif
 }
 
 void
@@ -221,6 +223,7 @@ void
 gdk_gc_set_clip_mask (GdkGC	*gc,
 		      GdkBitmap *mask)
 {
+#if 0
   GdkGCPrivate *private;
   Pixmap xmask;
   
@@ -241,6 +244,7 @@ gdk_gc_set_clip_mask (GdkGC	*gc,
   private = (GdkGCPrivate*) gc;
 
   XSetClipMask (private->xdisplay, private->xgc, xmask);
+#endif
 }
 
 
@@ -248,6 +252,7 @@ void
 gdk_gc_set_clip_rectangle (GdkGC	*gc,
 			   GdkRectangle *rectangle)
 {
+#if 0
   GdkGCPrivate *private;
   XRectangle xrectangle;
    
@@ -267,12 +272,14 @@ gdk_gc_set_clip_rectangle (GdkGC	*gc,
     }
   else
     XSetClipMask (private->xdisplay, private->xgc, None);
+#endif
 } 
 
 void
 gdk_gc_set_clip_region (GdkGC		 *gc,
 			GdkRegion	 *region)
 {
+#if 0
   GdkGCPrivate *private;
 
   g_return_if_fail (gc != NULL);
@@ -288,12 +295,14 @@ gdk_gc_set_clip_region (GdkGC		 *gc,
     }
   else
     XSetClipMask (private->xdisplay, private->xgc, None);
+#endif
 }
 
 void
 gdk_gc_set_subwindow (GdkGC	       *gc,
 		      GdkSubwindowMode	mode)
 {
+#if 0
   GdkGCPrivate *private;
 
   g_return_if_fail (gc != NULL);
@@ -301,12 +310,14 @@ gdk_gc_set_subwindow (GdkGC	       *gc,
   private = (GdkGCPrivate*) gc;
 
   XSetSubwindowMode (private->xdisplay, private->xgc, mode);
+#endif
 }
 
 void
 gdk_gc_set_exposures (GdkGC     *gc,
 		      gboolean   exposures)
 {
+#if 0
   GdkGCPrivate *private;
 
   g_return_if_fail (gc != NULL);
@@ -314,6 +325,7 @@ gdk_gc_set_exposures (GdkGC     *gc,
   private = (GdkGCPrivate*) gc;
 
   XSetGraphicsExposures (private->xdisplay, private->xgc, exposures);
+#endif
 }
 
 void
@@ -323,6 +335,7 @@ gdk_gc_set_line_attributes (GdkGC	*gc,
 			    GdkCapStyle	 cap_style,
 			    GdkJoinStyle join_style)
 {
+#if 0
   GdkGCPrivate *private;
   int xline_style;
   int xcap_style;
@@ -382,6 +395,7 @@ gdk_gc_set_line_attributes (GdkGC	*gc,
 
   XSetLineAttributes (private->xdisplay, private->xgc, line_width,
 		      xline_style, xcap_style, xjoin_style);
+#endif
 }
 
 void
@@ -390,6 +404,7 @@ gdk_gc_set_dashes (GdkGC      *gc,
 		   gint8       dash_list[],
 		   gint        n)
 { 
+#if 0
   GdkGCPrivate *private;
 
   g_return_if_fail (gc != NULL);
@@ -398,11 +413,13 @@ gdk_gc_set_dashes (GdkGC      *gc,
   private = (GdkGCPrivate*) gc;
 
   XSetDashes (private->xdisplay, private->xgc, dash_offset, dash_list, n);
+#endif
 }
 
 void
 gdk_gc_copy (GdkGC *dst_gc, GdkGC *src_gc)
 {
+#if 0
   GdkGCPrivate *dst_private, *src_private;
 
   src_private = (GdkGCPrivate *) src_gc;
@@ -410,5 +427,5 @@ gdk_gc_copy (GdkGC *dst_gc, GdkGC *src_gc)
 
   XCopyGC (src_private->xdisplay, src_private->xgc, ~((~1) << GCLastBit),
 	   dst_private->xgc);
-}
 #endif
+}

@@ -23,7 +23,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
-
+#if 0
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include "gdk.h"
@@ -324,5 +324,5 @@ gdk_regions_xor (GdkRegion      *source1,
   return res;
 }
 
-
+#endif
 

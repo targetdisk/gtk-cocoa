@@ -24,7 +24,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#include <config.h>
+//#include <config.h>
 
 #include <errno.h>
 #include <stdlib.h>
@@ -39,8 +39,8 @@
 #include <sys/shm.h>
 #endif /* USE_SHM */
 
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
+//#include <X11/Xlib.h>
+//#include <X11/Xutil.h>
 
 #ifdef USE_SHM
 #include <X11/extensions/XShm.h>
@@ -72,7 +72,7 @@ static void gdk_image_put_shared (GdkDrawable *drawable,
 
 static GList *image_list = NULL;
 
-
+#if 0
 void
 gdk_image_exit (void)
 {
@@ -84,15 +84,16 @@ gdk_image_exit (void)
       gdk_image_destroy (image);
     }
 }
-
+#endif
 GdkImage *
 gdk_image_new_bitmap(GdkVisual *visual, gpointer data, gint w, gint h)
 /*
  * Desc: create a new bitmap image
  */
 {
-        Visual *xvisual;
-        GdkImage *image;
+    GdkImage *image = NULL;
+#if 0
+         Visual *xvisual;
         GdkImagePrivate *private;
         private = g_new(GdkImagePrivate, 1);
         image = (GdkImage *) private;
@@ -113,9 +114,11 @@ gdk_image_new_bitmap(GdkVisual *visual, gpointer data, gint w, gint h)
         image->mem =  private->ximage->data;
         image->bpl = private->ximage->bytes_per_line;
         image->bpp = 1;
+#endif
 	return(image);
 } /* gdk_image_new_bitmap() */
 
+#if 0
 static int
 gdk_image_check_xshm(Display *display)
 /* 
@@ -151,14 +154,16 @@ gdk_image_init (void)
 	}
     }
 }
-
+#endif
+ 
 GdkImage*
 gdk_image_new (GdkImageType  type,
 	       GdkVisual    *visual,
 	       gint          width,
 	       gint          height)
 {
-  GdkImage *image;
+  GdkImage *image = NULL;
+#if 0
   GdkImagePrivate *private;
 #ifdef USE_SHM
   XShmSegmentInfo *x_shm_info;
@@ -324,10 +329,10 @@ gdk_image_new (GdkImageType  type,
 	  image->bpp = (private->ximage->bits_per_pixel + 7) / 8;
 	}
     }
-
+#endif
   return image;
 }
-
+#if 0
 GdkImage*
 gdk_image_get (GdkWindow *window,
 	       gint       x,
@@ -405,10 +410,11 @@ gdk_image_put_pixel (GdkImage *image,
 
   pixel = XPutPixel (private->ximage, x, y, pixel);
 }
-
+#endif
 void
 gdk_image_destroy (GdkImage *image)
 {
+#if 0
   GdkImagePrivate *private;
 #ifdef USE_SHM
   XShmSegmentInfo *x_shm_info;
@@ -446,8 +452,9 @@ gdk_image_destroy (GdkImage *image)
     }
 
   g_free (image);
+#endif
 }
-
+#if 0
 static void
 gdk_image_put_normal (GdkDrawable *drawable,
 		      GdkGC       *gc,
@@ -515,3 +522,4 @@ gdk_image_put_shared (GdkDrawable *drawable,
   g_error ("trying to draw shared memory image when gdk was compiled without shared memory support");
 #endif /* USE_SHM */
 }
+#endif

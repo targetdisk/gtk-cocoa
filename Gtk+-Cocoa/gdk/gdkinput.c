@@ -25,9 +25,9 @@
  */
 
 #include <stdlib.h>
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
-#include "config.h"
+//#include <X11/Xlib.h>
+//#include <X11/Xutil.h>
+//#include "config.h"
 #include "gdk.h"
 #include "gdkx.h"
 #include "gdkprivate.h"
@@ -127,6 +127,7 @@ gdk_input_motion_events (GdkWindow *window,
 			 guint32 stop,
 			 gint *nevents_return)
 {
+#if 0
   GdkWindowPrivate *window_private;
   XTimeCoord *xcoords;
   GdkTimeCoord *coords;
@@ -176,11 +177,14 @@ gdk_input_motion_events (GdkWindow *window,
 	  return NULL;
 	}
     }
+#endif
 }
 
+#if 0
 static gint
 gdk_input_enable_window (GdkWindow *window, GdkDevicePrivate *gdkdev)
 {
+
   if (gdk_input_vtable.enable_window)
     return gdk_input_vtable.enable_window (window, gdkdev);
   else
@@ -195,7 +199,7 @@ gdk_input_disable_window (GdkWindow *window, GdkDevicePrivate *gdkdev)
   else
     return TRUE;
 }
-
+#endif
 
 static GdkInputWindow *
 gdk_input_window_find(GdkWindow *window)
@@ -219,6 +223,7 @@ void
 gdk_input_set_extension_events (GdkWindow *window, gint mask,
 				GdkExtensionMode mode)
 {
+#if 0
   GdkWindowPrivate *window_private;
   GList *tmp_list;
   GdkInputWindow *iw;
@@ -276,6 +281,7 @@ gdk_input_set_extension_events (GdkWindow *window, gint mask,
 	    gdk_input_disable_window(window,gdkdev);
 	}
     }
+#endif
 }
 
 void

@@ -24,24 +24,24 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
+//#include <X11/Xlib.h>
+//#include <X11/Xutil.h>
 #include "gdk.h"
 #include "gdkprivate.h"
-#include "gdkx.h"
+//#include "gdkx.h"
 
 
 static void  gdk_visual_add            (GdkVisual *visual);
 static void  gdk_visual_decompose_mask (gulong     mask,
 					gint      *shift,
 					gint      *prec);
-static guint gdk_visual_hash           (Visual    *key);
-static gint  gdk_visual_compare        (Visual    *a,
-					Visual    *b);
+//static guint gdk_visual_hash           (Visual    *key);
+//static gint  gdk_visual_compare        (Visual    *a,
+//					Visual    *b);
 
 
-static GdkVisualPrivate *system_visual;
-static GdkVisualPrivate *visuals;
+//static GdkVisualPrivate *system_visual;
+//static GdkVisualPrivate *visuals;
 static gint nvisuals;
 
 static gint available_depths[7];
@@ -65,7 +65,7 @@ static const gchar* visual_names[] =
 #endif /* G_ENABLE_DEBUG */
 
 static GHashTable *visual_hash = NULL;
-
+#if 0
 void
 gdk_visual_init (void)
 {
@@ -283,19 +283,23 @@ gdk_visual_get_best_type (void)
 {
   return available_types[0];
 }
+#endif
 
 GdkVisual*
 gdk_visual_get_system (void)
 {
-  return ((GdkVisual*) system_visual);
+  //return ((GdkVisual*) system_visual);
+    return NULL;
 }
+
 
 GdkVisual*
 gdk_visual_get_best (void)
 {
-  return ((GdkVisual*) &(visuals[0]));
+  //return ((GdkVisual*) &(visuals[0]));
+    return NULL;
 }
-
+#if 0
 GdkVisual*
 gdk_visual_get_best_with_depth (gint depth)
 {
@@ -364,21 +368,21 @@ gdk_query_visual_types (GdkVisualType **visual_types,
   *count = navailable_types;
   *visual_types = available_types;
 }
-
+#endif
 GList*
 gdk_list_visuals (void)
 {
-  GList *list;
+  GList *list = NULL;
   guint i;
 
-  list = NULL;
-  for (i = 0; i < nvisuals; ++i)
-    list = g_list_append (list, (gpointer) &visuals[i]);
+//  list = NULL;
+ // for (i = 0; i < nvisuals; ++i)
+  //  list = g_list_append (list, (gpointer) &visuals[i]);
 
   return list;
 }
 
-
+#if 0
 GdkVisual*
 gdk_visual_lookup (Visual *xvisual)
 {
@@ -451,3 +455,4 @@ gdk_visual_compare (Visual *a,
 {
   return (a->visualid == b->visualid);
 }
+#endif

@@ -23,7 +23,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
-
+#if 0
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <string.h>
@@ -244,3 +244,4 @@ gdk_property_delete (GdkWindow *window,
 
   XDeleteProperty (xdisplay, xwindow, property);
 }
+#endif

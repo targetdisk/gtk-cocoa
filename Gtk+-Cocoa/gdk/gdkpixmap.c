@@ -23,7 +23,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
-
+#if 0
 #include "config.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -843,3 +843,4 @@ gdk_bitmap_unref (GdkBitmap *bitmap)
 {
   gdk_pixmap_unref ((GdkPixmap *)bitmap);
 }
+#endif

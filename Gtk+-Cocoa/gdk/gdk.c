@@ -24,7 +24,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#include "config.h"
+//#include "config.h"
 
 #include <ctype.h>
 #include <stdio.h>
@@ -36,7 +36,7 @@
 #ifdef HAVE_SYS_SELECT_H
 #include <sys/select.h>
 #endif /* HAVE_SYS_SELECT_H_ */
-
+#if 0
 #ifndef X_DISPLAY_MISSING
 #define XLIB_ILLEGAL_ACCESS
 #include <X11/Xatom.h>
@@ -45,11 +45,12 @@
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
 #endif /* X_DISPLAY_MISSING */
+#endif
 
 #include "gdk.h"
 #include "gdkprivate.h"
 #include "gdkinput.h"
-#include "gdkx.h"
+//#include "gdkx.h"
 #include "gdki18n.h"
 #include "gdkkeysyms.h"
 
@@ -72,7 +73,7 @@ struct _GdkErrorTrap
   gint error_warnings;
   gint error_code;
 };
-
+#if 0
 /* 
  * Private function declarations
  */
@@ -92,13 +93,13 @@ static int	    gdk_x_io_error		 (Display     *display);
 GdkFilterReturn gdk_wm_protocols_filter (GdkXEvent *xev,
 					 GdkEvent  *event,
 					 gpointer   data);
-
+#endif
 /* Private variable declarations
  */
 static int gdk_initialized = 0;			    /* 1 if the library is initialized,
 						     * 0 otherwise.
 						     */
-
+#if 0
 static struct timeval start;			    /* The time at which the library was
 						     *	last initialized.
 						     */
@@ -117,6 +118,7 @@ static guint32 timer_val;			    /* The timeout length as specified by
 						     *	the user in milliseconds.
 						     */
 static gint autorepeat;
+#endif
 
 static GSList *gdk_error_traps = NULL;               /* List of error traps */
 static GSList *gdk_error_trap_free_list = NULL;      /* Free list */
@@ -168,7 +170,7 @@ get_option (char ***argv,
   *i_inout = i;
   return result;
 }
-
+#if 0
 /*
  *--------------------------------------------------------------
  * gdk_init_heck
@@ -627,7 +629,7 @@ gdk_timer_disable (void)
 {
   timerp = NULL;
 }
-
+#endif
 /*
  *--------------------------------------------------------------
  * gdk_pointer_grab
@@ -659,8 +661,10 @@ gdk_pointer_grab (GdkWindow *	  window,
 		  GdkCursor *	  cursor,
 		  guint32	  time)
 {
+
   /*  From gdkwindow.c	*/
-  gint return_val;
+  gint return_val=0;
+#if 0  
   GdkWindowPrivate *window_private;
   GdkWindowPrivate *confine_to_private;
   GdkCursorPrivate *cursor_private;
@@ -722,7 +726,7 @@ gdk_pointer_grab (GdkWindow *	  window,
   
   if (return_val == GrabSuccess)
     gdk_xgrab_window = window_private;
-  
+#endif  
   return return_val;
 }
 
@@ -744,13 +748,14 @@ gdk_pointer_grab (GdkWindow *	  window,
 void
 gdk_pointer_ungrab (guint32 time)
 {
-  if (gdk_input_vtable.ungrab_pointer)
+/*  if (gdk_input_vtable.ungrab_pointer)
     gdk_input_vtable.ungrab_pointer (time);
   
-  XUngrabPointer (gdk_display, time);
-  gdk_xgrab_window = NULL;
+    XUngrabPointer (gdk_display, time);
+    gdk_xgrab_window = NULL;
+*/
 }
-
+#if 0
 /*
  *--------------------------------------------------------------
  * gdk_pointer_is_grabbed
@@ -1149,7 +1154,7 @@ gdk_get_display (void)
 {
   return (gchar *)XDisplayName (gdk_display_name);
 }
-
+#endif
 /*************************************************************
  * gdk_error_trap_push:
  *     Push an error trap. X errors will be trapped until
@@ -1220,7 +1225,7 @@ gdk_error_trap_pop (void)
   
   return result;
 }
-
+#if 0
 gint 
 gdk_send_xevent (Window window, gboolean propagate, glong event_mask,
 		 XEvent *event_send)
@@ -1451,4 +1456,9 @@ gdk_threads_leave ()
 {
   GDK_THREADS_LEAVE ();
 }
+#endif
 
+void
+gdk_flush()
+{
+}
