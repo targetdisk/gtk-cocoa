@@ -59,7 +59,7 @@ void
 gtk_menu_append (GtkMenu   *menu,
 		 GtkWidget *child)
 {
-    NSPopUpButton *m;
+    NSButton *m;
 
     m = GTK_WIDGET(menu)->proxy;
 
