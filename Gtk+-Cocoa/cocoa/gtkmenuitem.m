@@ -7,10 +7,14 @@
 #import <AppKit/AppKit.h>
 #import "NSGtkButton.h"
 
+#define BORDER_SPACING  3
+#define SELECT_TIMEOUT  75
+
 #include <gtk/gtk.h>
 #import "NSGtkMenuItem.h"
 
 void gtk_menu_item_detacher (GtkWidget     *widget, GtkMenu       *menu);
+void gtk_menu_item_accel_width_foreach (GtkWidget *widget, gpointer data);
 
 GtkWidget*
 gtk_menu_item_new_with_label (const gchar *label)
@@ -64,12 +68,67 @@ gtk_menu_item_set_submenu (GtkMenuItem *menu_item,
 	s = submenu->proxy;
     if([m respondsToSelector:@selector(frame)])
     {
-        frame = [m frame];
-        frame.size.width +=50; // get rid of arrow
-        [s setFrame:frame];
-        [m addSubview:submenu->proxy];
+  //      frame = [submenu->proxy frame];
+  //      frame.size.width +=50; // get rid of arrow
+  //      [s setFrame:frame];
+  //      [m addSubview:submenu->proxy];
+        [s setTitle:[m title]];
+        [m setMenu:[s menu]];
+        [m sizeToFit]; 
     }
     else
      [m setSubmenu:[s menu]];
 }
+
+void
+gtk_menu_item_size_request (GtkWidget      *widget,
+			    GtkRequisition *requisition)
+{
+  GtkMenuItem *menu_item;
+  GtkBin *bin;
+  guint accel_width;
+  NSPopUpButton *mi;
+
+  g_return_if_fail (widget != NULL);
+  g_return_if_fail (GTK_IS_MENU_ITEM (widget));
+  g_return_if_fail (requisition != NULL);
+  
+  mi = widget->proxy;
+  if([mi respondsToSelector:@selector(frame)])
+  {
+        [mi sizeToFit];
+        requisition->width = [mi frame].size.width-24;
+        requisition->height = [mi frame].size.height;
+        return;
+  }
+  bin = GTK_BIN (widget);
+  menu_item = GTK_MENU_ITEM (widget);
+
+  requisition->width = (GTK_CONTAINER (widget)->border_width +
+//			widget->style->klass->xthickness +
+			BORDER_SPACING) * 2;
+  requisition->height = (GTK_CONTAINER (widget)->border_width 
+//			+ widget->style->klass->ythickness
+			) * 2;
+
+  if (bin->child && GTK_WIDGET_VISIBLE (bin->child))
+    {
+      GtkRequisition child_requisition;
+      
+      gtk_widget_size_request (bin->child, &child_requisition);
+
+      requisition->width += child_requisition.width;
+      requisition->height += child_requisition.height;
+    }
+
+  if (menu_item->submenu && menu_item->show_submenu_indicator)
+    requisition->width += 21;
+
+  accel_width = 0;
+  gtk_container_foreach (GTK_CONTAINER (menu_item),
+			 gtk_menu_item_accel_width_foreach,
+			 &accel_width);
+  menu_item->accelerator_width = accel_width;
+}
+
 
