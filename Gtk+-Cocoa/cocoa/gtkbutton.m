@@ -33,7 +33,7 @@ gtk_button_init (GtkButton *button)
   but->customImage = FALSE;
   [GTK_WIDGET(button)->proxy release];
   GTK_WIDGET(button)->proxy = but;
-
+  GTK_WIDGET(button)->window = but;
 }
 
 
@@ -42,9 +42,15 @@ gtk_button_new_with_label (const gchar *label)
 {
   NSGtkButton *but;
   GtkWidget *button;
+  GtkWidget *label_widget;
   NSString *l;
   
   button = gtk_button_new ();
+  label_widget = gtk_label_new (label);
+  gtk_misc_set_alignment (GTK_MISC (label_widget), 0.5, 0.5);
+
+  gtk_container_add (GTK_CONTAINER (button), label_widget);
+
   but = button->proxy; 
   l = [NSString stringWithCString: label];
   [but setTitle:l];
@@ -181,6 +187,8 @@ ns_gtk_button_add (GtkContainer *container,
     }
     [oldBut release]; 
     GTK_WIDGET(container)->proxy = but;
+    GTK_WIDGET(container)->window = but;
+    widget->superview = NULL;
   }
   if(GTK_IS_LABEL(widget))
   {
@@ -189,6 +197,7 @@ ns_gtk_button_add (GtkContainer *container,
     [but sizeToFit];
     but->width = [but frame].size.width+CHILD_SPACING+6;
     but->height = [but frame].size.height+CHILD_SPACING+6;
+    widget->superview = NULL;
   }
 }
 
