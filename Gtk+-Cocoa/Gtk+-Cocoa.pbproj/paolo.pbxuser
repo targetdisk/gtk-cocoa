@@ -154,7 +154,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 134177124;
+			PBXPerProjectTemplateStateSaveDate = 134177740;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -1306,7 +1306,7 @@
 				PBXModuleWindowStatusBarHidden = YES;
 				RubberWindowFrame = "237 502 745 408 0 0 1680 1028 ";
 			};
-			PBXWorkspaceStateSaveDate = 134177124;
+			PBXWorkspaceStateSaveDate = 134177740;
 		};
 		perUserProjectItems = {
 			52054DAA072C36F9006F8E7C = 52054DAA072C36F9006F8E7C;
