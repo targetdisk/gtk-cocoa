@@ -3,7 +3,6 @@
 //  Gtk+
 //
 //  Created by Paolo Costabel on Sun Oct 13 2002.
-//  Copyright (c) 2002 __MyCompanyName__. All rights reserved.
 //
 #import <AppKit/AppKit.h>
 #import "NSGtkButton.h"
@@ -44,7 +43,7 @@ gtk_menu_item_set_submenu (GtkMenuItem *menu_item,
   NSPopUpButton *s;
   NSButton *m;
   NSRect frame;
-
+ g_return_if_fail (submenu != NULL);
   g_return_if_fail (menu_item != NULL);
   g_return_if_fail (GTK_IS_MENU_ITEM (menu_item));
   
