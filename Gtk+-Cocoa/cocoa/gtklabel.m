@@ -40,13 +40,30 @@ void
 gtk_label_set_text (GtkLabel    *label,
 		    const gchar *str)
 {
+  GdkWChar *str_wc;
   NSButton *text;
-  g_return_if_fail (GTK_IS_LABEL (label));
+  gint len;
+  gint wc_len; 
+  
+    g_return_if_fail (GTK_IS_LABEL (label));
   if (!str)
     str = "";
 
-  g_free (label->label);
-  label->label = g_strdup(str);
+ if (!label->label || strcmp (label->label, str))
+    {
+      /* Convert text to wide characters */
+      len = strlen (str);
+      str_wc = g_new (GdkWChar, len + 1);
+      wc_len = gdk_mbstowcs (str_wc, str, len + 1);
+      if (wc_len >= 0)
+    {
+      str_wc[wc_len] = '\0';
+      gtk_label_set_text_internal (label, g_strdup (str), str_wc);
+    }
+      else
+    g_free (str_wc);
+    }
+
 
   text = GTK_WIDGET(label)->proxy;
 
@@ -56,7 +73,7 @@ gtk_label_set_text (GtkLabel    *label,
   //[text sizeToFit];
   //printf("label req %f %f \n", [text frame].size.width, [text frame].size.height);
   gtk_widget_queue_resize (GTK_WIDGET (label));
-  gdk_idle_hook();
+ //  gdk_idle_hook();
 }
 
 void
