@@ -219,14 +219,20 @@ gtk_notebook_size_allocate (GtkWidget     *widget,
       		child_allocation.x = GTK_CONTAINER (widget)->border_width + tabw/2;
       		child_allocation.y = 0;//GTK_CONTAINER (widget)->border_width; 
       		child_allocation.width = MAX (1, (gint)allocation->width - GTK_CONTAINER (widget)->border_width * 2-tabw);
-      		child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2-tabh/2-6);
+            if(notebook->show_tabs)
+                child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2-tabh/2-6);
+            else
+                child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2);
 			break;
 			
 		case GTK_POS_LEFT:
       		child_allocation.x = GTK_CONTAINER (widget)->border_width + tabw;
       		child_allocation.y = GTK_CONTAINER (widget)->border_width ;//+ tabh/2; 
       		child_allocation.width = MAX (1, (gint)allocation->width - GTK_CONTAINER (widget)->border_width * 2- tabw);
-      		child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2-tabh/2-6);
+      		if(notebook->show_tabs)
+                child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2-tabh/2-6);
+			else
+                child_allocation.height = MAX (1, (gint)allocation->height - GTK_CONTAINER (widget)->border_width * 2);
 			break;
 	  }
 printf("notebook child allocation %d %d %d %d\n",child_allocation.x, child_allocation.y, child_allocation.width, child_allocation.height);
@@ -629,7 +635,7 @@ gtk_notebook_set_show_tabs (GtkNotebook *notebook,
   children = notebook->children;
 
   if(!show_tabs)
-  	[GTK_WIDGET(notebook)->proxy setTabViewType:NSNoTabsLineBorder];
+  	[GTK_WIDGET(notebook)->proxy setTabViewType:NSNoTabsNoBorder];
   else
 	gtk_notebook_set_tab_pos (notebook, notebook->tab_pos);
 	
