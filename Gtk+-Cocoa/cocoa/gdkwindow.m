@@ -151,4 +151,5 @@ gdk_window_set_back_pixmap (GdkWindow *window,
     XSetWindowBackgroundPixmap (window_private->xdisplay, window_private->xwindow, xpixmap);
 #endif
     [window setBGImage:pixmap];
+    [window display];
 }
