@@ -3,7 +3,7 @@
 //  Gtk+
 //
 //  Created by Paolo Costabel on Sun Sep 22 2002.
-//  Copyright (c) 2002 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2002 Zebra Development, Inc. All rights reserved.
 //
 
 #import "NSGtkButton.h"

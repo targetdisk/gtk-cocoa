@@ -15,6 +15,7 @@
 @public
     GtkWidget *proxy;
 	int width, height;
+    bool customImage;
 }
 
 - (void)clicked:(id)sender;
