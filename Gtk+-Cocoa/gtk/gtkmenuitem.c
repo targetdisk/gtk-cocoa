@@ -49,7 +49,7 @@ enum {
 static void gtk_menu_item_class_init     (GtkMenuItemClass *klass);
 static void gtk_menu_item_init           (GtkMenuItem      *menu_item);
 static void gtk_menu_item_destroy        (GtkObject        *object);
-static void gtk_menu_item_size_request   (GtkWidget        *widget,
+extern void gtk_menu_item_size_request   (GtkWidget        *widget,
 					  GtkRequisition   *requisition);
 static void gtk_menu_item_size_allocate  (GtkWidget        *widget,
 					  GtkAllocation    *allocation);
@@ -278,7 +278,7 @@ gtk_menu_item_activate (GtkMenuItem *menu_item)
   gtk_signal_emit (GTK_OBJECT (menu_item), menu_item_signals[ACTIVATE]);
 }
 
-static void
+void
 gtk_menu_item_accel_width_foreach (GtkWidget *widget,
 				   gpointer data)
 {
@@ -297,47 +297,6 @@ gtk_menu_item_accel_width_foreach (GtkWidget *widget,
 			   data);
 }
 
-static void
-gtk_menu_item_size_request (GtkWidget      *widget,
-			    GtkRequisition *requisition)
-{
-  GtkMenuItem *menu_item;
-  GtkBin *bin;
-  guint accel_width;
-
-  g_return_if_fail (widget != NULL);
-  g_return_if_fail (GTK_IS_MENU_ITEM (widget));
-  g_return_if_fail (requisition != NULL);
-
-  bin = GTK_BIN (widget);
-  menu_item = GTK_MENU_ITEM (widget);
-
-  requisition->width = (GTK_CONTAINER (widget)->border_width +
-//			widget->style->klass->xthickness +
-			BORDER_SPACING) * 2;
-  requisition->height = (GTK_CONTAINER (widget)->border_width 
-//			+ widget->style->klass->ythickness
-			) * 2;
-
-  if (bin->child && GTK_WIDGET_VISIBLE (bin->child))
-    {
-      GtkRequisition child_requisition;
-      
-      gtk_widget_size_request (bin->child, &child_requisition);
-
-      requisition->width += child_requisition.width;
-      requisition->height += child_requisition.height;
-    }
-
-  if (menu_item->submenu && menu_item->show_submenu_indicator)
-    requisition->width += 21;
-
-  accel_width = 0;
-  gtk_container_foreach (GTK_CONTAINER (menu_item),
-			 gtk_menu_item_accel_width_foreach,
-			 &accel_width);
-  menu_item->accelerator_width = accel_width;
-}
 
 static void
 gtk_menu_item_size_allocate (GtkWidget     *widget,
