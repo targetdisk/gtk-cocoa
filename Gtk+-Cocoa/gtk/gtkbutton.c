@@ -460,8 +460,8 @@ gtk_button_add (GtkContainer *container,
   g_return_if_fail (container != NULL);
   g_return_if_fail (widget != NULL);
 
-//  if (GTK_CONTAINER_CLASS (parent_class)->add)
-//    GTK_CONTAINER_CLASS (parent_class)->add (container, widget);
+  if (GTK_CONTAINER_CLASS (parent_class)->add)
+    GTK_CONTAINER_CLASS (parent_class)->add (container, widget);
   GTK_BUTTON (container)->child = GTK_BIN (container)->child;
   ns_gtk_button_add(container, widget);
 }
