@@ -21,7 +21,9 @@ extern GList *idle_funcs;
 - (void)drawRect:(NSRect)aRect
 {
     GdkEventExpose *event;
-
+  
+    [super drawRect:aRect];
+  
     event = (GdkEventExpose *)gdk_event_new ();
     event->type = GDK_EXPOSE;
     event->window = (GdkWindow *)self;
@@ -34,6 +36,7 @@ extern GList *idle_funcs;
     gtk_widget_event (proxy, event);
 	while(idle_funcs)
 		gdk_idle_hook();
+  
 }
 
 - (void)mouseDown:(NSEvent *)theEvent

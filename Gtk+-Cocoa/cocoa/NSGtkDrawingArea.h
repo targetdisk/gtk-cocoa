@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
-
+#import "NSGtkView.h"
 #include <gtk/gtk.h>
 
-@interface NSGtkDrawingArea : NSView 
+@interface NSGtkDrawingArea : NSGtkView 
 {
-	GtkWidget *proxy;
 }
 
 - (BOOL)isFlipped;
