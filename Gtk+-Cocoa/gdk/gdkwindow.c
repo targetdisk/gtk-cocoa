@@ -1110,24 +1110,7 @@ gdk_window_get_geometry (GdkWindow *window,
 #endif
 }
 
-void
-gdk_window_get_size (GdkWindow *window,
-		     gint       *width,
-		     gint       *height)
-{
-#if 0
-  GdkWindowPrivate *window_private;
-  
-  g_return_if_fail (window != NULL);
-  
-  window_private = (GdkWindowPrivate*) window;
-  
-  if (width)
-    *width = window_private->width;
-  if (height)
-    *height = window_private->height;
-#endif
-}
+
 
 GdkVisual*
 gdk_window_get_visual (GdkWindow *window)
@@ -1407,15 +1390,7 @@ gdk_window_at_pointer (gint *win_x,
 #endif
 }
 
-GdkWindow*
-gdk_window_get_parent (GdkWindow *window)
-{
-#if 0
-  g_return_val_if_fail (window != NULL, NULL);
-  
-  return ((GdkWindowPrivate*) window)->parent;
-#endif
-}
+
 
 GdkWindow*
 gdk_window_get_toplevel (GdkWindow *window)
@@ -1437,46 +1412,6 @@ gdk_window_get_toplevel (GdkWindow *window)
 #endif
 }
 
-GList*
-gdk_window_get_children (GdkWindow *window)
-{
-#if 0
-  GdkWindowPrivate *private;
-  GdkWindow *child;
-  GList *children;
-  Window root;
-  Window parent;
-  Window *xchildren;
-  unsigned int nchildren;
-  unsigned int i;
-  
-  g_return_val_if_fail (window != NULL, NULL);
-  
-  private = (GdkWindowPrivate*) window;
-  if (private->destroyed)
-    return NULL;
-  
-  XQueryTree (private->xdisplay, private->xwindow,
-	      &root, &parent, &xchildren, &nchildren);
-  
-  children = NULL;
-  
-  if (nchildren > 0)
-    {
-      for (i = 0; i < nchildren; i++)
-	{
-	  child = gdk_window_lookup (xchildren[i]);
-          if (child)
-            children = g_list_prepend (children, child);
-	}
-      
-      if (xchildren)
-	XFree (xchildren);
-    }
-  
-  return children;
-#endif
-}
 
 GdkEventMask  
 gdk_window_get_events (GdkWindow *window)
