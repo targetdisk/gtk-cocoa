@@ -7,6 +7,7 @@
 //
 #import <AppKit/AppKit.h>
 #import "NSGtkButton.h"
+#include "gdk/gdkkeysyms.h"
 
 #include <gtk/gtk.h>
 
@@ -42,9 +43,11 @@ gtk_label_set_text (GtkLabel    *label,
 		    const gchar *str)
 {
   GdkWChar *str_wc;
-  NSButton *text;
+  NSGtkButton *text;
+  GtkWidget *parent;
   gint len;
   gint wc_len; 
+  NSString *label_text;
   
     g_return_if_fail (GTK_IS_LABEL (label));
   if (!str)
@@ -65,16 +68,30 @@ gtk_label_set_text (GtkLabel    *label,
     g_free (str_wc);
     }
 
-
+  label_text = [NSString stringWithCString:str];
   text = GTK_WIDGET(label)->proxy;
-
+  parent = GTK_WIDGET(label)->parent;
+  
+  if( parent && GTK_IS_BUTTON(parent))
+        [parent->proxy setTitle:label_text];
   //printf("label req %f %f \n", [text frame].size.width, [text frame].size.height);
-  [text setTitle:[NSString stringWithCString:str]];
+  [text setTitle:label_text];
   [text display];
   //[text sizeToFit];
   //printf("label req %f %f \n", [text frame].size.width, [text frame].size.height);
   gtk_widget_queue_resize (GTK_WIDGET (label));
  //  gdk_idle_hook();
+}
+
+guint      
+gtk_label_parse_uline (GtkLabel    *label,
+		       const gchar *string)
+{
+  guint accel_key = GDK_VoidSymbol;
+   
+  gtk_label_set_text(label, string);
+
+  return accel_key;
 }
 
 void
