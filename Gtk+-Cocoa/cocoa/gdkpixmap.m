@@ -17,24 +17,6 @@
 #include "gdk.h"
 #include "gdkprivate.h"
 
-typedef struct
-{
-	unsigned char red,green,blue,alpha;
-} Color;
-
-
-gboolean
-color_parse(gchar *color_name, Color *color)
-{
-	unsigned int red,green,blue;
-	sscanf(color_name,"#%2x%2x%2x",&red,&green,&blue);
-	color->red = (unsigned char)red;
-	color->green = (unsigned char)green;
-	color->blue = (unsigned char)blue;
-	color->alpha = 255;
-	return TRUE;
-}
-
 GdkPixmap*
 gdk_pixmap_new (GdkWindow *window,
 		gint       width,
@@ -405,7 +387,7 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
   gulong index;
   unsigned char *bitplanes[5];
   GHashTable *color_hash = NULL;
-  Color *color,*fallbackcolor, *colors, transparent={0,0,0,0};
+  GdkColor *color,*fallbackcolor, *colors;
   int bpr=0;
   
 //  if ((window == NULL) && (colormap == NULL))
@@ -426,7 +408,7 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
   color_hash = g_hash_table_new (g_str_hash, g_str_equal);
   
   name_buf = g_new (gchar, num_cols * (cpp+1));
-  colors = g_new (Color, num_cols);
+  colors = g_new (GdkColor, num_cols);
 
   for (cnt = 0; cnt < num_cols; cnt++)
     {
@@ -443,11 +425,12 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
       buffer += strlen (color_string);
       
       color_name = gdk_pixmap_extract_color (buffer);
+      color->pixel = 255;
       
       if (color_name == NULL || g_strcasecmp (color_name, "None") == 0 ||
-	  color_parse (color_name, color) == FALSE)
+	  gdk_color_parse (color_name, color) == FALSE)
 	{
-	  color = &transparent;
+        color->pixel = 0;
 	}
       
       g_free (color_name);
@@ -472,13 +455,14 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
 		
    [image getBitmapDataPlanes:bitplanes];
 	bpr = [image bytesPerRow];
-#if 0
+
   if (mask)
     {
       /* The pixmap mask is just a bits pattern.
        * Color 0 is used for background and 1 for foreground.
        * We don't care about the colormap, we just need 0 and 1.
        */
+       GdkGC *gc;
       GdkColor mask_pattern;
       
       *mask = gdk_pixmap_new (window, width, height, 1);
@@ -486,12 +470,12 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
       
       mask_pattern.pixel = 0;
       gdk_gc_set_foreground (gc, &mask_pattern);
-      gdk_draw_rectangle (*mask, gc, TRUE, 0, 0, -1, -1);
+     // gdk_draw_rectangle (*mask, gc, TRUE, 0, 0, -1, -1);
       
       mask_pattern.pixel = 1;
       gdk_gc_set_foreground (gc, &mask_pattern);
     }
-#endif
+
   
   wbytes = width * cpp;
   for (ycnt = 0; ycnt < height; ycnt++)
@@ -519,7 +503,7 @@ _gdk_pixmap_create_from_xpm (GdkWindow  *window,
 	  bitplanes[0][ycnt*bpr+xcnt] = color->red;
 	  bitplanes[0][ycnt*bpr+xcnt+1] = color->green;
 	  bitplanes[0][ycnt*bpr+xcnt+2] = color->blue;
-	  bitplanes[0][ycnt*bpr+xcnt+3] = color->alpha;
+	  bitplanes[0][ycnt*bpr+xcnt+3] = color->pixel;
 	}
       
     }
