@@ -43,7 +43,16 @@
 - (void)display
 {
 }
+    
+-(void)setFrameOrigin:(NSPoint)origin
+{
+    return;
+}
 
+-(void)setFrameSize:(NSSize)size
+{
+    return;
+}
 - (void)setNeedsDisplay:(BOOL)yesno
 {
 }
