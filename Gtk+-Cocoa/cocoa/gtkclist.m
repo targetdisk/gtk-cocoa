@@ -175,7 +175,8 @@ gtk_clist_init (GtkCList *clist)
   tv = [[NSGtkTableView alloc] initWithFrame:NSMakeRect(0,0,100,100)];
   [GTK_WIDGET(clist)->proxy release];
   GTK_WIDGET(clist)->proxy = sw;
-  tv->proxy = clist;
+  GTK_WIDGET(clist)->window = sw;
+   tv->proxy = clist;
   [sw setDocumentView:tv];
   tv->lock_size = FALSE;
   [tv setDataSource:tv];

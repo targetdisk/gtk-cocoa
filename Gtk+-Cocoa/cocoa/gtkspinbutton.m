@@ -36,7 +36,9 @@ gtk_spin_button_init (GtkSpinButton *spin_button)
   spin_button->snap_to_ticks = FALSE;
 
   sb = [[NSGtkSpinButton alloc] initWithFrame:NSMakeRect(0,0,100,25) entry:(NSGtkEntry *)GTK_WIDGET(spin_button)->proxy];
+  [GTK_WIDGET(spin_button)->proxy release];
   GTK_WIDGET(spin_button)->proxy = sb;
+  GTK_WIDGET(spin_button)->window = sb;
   sb->proxy = spin_button;	
 //  sb->stepper->proxy = spin_button;	
   gtk_spin_button_set_adjustment (spin_button,

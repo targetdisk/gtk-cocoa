@@ -65,6 +65,7 @@ gtk_ctree_init (GtkCTree *ctree)
   [tree setDelegate:tree];
   [GTK_WIDGET(ctree)->proxy release];
   GTK_WIDGET(ctree)->proxy = sw;
+  GTK_WIDGET(ctree)->window = sw;
   thv = [[NSTableHeaderView alloc] initWithFrame:NSMakeRect(0,0,100,17)];
   [tree setHeaderView:thv];
 //  [tree addSubview:thv];

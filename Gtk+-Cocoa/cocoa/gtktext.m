@@ -214,6 +214,7 @@ gtk_text_init (GtkText *text)
   [sw setDocumentView:tf];
   [GTK_WIDGET(text)->proxy release];
   GTK_WIDGET(text)->proxy = sw;
+  GTK_WIDGET(text)->window = sw;
   [tf setDelegate:tf];
   [tf setEditable:FALSE];
   [tf setHorizontallyResizable:YES];

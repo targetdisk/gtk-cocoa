@@ -28,6 +28,7 @@ gtk_progress_bar_init (GtkProgressBar *pbar)
   pb->proxy = pbar;
   [GTK_WIDGET(pbar)->proxy release];
   GTK_WIDGET(pbar)->proxy = pb;
+  GTK_WIDGET(pbar)->window = pb;
   [pb setMinValue:0];
   [pb setMaxValue:1];
   [pb setDoubleValue:0];

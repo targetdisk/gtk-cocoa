@@ -21,6 +21,7 @@ gtk_vscrollbar_init (GtkHScale *vscrollbar)
   [scroller setTarget: scroller];
   scroller->proxy = vscrollbar;
   GTK_WIDGET(vscrollbar)->proxy = scroller;
+  GTK_WIDGET(vscrollbar)->window = scroller;
 }
 
 void

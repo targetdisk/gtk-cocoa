@@ -19,8 +19,10 @@ gtk_hscale_init (GtkHScale *hscale)
   slider = [[NSGtkScale alloc] initWithFrame:NSMakeRect(0,0,100,20)]; 
   [slider setAction: @selector(value_changed:)];
   [slider setTarget: slider];
+  [GTK_WIDGET(hscale)->proxy release];
   slider->proxy = hscale;
   GTK_WIDGET(hscale)->proxy = slider;
+  GTK_WIDGET(hscale)->window = slider;
 }
 
 void

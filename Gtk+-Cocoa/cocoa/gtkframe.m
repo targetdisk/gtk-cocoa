@@ -31,6 +31,7 @@ gtk_frame_init (GtkFrame *frame)
   box->highlight = FALSE;
   [GTK_WIDGET(frame)->proxy release];
   GTK_WIDGET(frame)->proxy = box;
+  GTK_WIDGET(frame)->window = box;
 }
 
 void

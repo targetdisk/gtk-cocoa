@@ -29,6 +29,7 @@ gtk_tree_init (GtkTree *tree)
   view->bgColor =  [NSColor whiteColor];
   [view  initWithFrame:NSMakeRect(0,0,100,100)]; 
   GTK_WIDGET(tree)->proxy = view;
+  GTK_WIDGET(tree)->window = view;
 }
 
 void

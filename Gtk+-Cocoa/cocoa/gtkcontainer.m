@@ -68,6 +68,7 @@ gtk_container_init (GtkContainer *container)
   view->proxy = container;
   [GTK_WIDGET(container)->proxy release];
   GTK_WIDGET(container)->proxy = view;
+  GTK_WIDGET(container)->window = view;
 }
 
 

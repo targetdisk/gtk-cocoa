@@ -25,6 +25,7 @@ gtk_accel_label_init (GtkAccelLabel *accel_label)
 
   [GTK_WIDGET(accel_label)->proxy release];
   GTK_WIDGET(accel_label)->proxy = text;
+   GTK_WIDGET(accel_label)->window = text;
   GTK_WIDGET(accel_label)->superview = NULL;
   [text  setBordered:NO];
 

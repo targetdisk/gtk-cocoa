@@ -31,6 +31,7 @@ gtk_menu_item_new_with_label (const gchar *label)
   [l setTarget:l];
   [GTK_WIDGET(menu_item)->proxy release];
   GTK_WIDGET(menu_item)->proxy = l;
+  GTK_WIDGET(menu_item)->window = l;
   l->proxy = menu_item;
 
   return menu_item;

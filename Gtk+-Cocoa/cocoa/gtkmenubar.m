@@ -34,6 +34,7 @@ gtk_menu_bar_append (GtkMenuBar *menu_bar,
 //    [menuBar addSubview:item];
     [child->proxy release];
     child->proxy = item;
+	child->window = item;
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu_bar), child);
 
 }

@@ -164,6 +164,7 @@ gtk_toggle_button_set_mode (GtkToggleButton *toggle_button,
         }
         [oldBut release];
         widget->proxy = but;
+        widget->window = but;
         gtk_button_set_relief(widget, GTK_BUTTON(widget)->relief);
         [but sizeToFit];
         but->width = [but frame].size.width;

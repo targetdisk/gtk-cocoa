@@ -29,6 +29,7 @@ gtk_option_menu_init (GtkOptionMenu *option_menu)
   om->proxy = option_menu;
   [GTK_WIDGET(option_menu)->proxy release];
   GTK_WIDGET(option_menu)->proxy = om;
+  GTK_WIDGET(option_menu)->window = om;
 }
 
 void
@@ -51,17 +52,14 @@ gtk_option_menu_set_menu (GtkOptionMenu *option_menu,
 
       option_menu->menu = menu;
 
-#if 0
       gtk_menu_attach_to_widget (GTK_MENU (menu),
 				 GTK_WIDGET (option_menu),
 				 gtk_option_menu_detacher);
-
 	 
       gtk_option_menu_calc_size (option_menu);
       gtk_signal_connect (GTK_OBJECT (option_menu->menu), "deactivate",
 			  (GtkSignalFunc) gtk_option_menu_deactivate,
 			  option_menu);
-#endif
 
 	[om removeAllItems];
 	for(l = GTK_MENU_SHELL (menu)->children;l;l= g_list_next(l))
@@ -80,7 +78,7 @@ gtk_option_menu_set_menu (GtkOptionMenu *option_menu,
 		gdk_idle_hook();
 	}
 
-//      gtk_option_menu_update_contents (option_menu);
+      gtk_option_menu_update_contents (option_menu);
     }
 	menu->proxy = om;
 }

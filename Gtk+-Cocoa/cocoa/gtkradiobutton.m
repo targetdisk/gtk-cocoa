@@ -26,6 +26,7 @@ gtk_radio_button_init (GtkRadioButton *radio_button)
   but = [[NSGtkButton alloc] initWithFrame:NSMakeRect(0,0,100,100)];
   [GTK_WIDGET(radio_button)->proxy release];
   GTK_WIDGET(radio_button)->proxy = but;
+  GTK_WIDGET(radio_button)->window = but;
   [but setButtonType:NSRadioButton];
   [but setAction: @selector (clicked:)];
   [but setTarget: but];

@@ -49,6 +49,7 @@ gtk_notebook_init (GtkNotebook *notebook)
 //  [tab setTabViewType:NSNoTabsLineBorder];
   [GTK_WIDGET(notebook)->proxy release];
   GTK_WIDGET(notebook)->proxy = tab;
+  GTK_WIDGET(notebook)->window = tab;
   tab->proxy = notebook;
   tab->current = 0;
   [tab computeMaxTabs:FALSE];

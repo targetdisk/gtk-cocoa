@@ -37,6 +37,7 @@ gtk_entry_init (GtkEntry *entry)
   tf->sb = NULL;
   [GTK_WIDGET(entry)->proxy release];
   GTK_WIDGET(entry)->proxy = tf;
+  GTK_WIDGET(entry)->window = tf;
   [tf setDelegate:tf];
   [tf setAction: @selector (activate:)];
   [tf setTarget: tf];
@@ -99,12 +100,8 @@ gtk_entry_set_editable(GtkEntry *entry,
   {
 	  [tf setEditable:NO];
 	  [tf setRefusesFirstResponder:YES];
-	  top = gtk_widget_get_toplevel(GTK_WIDGET(entry));
-	  if(top)
-	  {
-	  	win = top->window;
-	  	[win makeFirstResponder:NULL];
-	 }
+	  win = [tf window];
+	  [win makeFirstResponder:NULL];
   }
   else
   {

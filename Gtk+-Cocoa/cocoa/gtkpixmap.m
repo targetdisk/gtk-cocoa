@@ -23,6 +23,7 @@ gtk_pixmap_new (GdkPixmap *val,
   pixmap->build_insensitive = TRUE;
   img = [[NSImageView alloc] initWithFrame:NSMakeRect(0,0,100,100)];
   GTK_WIDGET(pixmap)->proxy = img;
+  GTK_WIDGET(pixmap)->window = img;
   gtk_pixmap_set (pixmap, val, mask);
   
   return GTK_WIDGET (pixmap);

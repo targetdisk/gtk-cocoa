@@ -18,5 +18,7 @@ gtk_separator_init (GtkSeparator *separator)
   box = [[NSBox alloc] initWithFrame:NSMakeRect(0,0,4,4)];
   [box setTitlePosition:NSNoTitle];
   [box setBoxType:NSBoxSeparator];
+  [GTK_WIDGET(separator)->proxy release];
   GTK_WIDGET(separator)->proxy = box;
+  GTK_WIDGET(separator)->window = box;
 }

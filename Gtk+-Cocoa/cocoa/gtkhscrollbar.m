@@ -20,7 +20,9 @@ gtk_hscrollbar_init (GtkHScale *hscrollbar)
   [scroller setAction: @selector(value_changed:)];
   [scroller setTarget: scroller];
   scroller->proxy = hscrollbar;
+  [ GTK_WIDGET(hscrollbar)->proxy release];
   GTK_WIDGET(hscrollbar)->proxy = scroller;
+  GTK_WIDGET(hscrollbar)->window = scroller;
 }
 
 void

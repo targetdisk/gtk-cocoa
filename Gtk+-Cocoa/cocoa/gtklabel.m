@@ -30,6 +30,7 @@ gtk_label_init (GtkLabel *label)
   text = [[NSGtkButton alloc] initWithFrame:NSMakeRect(0,0,100,10)];
   [GTK_WIDGET(label)->proxy release];
   GTK_WIDGET(label)->proxy = text;
+  GTK_WIDGET(label)->window = text;
   text->proxy = label;
   [text  setBordered:NO];
   [[text cell] setHighlightsBy:NSNoCellMask];

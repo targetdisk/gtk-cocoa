@@ -19,6 +19,7 @@ gtk_gl_area_init (GtkGLArea *gl_area)
   gl_area->glcontext = NULL;
   glv = [[NSGtkGLArea alloc] initWithFrame:NSMakeRect(0,0,100,100)];
   GTK_WIDGET(gl_area)->proxy = glv;
+  GTK_WIDGET(gl_area)->window = glv;
   glv->proxy = gl_area;
 }
 

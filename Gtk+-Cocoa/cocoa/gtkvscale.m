@@ -21,6 +21,7 @@ gtk_vscale_init (GtkVScale *vscale)
   [slider setTarget: slider];
   slider->proxy = vscale;
   GTK_WIDGET(vscale)->proxy = slider;
+  GTK_WIDGET(vscale)->window = slider;
 }
 
 void

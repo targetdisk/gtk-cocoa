@@ -53,6 +53,7 @@ gtk_check_menu_item_new_with_label (const gchar *label)
 
   l = [[NSGtkMenuItem alloc] initWithTitle:[NSString stringWithCString:label] action:nil keyEquivalent:@""];
   GTK_WIDGET(check_menu_item)->proxy = l;
+  GTK_WIDGET(check_menu_item)->window = l;
   return check_menu_item;
 }
 

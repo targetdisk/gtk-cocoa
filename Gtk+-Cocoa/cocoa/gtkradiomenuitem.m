@@ -32,6 +32,7 @@ gtk_radio_menu_item_new_with_label (GSList *group,
   [l setTarget:l];
   [GTK_WIDGET(radio_menu_item)->proxy release];
   GTK_WIDGET(radio_menu_item)->proxy = l;
+  GTK_WIDGET(radio_menu_item)->window = l;
   l->proxy = radio_menu_item;
   
   return radio_menu_item;

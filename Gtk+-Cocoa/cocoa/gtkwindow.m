@@ -62,11 +62,13 @@ gtk_window_init (GtkWindow *window)
                             NSResizableWindowMask | NSClosableWindowMask);
   win = [GtkWindowPrivate alloc];
   contentRect = NSMakeRect(0,0,100,500);
-  GTK_WIDGET(window)->window = win;
+  
   win->widget = window;
   [win initWithContentRect:contentRect
 		styleMask: windowStyle backing:NSBackingStoreBuffered defer: NO];
   [win setReleasedWhenClosed:NO];
+  GTK_WIDGET(window)->window = [win contentView];
+  GTK_WIDGET(window)->proxy = win;
 }
 
 
@@ -110,7 +112,7 @@ gtk_window_realize (GtkWidget *widget)
     contentRect = NSMakeRect(widget->allocation.x, widget->allocation.y, 
         widget->allocation.width, widget->allocation.height);
         
-	win = widget->window;
+	win = widget->proxy;
 	[win setContentSize:contentRect.size];
 
 	if(window->title)
@@ -132,10 +134,10 @@ gtk_window_realize (GtkWidget *widget)
   [[win contentView] setAutoresizesSubviews:FALSE];
 //  [win setAutodisplay:FALSE];
 //  [win useOptimizedDrawing:YES];
-  [win setDelegate:win];
-  widget->window = win;
-  [widget->proxy release];
-  widget->proxy = [win contentView];
+  [win setDelegate:win];  
+  //[widget->proxy release];
+  //widget->proxy = win;
+  widget->window = [win contentView];
   //gdk_window_set_user_data (widget->window, window);
 
 /*
@@ -170,7 +172,7 @@ gtk_window_set_title (GtkWindow   *window,
     g_free (window->title);
   window->title = g_strdup (title);
 
-  win  = (GtkWindowPrivate *)GTK_WIDGET (window)->window;
+  win  = (GtkWindowPrivate *)GTK_WIDGET (window)->proxy;
   if (GTK_WIDGET_REALIZED (window)) 
   { 
         t = [NSString stringWithCString: title];
@@ -191,7 +193,7 @@ gtk_window_set_default          (GtkWindow *window,
 
     if (default_widget)
         g_return_if_fail (GTK_WIDGET_CAN_DEFAULT (default_widget));
-    win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+    win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
 	if(default_widget)
 	    button = (NSButtonCell *)[((NSControl *)default_widget->proxy) cell];
 
@@ -228,7 +230,7 @@ gtk_window_set_default_size (GtkWindow   *window,
 
   g_return_if_fail (GTK_IS_WINDOW (window));
 
-  win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+  win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
   info = gtk_window_get_geometry_info (window, TRUE);
 
   if (width >= 0)
@@ -254,7 +256,7 @@ gtk_window_set_policy           (GtkWindow *window,
     window->allow_grow = (allow_grow != FALSE);
     window->auto_shrink = (auto_shrink != FALSE);
 
-    win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+    win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
     
     [win setShowsResizeIndicator:allow_grow];
 	if(!allow_grow)
@@ -304,7 +306,7 @@ void        gtk_window_set_geometry_hints   (GtkWindow *window,
     
     info->mask = geom_mask;
 
-    win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+    win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
 
     if(geom_mask & GDK_HINT_MIN_SIZE)
 	[win setMinSize:NSMakeSize(geometry->min_width, geometry->min_height)]; 
@@ -332,7 +334,7 @@ gtk_window_destroy (GtkObject *object)
   if (window->transient_parent)
     gtk_window_unset_transient_for (window);
 
-  win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+  win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
   [win close];
 //  gtk_window_super_destroy(object);
 }
@@ -368,7 +370,7 @@ gtk_window_unset_transient_for  (GtkWindow *window)
       window->transient_parent = NULL;
     }
 */
-    win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+    win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
 	[win setLevel:NSNormalWindowLevel];
 }
 
@@ -411,7 +413,7 @@ gtk_window_set_transient_for  (GtkWindow *window,
 					      GTK_WIDGET (window));
     }
 */
-    win = (GtkWindowPrivate *)GTK_WIDGET(window)->window;
+    win = (GtkWindowPrivate *)GTK_WIDGET(window)->proxy;
 	[win setLevel:NSFloatingWindowLevel];
 }
 

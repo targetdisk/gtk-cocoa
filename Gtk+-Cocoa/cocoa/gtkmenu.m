@@ -51,6 +51,7 @@ gtk_menu_init (GtkMenu *menu)
   [m setBordered:NO];
   [GTK_WIDGET(menu)->proxy release];
   GTK_WIDGET(menu)->proxy = m;
+  GTK_WIDGET(menu)->window = m;
 }
 
 

@@ -20,6 +20,7 @@ gtk_tearoff_menu_item_init (GtkTearoffMenuItem *tearoff_menu_item)
   [l setTarget:l];
   [GTK_WIDGET(tearoff_menu_item)->proxy release];
   GTK_WIDGET(tearoff_menu_item)->proxy = l;
+  GTK_WIDGET(tearoff_menu_item)->window = l;
   l->proxy = tearoff_menu_item;
 }
 

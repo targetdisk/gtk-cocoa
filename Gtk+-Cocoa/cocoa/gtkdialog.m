@@ -23,11 +23,12 @@ gtk_dialog_init (GtkDialog *dialog)
                             NSResizableWindowMask | NSClosableWindowMask);
   win = [GtkWindowPrivate alloc];
   contentRect = NSMakeRect(0,0,100,500);
-  GTK_WIDGET(dialog)->window = win;
+
   win->widget = dialog;
   [win initWithContentRect:contentRect
 		styleMask: windowStyle backing:NSBackingStoreBuffered defer: NO];
-
+  GTK_WIDGET(dialog)->proxy = win;
+  GTK_WIDGET(dialog)->window = [win contentView];
   dialog->vbox = gtk_vbox_new (FALSE, 0);
   gtk_container_add (GTK_CONTAINER (dialog), dialog->vbox);
   gtk_widget_show (dialog->vbox);
