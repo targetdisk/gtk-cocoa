@@ -112,10 +112,12 @@ gtk_widget_show                 (GtkWidget *widget)
  */   
       	
       }
-      if (GTK_IS_WINDOW (widget) && GTK_WIDGET_REALIZED (widget))
-                [widget->proxy makeKeyAndOrderFront:widget->proxy ];
-      gtk_signal_emit (GTK_OBJECT (widget), widget_signals[SHOW]);
-    }
+/*      if (GTK_IS_WINDOW (widget) && GTK_WIDGET_REALIZED (widget))
+      {
+           [widget->proxy makeKeyAndOrderFront:widget->proxy ];
+      }           
+  */    gtk_signal_emit (GTK_OBJECT (widget), widget_signals[SHOW]);
+ }
  //if(!GTK_IS_MENU_ITEM(widget))
  if([widget->proxy isKindOfClass:[NSView class]])
   {  
@@ -373,9 +375,12 @@ gtk_widget_set_parent (GtkWidget *widget,
 */
   subView = (NSView *)widget->proxy;
   view = (NSView *)GTK_WIDGET(parent)->window;
-  if(GTK_WIDGET_VISIBLE(widget))
-		[view addSubview:subView];
-  widget->superview = view;
+  if([subView respondsToSelector:@selector(window)])
+  {
+    if(GTK_WIDGET_VISIBLE(widget)) 
+		[view addSubview:subView];  
+    widget->superview = view;
+  }
   [subView display];
 
   gtk_widget_propagate_state (widget, &data);
