@@ -20,7 +20,7 @@
 void
 gdk_window_raise (GdkWindow *window)
 {
-	[window makeKeyAndOrderFront:window];
+	[[window window] makeKeyAndOrderFront:window];
 }
 
 void
@@ -30,7 +30,7 @@ gdk_window_get_position (GdkWindow *window,
 {
 	NSPoint p;
 
-	p = [window frame].origin;
+	p = [[window window] frame].origin;
 	*x = p.x;
 	*y = p.y;
 }
@@ -43,7 +43,7 @@ gdk_window_get_pointer (GdkWindow       *window,
 {
 	NSPoint p;
 
-	p = [window mouseLocationOutsideOfEventStream];
+	p = [[window window] mouseLocationOutsideOfEventStream];
     if(x)
         *x = p.x;
     
@@ -122,4 +122,33 @@ gdk_window_get_children (GdkWindow *window)
   return children;
 */
 return NULL;
+}
+
+void
+gdk_window_set_back_pixmap (GdkWindow *window,
+			    GdkPixmap *pixmap,
+			    gboolean   parent_relative)
+{
+#if 0
+  GdkWindowPrivate *window_private;
+  GdkPixmapPrivate *pixmap_private;
+  Pixmap xpixmap;
+  
+  g_return_if_fail (window != NULL);
+  
+  window_private = (GdkWindowPrivate*) window;
+  pixmap_private = (GdkPixmapPrivate*) pixmap;
+  
+  if (pixmap)
+    xpixmap = pixmap_private->xwindow;
+  else
+    xpixmap = None;
+  
+  if (parent_relative)
+    xpixmap = ParentRelative;
+  
+  if (!window_private->destroyed)
+    XSetWindowBackgroundPixmap (window_private->xdisplay, window_private->xwindow, xpixmap);
+#endif
+    [window setBGImage:pixmap];
 }
