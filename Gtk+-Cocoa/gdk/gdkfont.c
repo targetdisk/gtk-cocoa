@@ -24,8 +24,8 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#include <X11/Xlib.h>
-#include <X11/Xos.h>
+//#include <X11/Xlib.h>
+//#include <X11/Xos.h>
 #include "gdk.h"
 #include "gdkprivate.h"
 
@@ -50,6 +50,7 @@ static GHashTable *fontset_name_hash = NULL;
 static void
 gdk_font_hash_insert (GdkFontType type, GdkFont *font, const gchar *font_name)
 {
+#if 0
   GdkFontPrivate *private = (GdkFontPrivate *)font;
   GHashTable **hashp = (type == GDK_FONT_FONT) ?
     &font_name_hash : &fontset_name_hash;
@@ -59,11 +60,13 @@ gdk_font_hash_insert (GdkFontType type, GdkFont *font, const gchar *font_name)
 
   private->names = g_slist_prepend (private->names, g_strdup (font_name));
   g_hash_table_insert (*hashp, private->names->data, font);
+#endif
 }
 
 static void
 gdk_font_hash_remove (GdkFontType type, GdkFont *font)
 {
+#if 0
   GdkFontPrivate *private = (GdkFontPrivate *)font;
   GSList *tmp_list;
   GHashTable *hash = (type == GDK_FONT_FONT) ?
@@ -80,6 +83,7 @@ gdk_font_hash_remove (GdkFontType type, GdkFont *font)
 
   g_slist_free (private->names);
   private->names = NULL;
+#endif
 }
 
 static GdkFont *
@@ -101,56 +105,11 @@ gdk_font_hash_lookup (GdkFontType type, const gchar *font_name)
     }
 }
 
-GdkFont*
-gdk_font_load (const gchar *font_name)
-{
-  GdkFont *font;
-  GdkFontPrivate *private;
-  XFontStruct *xfont;
-
-  g_return_val_if_fail (font_name != NULL, NULL);
-
-  font = gdk_font_hash_lookup (GDK_FONT_FONT, font_name);
-  if (font)
-    return font;
-
-  xfont = XLoadQueryFont (gdk_display, font_name);
-  if (xfont == NULL)
-    return NULL;
-
-  font = gdk_font_lookup (xfont->fid);
-  if (font != NULL)
-    {
-      private = (GdkFontPrivate *) font;
-      if (xfont != private->xfont)
-	XFreeFont (gdk_display, xfont);
-
-      gdk_font_ref (font);
-    }
-  else
-    {
-      private = g_new (GdkFontPrivate, 1);
-      private->xdisplay = gdk_display;
-      private->xfont = xfont;
-      private->ref_count = 1;
-      private->names = NULL;
- 
-      font = (GdkFont*) private;
-      font->type = GDK_FONT_FONT;
-      font->ascent =  xfont->ascent;
-      font->descent = xfont->descent;
-
-      gdk_xid_table_insert (&xfont->fid, font);
-    }
-
-  gdk_font_hash_insert (GDK_FONT_FONT, font, font_name);
-
-  return font;
-}
 
 GdkFont*
 gdk_fontset_load (const gchar *fontset_name)
 {
+#if 0
   GdkFont *font;
   GdkFontPrivate *private;
   XFontSet fontset;
@@ -210,11 +169,14 @@ gdk_fontset_load (const gchar *fontset_name)
       
       return font;
     }
+#endif
+    return NULL;
 }
 
 GdkFont*
 gdk_font_ref (GdkFont *font)
 {
+#if 0
   GdkFontPrivate *private;
 
   g_return_val_if_fail (font != NULL, NULL);
@@ -222,11 +184,14 @@ gdk_font_ref (GdkFont *font)
   private = (GdkFontPrivate*) font;
   private->ref_count += 1;
   return font;
+#endif
+    return NULL;
 }
 
 void
 gdk_font_unref (GdkFont *font)
 {
+#if 0
   GdkFontPrivate *private;
   private = (GdkFontPrivate*) font;
 
@@ -253,11 +218,13 @@ gdk_font_unref (GdkFont *font)
 	}
       g_free (font);
     }
+#endif
 }
 
 gint
 gdk_font_id (const GdkFont *font)
 {
+#if 0
   const GdkFontPrivate *font_private;
 
   g_return_val_if_fail (font != NULL, 0);
@@ -272,12 +239,16 @@ gdk_font_id (const GdkFont *font)
     {
       return 0;
     }
+    
+#endif
+    return 0;
 }
 
 gboolean
 gdk_font_equal (const GdkFont *fonta,
                 const GdkFont *fontb)
 {
+#if 0
   const GdkFontPrivate *privatea;
   const GdkFontPrivate *privateb;
 
@@ -304,12 +275,15 @@ gdk_font_equal (const GdkFont *fonta,
   else
     /* fontset != font */
     return FALSE;
+#endif
+return FALSE;
 }
 
 gint
 gdk_string_width (GdkFont     *font,
 		  const gchar *string)
 {
+#if 0
   GdkFontPrivate *font_private;
   gint width;
   XFontStruct *xfont;
@@ -342,6 +316,8 @@ gdk_string_width (GdkFont     *font,
     }
 
   return width;
+#endif
+    return 0;
 }
 
 gint
@@ -349,6 +325,7 @@ gdk_text_width (GdkFont      *font,
 		const gchar  *text,
 		gint          text_length)
 {
+#if 0
   GdkFontPrivate *private;
   gint width;
   XFontStruct *xfont;
@@ -380,6 +357,8 @@ gdk_text_width (GdkFont      *font,
       width = 0;
     }
   return width;
+#endif
+    return 0;
 }
 
 gint
@@ -387,6 +366,7 @@ gdk_text_width_wc (GdkFont	  *font,
 		   const GdkWChar *text,
 		   gint		   text_length)
 {
+#if 0
   GdkFontPrivate *private;
   gint width;
   XFontSet fontset;
@@ -435,6 +415,8 @@ gdk_text_width_wc (GdkFont	  *font,
       width = 0;
     }
   return width;
+#endif
+    return 0;
 }
 
 /* Problem: What if a character is a 16 bits character ?? */
@@ -442,6 +424,7 @@ gint
 gdk_char_width (GdkFont *font,
 		gchar    character)
 {
+#if 0
   GdkFontPrivate *private;
   XCharStruct *chars;
   gint width;
@@ -482,12 +465,15 @@ gdk_char_width (GdkFont *font,
       width = 0;
     }
   return width;
+#endif
+    return 0;
 }
 
 gint
 gdk_char_width_wc (GdkFont *font,
 		   GdkWChar character)
 {
+#if 0
   GdkFontPrivate *private;
   gint width;
   XFontSet fontset;
@@ -534,6 +520,8 @@ gdk_char_width_wc (GdkFont *font,
       width = 0;
     }
   return width;
+#endif
+    return 0;
 }
 
 gint
@@ -556,6 +544,7 @@ gdk_text_extents (GdkFont     *font,
 		  gint        *ascent,
 		  gint        *descent)
 {
+# if 0
   GdkFontPrivate *private;
   XCharStruct overall;
   XFontStruct *xfont;
@@ -612,7 +601,7 @@ gdk_text_extents (GdkFont     *font,
 	*descent = ink.y + ink.height;
       break;
     }
-
+#endif
 }
 
 void
@@ -625,6 +614,7 @@ gdk_text_extents_wc (GdkFont        *font,
 		     gint           *ascent,
 		     gint           *descent)
 {
+#if 0
   GdkFontPrivate *private;
   XFontSet    fontset;
   XRectangle  ink, logical;
@@ -692,7 +682,7 @@ gdk_text_extents_wc (GdkFont        *font,
 	*descent = ink.y + ink.height;
       break;
     }
-
+#endif
 }
 
 void
@@ -717,6 +707,7 @@ gdk_text_measure (GdkFont     *font,
                   const gchar *text,
                   gint         text_length)
 {
+#if 0
   GdkFontPrivate *private;
   XCharStruct overall;
   XFontStruct *xfont;
@@ -759,6 +750,8 @@ gdk_text_measure (GdkFont     *font,
       width = 0;
     }
   return width;
+#endif 
+    return 0;
 }
 
 gint
@@ -785,6 +778,7 @@ gdk_text_height (GdkFont     *font,
 		 const gchar *text,
 		 gint         text_length)
 {
+#if 0
   GdkFontPrivate *private;
   XCharStruct overall;
   XFontStruct *xfont;
@@ -827,6 +821,8 @@ gdk_text_height (GdkFont     *font,
       height = 0;
     }
   return height;
+#endif
+    return 0;
 }
 
 gint
@@ -845,6 +841,7 @@ _gdk_font_wc_to_glyphs (GdkFont        *font,
 			gchar         **result,
 			gint           *result_length)
 {
+#if 0
   XFontStruct *xfont;
   GdkFontPrivate *font_private = (GdkFontPrivate*) font;
 
@@ -894,4 +891,6 @@ _gdk_font_wc_to_glyphs (GdkFont        *font,
 
       return TRUE;
     }
+#endif
+    return FALSE;
 }
