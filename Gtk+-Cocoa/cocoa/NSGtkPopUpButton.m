@@ -19,7 +19,7 @@
 	NSGtkPopUpButton *pum = ( NSGtkPopUpButton *)sender;
 	int idx = [pum indexOfSelectedItem];
 	om = pum->proxy;
-    gtk_menu_shell_deactivate(om->menu); 
+ //   gtk_menu_shell_deactivate(om->menu); 
 	gtk_option_menu_set_history(pum->proxy, idx);
     mi = gtk_menu_get_active (om->menu);
 
