@@ -43,7 +43,6 @@ gtk_button_new_with_label (const gchar *label)
   NSGtkButton *but;
   GtkWidget *button;
   GtkWidget *label_widget;
-  NSString *l;
   
   button = gtk_button_new ();
   label_widget = gtk_label_new (label);
@@ -52,10 +51,7 @@ gtk_button_new_with_label (const gchar *label)
   gtk_container_add (GTK_CONTAINER (button), label_widget);
 
   but = button->proxy; 
-  l = [NSString stringWithCString: label];
-  [but setTitle:l];
-  [but sizeToFit];
-
+  
   but->width = [but frame].size.width;
   //but->height = [but frame].size.height;
   but->height = 24;
@@ -198,6 +194,24 @@ ns_gtk_button_add (GtkContainer *container,
     but->width = [but frame].size.width+CHILD_SPACING+6;
     but->height = [but frame].size.height+CHILD_SPACING+6;
     widget->superview = NULL;
+  }
+  if(GTK_IS_ARROW(widget))
+  {
+    switch(GTK_ARROW(widget)->arrow_type)
+    {
+      case GTK_ARROW_RIGHT:
+           [but setTitle:[NSString stringWithFormat:@"%C",0x25B6]];
+           break;
+       case GTK_ARROW_LEFT:
+           [but setTitle:[NSString stringWithFormat:@"%C",0x25C0]];
+          break;
+       case GTK_ARROW_UP:
+          [but setTitle:[NSString stringWithFormat:@"%C",0x25B2]];
+           break;
+       case GTK_ARROW_DOWN:
+          [but setTitle:[NSString stringWithFormat:@"%C",0x25BC]];
+           break;
+    }
   }
 }
 
