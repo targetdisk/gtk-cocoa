@@ -337,7 +337,7 @@ gtk_accel_label_refetch_idle (GtkAccelLabel *accel_label)
   retval = gtk_accel_label_refetch (accel_label);
   GDK_THREADS_LEAVE ();
 #endif
-  return retval;
+  return 0;
 }
 
 gboolean
