@@ -53,8 +53,8 @@ extern GList *idle_funcs;
 
     printf("Window size %f %f\n",frameRect.size.width, frameRect.size.height);
     gtk_widget_event (widget, event);
-	while(idle_funcs)
-		gdk_idle_hook();
+	//while(idle_funcs)
+	//	gdk_idle_hook();
 }
 
 - (void)keyUp:(NSEvent *)theEvent

@@ -62,6 +62,11 @@ printf("add idle\n");
   hook->destroy = destroy;
 
   idle_funcs = g_list_insert_sorted(idle_funcs,hook,hook_compare);
+  
+  // queue a notification that will be execute the next idle loop
+  [[NSNotificationQueue defaultQueue] 
+    enqueueNotification:[NSNotification notificationWithName:@"gdk_idle" object:nil]
+    postingStyle:NSPostWhenIdle];
   return (guint)hook;
 }
 
@@ -95,6 +100,9 @@ gdk_idle_hook()
 	gboolean res;
 	IdleHook *hook;
 
+    if(count)
+        return;
+    count++;    
 	while(idle_funcs)
 	{
 //	printf("idle hook\n");
@@ -112,5 +120,6 @@ gdk_idle_hook()
 			}
 		}
 	}
+    count--;
 }
 

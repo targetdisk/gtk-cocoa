@@ -12,16 +12,14 @@
 @implementation GtkAppDelegate
 - (void) applicationDidFinishLaunching: (NSNotification *)not
 {
-/*
- NSMenu *menu;
-  NSMenuItem *item;
-  NSMenu *menuBar = [NSApp mainMenu];
-  
- item = [[NSMenuItem alloc] initWithTitle:@"Prova" action:nil keyEquivalent:@"P"];
- menu = [[NSMenu alloc] initWithTitle:@"Belin"];
- [menuBar addItem: item];
- [menuBar setSubmenu:menu forItem:item];
- */
+    [[NSNotificationCenter defaultCenter] addObserver:self
+    selector:@selector(gdkIdle:)
+    name:@"gdk_idle" object:nil];
+}
+
+- (void)gdkIdle:(NSNotification *)notification
+{
+		gdk_idle_hook();
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
