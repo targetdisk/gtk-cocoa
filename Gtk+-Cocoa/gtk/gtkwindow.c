@@ -121,17 +121,17 @@ static gboolean gtk_window_compare_hints  (GdkGeometry       *geometry_a,
 					   guint              flags_a,
 					   GdkGeometry       *geometry_b,
 					   guint              flags_b);
-static void gtk_window_compute_default_size (GtkWindow       *window,
+void gtk_window_compute_default_size (GtkWindow       *window,
 					     guint           *width,
 					     guint           *height);
-static void  gtk_window_constrain_size      (GtkWindow       *window,
+void  gtk_window_constrain_size      (GtkWindow       *window,
 					     GdkGeometry     *geometry,
 					     guint            flags,
 					     gint             width,
 					     gint             height,
 					     gint            *new_width,
 					     gint            *new_height);
-static void gtk_window_compute_hints      (GtkWindow         *window, 
+void gtk_window_compute_hints      (GtkWindow         *window, 
 					   GdkGeometry       *new_geometry,
 					   guint             *new_flags);
 
@@ -527,9 +527,29 @@ gtk_window_shutdown (GtkObject *object)
 
   gtk_window_set_focus (window, NULL);
   gtk_window_set_default (window, NULL);
-
+  
   GTK_OBJECT_CLASS (parent_class)->shutdown (object);
+  ns_window_close(window);
 }
+
+void
+gtk_window_destroy (GtkObject *object)
+{
+  GtkWindow *window;
+  
+  g_return_if_fail (object != NULL);
+  g_return_if_fail (GTK_IS_WINDOW (object));
+
+  window = GTK_WINDOW (object);
+  
+  gtk_container_unregister_toplevel (GTK_CONTAINER (object));
+
+  if (window->transient_parent)
+    gtk_window_unset_transient_for (window);
+
+ //  gtk_window_super_destroy(object);
+}
+
 
 static void
 gtk_window_transient_parent_realized (GtkWidget *parent,
@@ -604,60 +624,6 @@ gtk_window_finalize (GtkObject *object)
   GTK_OBJECT_CLASS(parent_class)->finalize (object);
 }
 
-void
-gtk_window_show (GtkWidget *widget)
-{
-  GtkWindow *window = GTK_WINDOW (widget);
-  GtkContainer *container = GTK_CONTAINER (window);
-  gboolean need_resize;
-
-  GTK_WIDGET_SET_FLAGS (widget, GTK_VISIBLE);
-
-  need_resize = container->need_resize || !GTK_WIDGET_REALIZED (widget);
-  container->need_resize = FALSE;
-
-  if (need_resize)
-    {
-      GtkWindowGeometryInfo *info = gtk_window_get_geometry_info (window, TRUE);
-      GtkAllocation allocation = { 0, 0 };
-      GdkGeometry new_geometry;
-      guint width, height, new_flags;
-
-      /* determine default size to initially show the window with */
-      gtk_widget_size_request (widget, NULL);
-      gtk_window_compute_default_size (window, &width, &height);
-
-      /* save away the last default size for later comparisions */
-      info->last.width = width;
-      info->last.height = height;
-
-      /* constrain size to geometry */
-      gtk_window_compute_hints (window, &new_geometry, &new_flags);
-      gtk_window_constrain_size (window,
-				 &new_geometry, new_flags,
-				 width, height,
-				 &width, &height);
-
-      /* and allocate the window */
-      allocation.width  = width;
-      allocation.height = height;
-      gtk_widget_size_allocate (widget, &allocation);
-      
-      if (GTK_WIDGET_REALIZED (widget))
-		;//gdk_window_resize (widget->window, width, height);
-      else
-	gtk_widget_realize (widget);
-    }
-  
-  gtk_container_check_resize (container);
-
-  gtk_widget_map (widget);
-
-/*
-  if (window->modal)
-    gtk_grab_add (widget);
-*/
-}
 
 static void
 gtk_window_hide (GtkWidget *widget)
@@ -1448,7 +1414,7 @@ gtk_window_compare_hints (GdkGeometry *geometry_a,
  * This routine does not attempt to constrain the size
  * to obey the geometry hints - that must be done elsewhere.
  */
-static void 
+void 
 gtk_window_compute_default_size (GtkWindow       *window,
 				 guint           *width,
 				 guint           *height)
@@ -1487,7 +1453,7 @@ gtk_window_compute_default_size (GtkWindow       *window,
  *
  * which in turn borrows parts of the algorithm from uwm
  */
-static void 
+void 
 gtk_window_constrain_size (GtkWindow   *window,
 			   GdkGeometry *geometry,
 			   guint        flags,
@@ -1602,7 +1568,7 @@ gtk_window_constrain_size (GtkWindow   *window,
  * of the window. gtk_widget_size_request() must have been
  * called first.
  */
-static void
+void
 gtk_window_compute_hints (GtkWindow   *window,
 			  GdkGeometry *new_geometry,
 			  guint       *new_flags)
