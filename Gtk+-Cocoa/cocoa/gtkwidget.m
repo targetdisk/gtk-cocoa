@@ -115,7 +115,8 @@ gtk_widget_show                 (GtkWidget *widget)
                 [widget->window makeKeyAndOrderFront:widget->window ];
       gtk_signal_emit (GTK_OBJECT (widget), widget_signals[SHOW]);
     }
-  if(!GTK_IS_MENU_ITEM(widget))
+ //if(!GTK_IS_MENU_ITEM(widget))
+ if([widget->proxy isKindOfClass:[NSView class]])
   {  
       obj = (NSView *)widget->proxy;
 	  [obj setNeedsDisplay:TRUE];
@@ -632,7 +633,8 @@ gtk_widget_set_sensitive (GtkWidget *widget,
   gtk_widget_propagate_state (widget, &data);
   if (GTK_WIDGET_DRAWABLE (widget))
     gtk_widget_queue_clear (widget);
-	[widget->proxy setEnabled:sensitive];
+    if([widget->proxy respondsToSelector:@selector(setEnabled)])
+        [widget->proxy setEnabled:sensitive];
 }
 
 
