@@ -1602,7 +1602,7 @@ _gdk_wcstombs_len (const GdkWChar *src,
       mbstr[i] = '\0';
     }
 #endif
-  return mbstr;
+  return strdup(src);
 }
 #endif /* !USE_NATIVE_LOCALE */
   
